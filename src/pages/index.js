@@ -1,15 +1,13 @@
-import React from 'react';
-import {Link, graphql} from 'gatsby';
+import React from "react";
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Contributors from "../components/Contributors";
+import BrowserExtensions from "../components/BrowserExtensions";
 
-const BlogIndex = ({data, location}) => {
-  const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMarkdownRemark.edges;
-
+const Index = ({ location }) => {
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title="A Web Developer's Browser">
       <SEO title="All posts" />
       <>
         <section
@@ -39,11 +37,12 @@ const BlogIndex = ({data, location}) => {
                     className="ml-lg-3"
                     href="https://www.producthunt.com/posts/responsively?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-responsively"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <img
                       src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=200375&theme=light&period=daily"
                       alt="Responsively - Develop responsive web-apps 5x faster! | Product Hunt Embed"
-                      style={{width: 250, height: 50}}
+                      style={{ width: 250, height: 50 }}
                       width="250px"
                       height="50px"
                     />
@@ -69,7 +68,7 @@ const BlogIndex = ({data, location}) => {
               <div className="col-lg-10">
                 <img
                   src="assets/img/screenshot.png"
-                  alt="Image"
+                  alt="Screenshot"
                   className="rounded screenshot-img"
                 />
               </div>
@@ -140,6 +139,7 @@ const BlogIndex = ({data, location}) => {
                   <a
                     href="https://github.com/responsively-org/responsively-app"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     here
                   </a>
@@ -166,7 +166,10 @@ const BlogIndex = ({data, location}) => {
                 </h2>
                 <h2 className="display-4 mx-xl-6">- Steve Jobs</h2>
                 <h2 className="display-5 mx-xl-6">
-                  So let's use it wisely. 😎
+                  So let's use it wisely.{" "}
+                  <span role="img" aria-label="sunglases">
+                    😎
+                  </span>
                 </h2>
                 <p className="lead"></p>
               </div>
@@ -367,90 +370,12 @@ const BlogIndex = ({data, location}) => {
             </div>
           </div>
         </section>
-        <section className="has-divider bg-primary-2-alt">
-          <div className="divider flip-y">
-            <img
-              src="assets/img/dividers/divider-2.svg"
-              alt="graphical divider"
-              data-inject-svg
-            />
-          </div>
-          <div className="container pt-3 pb-0">
-            <div className="row justify-content-center text-center mb-6">
-              <div className="col-xl-11 col-lg-9">
-                <h2 className="mx-xl-6 h1">Browser Extension</h2>
-                <p className="display-5 mx-xl-6">
-                  Install the handy browser extension to easily send links from
-                  your browser to the app and preview instantly.
-                </p>
-                <a
-                  className="extensionButton m-1 btn btn-inline btn-lg btn-outline-primary"
-                  href="https://addons.mozilla.org/en-US/firefox/addon/responsively-helper"
-                  target="_blank"
-                >
-                  <span className="m-1">Download for Firefox</span>
-                </a>
-                <a
-                  className="extensionButton m-1 btn btn-inline btn-lg btn-outline-primary"
-                  href="https://chrome.google.com/webstore/detail/responsively-helper/jhphiidjkooiaollfiknkokgodbaddcj"
-                  target="_blank"
-                >
-                  <span className="m-1">Download for Chrome </span>
-                </a>
-                <a
-                  className="extensionButton m-1 btn btn-inline btn-lg btn-outline-primary"
-                  href="https://microsoftedge.microsoft.com/addons/detail/responsively-helper/ooiejjgflcgkbbehheengalibfehaojn"
-                  target="_blank"
-                >
-                  <span className="m-1">Download for Edge </span>
-                </a>
-                <p className="lead"></p>
-              </div>
-            </div>
-          </div>
-          <div className="divider flip-x">
-            <img
-              src="assets/img/dividers/divider-3.svg"
-              alt="graphical divider"
-              data-inject-svg
-            />
-          </div>
-        </section>
+        <BrowserExtensions />
 
-        <section>
-          <div className="justify-content-center text-center">
-            <h4 id="github-contributors__thanks"></h4>
-            <div id="github-contributors__users"></div>
-          </div>
-        </section>
+        <Contributors />
       </>
     </Layout>
   );
 };
 
-export default BlogIndex;
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`;
+export default Index;

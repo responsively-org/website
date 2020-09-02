@@ -1,21 +1,21 @@
-import React, {useEffect} from 'react';
-import InnerHTML from 'dangerously-set-html-content';
-import 'core-js/features/array/from';
-import mrUtil from '../assets/js/mrare/util';
-import {SVGInjector} from '@tanem/svg-injector';
-import '../assets/js/mrare';
-import '../assets/js/bootstrap';
+import React, { useEffect } from "react";
+import "core-js/features/array/from";
+import mrUtil from "../assets/js/mrare/util";
+import { SVGInjector } from "@tanem/svg-injector";
+import AOS from "aos";
 
 const Footer = () => {
   useEffect(() => {
     if (mrUtil.isIE()) {
-      window.addEventListener('load', () => {
-        SVGInjector(document.querySelectorAll('[class][data-inject-svg]'));
+      window.addEventListener("load", () => {
+        SVGInjector(document.querySelectorAll("[class][data-inject-svg]"));
       });
-      SVGInjector(document.querySelectorAll('[data-inject-svg]'));
+      SVGInjector(document.querySelectorAll("[data-inject-svg]"));
     } else {
-      SVGInjector(document.querySelectorAll('[data-inject-svg]'));
+      SVGInjector(document.querySelectorAll("[data-inject-svg]"));
     }
+
+    AOS.init({ once: true });
   }, []);
 
   return (
@@ -41,7 +41,7 @@ const Footer = () => {
                     <img
                       src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=200375&theme=light&period=daily"
                       alt="Responsively - Develop responsive web-apps 5x faster! | Product Hunt Embed"
-                      style={{width: 250, height: 50}}
+                      style={{ width: 250, height: 50 }}
                       width="250px"
                       height="50px"
                     />
@@ -129,7 +129,7 @@ const Footer = () => {
           <div className="col col-md-auto text-center">
             <small className="text-muted">
               &copy;2020 Responsively App, All rights reserved and subject to
-              the <a href="/privacy-policy.html">Privacy Policy</a> and{' '}
+              the <a href="/privacy-policy.html">Privacy Policy</a> and{" "}
               <a href="/terms-and-conditions.html">Terms and Conditions</a>.
             </small>
           </div>
