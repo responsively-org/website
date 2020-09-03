@@ -9,11 +9,7 @@ const Header = () => (
     >
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <img
-            src="/assets/img/responsively-logo.png"
-            alt="Responsively"
-            width="60px"
-          />
+          <img src="/assets/img/logo.svg" alt="Responsively" width="60px" />
           Responsively
         </Link>
         <iframe
