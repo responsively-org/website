@@ -68,7 +68,7 @@ const Index = ({ location }) => {
             >
               <div className="col-lg-10">
                 <img
-                  src="assets/img/screenshot.png"
+                  src="/assets/img/screenshot.png"
                   alt="Screenshot"
                   className="rounded screenshot-img"
                 />
@@ -77,7 +77,7 @@ const Index = ({ location }) => {
           </div>
           <div className="divider">
             <img
-              src="assets/img/dividers/divider-2.svg"
+              src="/assets/img/dividers/divider-2.svg"
               alt="graphical divider"
               data-inject-svg
             />
@@ -95,7 +95,7 @@ const Index = ({ location }) => {
                 <div className="icon-round bg-primary mx-auto mb-4">
                   <img
                     className="icon bg-primary"
-                    src="assets/img/icons/custom/devices-preview.svg"
+                    src="/assets/img/icons/custom/devices-preview.svg"
                     alt="icon"
                     data-inject-svg
                   />
@@ -111,7 +111,7 @@ const Index = ({ location }) => {
                 <div className="icon-round bg-primary mx-auto mb-4">
                   <img
                     className="icon bg-primary"
-                    src="assets/img/icons/theme/code/code.svg"
+                    src="/assets/img/icons/theme/code/code.svg"
                     alt="icon"
                     data-inject-svg
                   />
@@ -127,7 +127,7 @@ const Index = ({ location }) => {
                 <div className="icon-round bg-primary mx-auto mb-4">
                   <img
                     className="icon bg-primary"
-                    src="assets/img/icons/social/github.svg"
+                    src="/assets/img/icons/social/github.svg"
                     alt="icon"
                     data-inject-svg
                   />
@@ -136,7 +136,7 @@ const Index = ({ location }) => {
                 <p className="lead mx-xl-3">
                   Lets improve it together!
                   <br />
-                  Your contributions are welcome
+                  Your contributions are welcome&nbsp;
                   <a
                     href="https://github.com/responsively-org/responsively-app"
                     target="_blank"
@@ -153,7 +153,7 @@ const Index = ({ location }) => {
         <section className="has-divider bg-primary-2-alt">
           <div className="divider flip-y">
             <img
-              src="assets/img/dividers/divider-2.svg"
+              src="/assets/img/dividers/divider-2.svg"
               alt="graphical divider"
               data-inject-svg
             />
@@ -178,7 +178,7 @@ const Index = ({ location }) => {
           </div>
           <div className="divider flip-x">
             <img
-              src="assets/img/dividers/divider-3.svg"
+              src="/assets/img/dividers/divider-3.svg"
               alt="graphical divider"
               data-inject-svg
             />

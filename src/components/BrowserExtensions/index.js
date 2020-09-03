@@ -7,7 +7,7 @@ const BrowserExtensions = () => {
     <section id="browserExtensions" className="has-divider bg-primary-2-alt">
       <div className="divider flip-y">
         <img
-          src="assets/img/dividers/divider-2.svg"
+          src="/assets/img/dividers/divider-2.svg"
           alt="graphical divider"
           data-inject-svg
         />
@@ -50,7 +50,7 @@ const BrowserExtensions = () => {
       </div>
       <div className="divider flip-x">
         <img
-          src="assets/img/dividers/divider-3.svg"
+          src="/assets/img/dividers/divider-3.svg"
           alt="graphical divider"
           data-inject-svg
         />

@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 const SEO = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
@@ -25,9 +25,9 @@ const SEO = ({ description, lang, meta, title }) => {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -72,34 +72,9 @@ const SEO = ({ description, lang, meta, title }) => {
       ].concat(meta)}
     >
       <link
-        href="assets/css/loaders/loader-typing.css"
-        rel="stylesheet"
-        type="text/css"
-        media="all"
-      />
-      <link
-        href="assets/css/theme-desktop-app.css"
-        rel="stylesheet"
-        type="text/css"
-        media="all"
-      />
-      <link
-        href="assets/css/custom.css"
-        rel="stylesheet"
-        type="text/css"
-        media="all"
-      />
-      <link
         rel="preload"
         as="font"
-        href="assets/fonts/Inter-UI-upright.var.woff2"
-        type="font/woff2"
-        crossorigin="anonymous"
-      />
-      <link
-        rel="preload"
-        as="font"
-        href="assets/fonts/Inter-UI.var.woff2"
+        href="/assets/fonts/Inter-UI.var.woff2"
         type="font/woff2"
         crossorigin="anonymous"
       />
@@ -173,22 +148,26 @@ const SEO = ({ description, lang, meta, title }) => {
         href="/assets/img/favicons/favicon-16x16.png"
       />
       <link rel="manifest" href="/assets/img/favicons/manifest.json" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"
+      ></script>
     </Helmet>
-  )
-}
+  );
+};
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
-export default SEO
+export default SEO;

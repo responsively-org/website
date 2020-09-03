@@ -52,7 +52,7 @@ const Footer = () => {
               <div className="decoration layer-0">
                 <img
                   className="bg-primary-2"
-                  src="assets/img/decorations/deco-blob-1.svg"
+                  src="/assets/img/decorations/deco-blob-1.svg"
                   alt="deco-blob-1 decoration"
                   data-inject-svg
                 />
@@ -72,7 +72,7 @@ const Footer = () => {
                 >
                   <img
                     className="icon undefined"
-                    src="assets/img/icons/social/twitter.svg"
+                    src="/assets/img/icons/social/twitter.svg"
                     alt="twitter social icon"
                     data-inject-svg
                   />
@@ -87,7 +87,7 @@ const Footer = () => {
                 >
                   <img
                     className="icon undefined"
-                    src="assets/img/icons/social/github.svg"
+                    src="/assets/img/icons/social/github.svg"
                     alt="github social icon"
                     data-inject-svg
                   />
@@ -102,7 +102,7 @@ const Footer = () => {
                 >
                   <img
                     className="icon undefined"
-                    src="assets/img/logos/brand/ph.svg"
+                    src="/assets/img/logos/brand/ph.svg"
                     alt="product hunt social icon"
                     data-inject-svg
                   />
@@ -117,7 +117,7 @@ const Footer = () => {
                 >
                   <img
                     className="icon undefined"
-                    src="assets/img/logos/brand/indie-hackers.svg"
+                    src="/assets/img/logos/brand/indie-hackers.svg"
                     alt="indie hackers social icon"
                     data-inject-svg
                   />

@@ -8,14 +8,14 @@ const Header = () => (
       data-sticky="top"
     >
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img
             src="/assets/img/responsively-logo.png"
             alt="Responsively"
             width="60px"
           />
           Responsively
-        </a>
+        </Link>
         <iframe
           title="GitHub stars"
           className="d-none d-sm-none d-md-none d-lg-block"
@@ -35,13 +35,13 @@ const Header = () => (
         >
           <img
             className="icon navbar-toggler-open"
-            src="assets/img/icons/interface/menu.svg"
+            src="/assets/img/icons/interface/menu.svg"
             alt="menu interface icon"
             data-inject-svg
           />
           <img
             className="icon navbar-toggler-close"
-            src="assets/img/icons/interface/cross.svg"
+            src="/assets/img/icons/interface/cross.svg"
             alt="cross interface icon"
             data-inject-svg
           />
@@ -96,7 +96,7 @@ const Header = () => (
           >
             <img
               className="icon bg-primary"
-              src="assets/img/icons/social/github.svg"
+              src="/assets/img/icons/social/github.svg"
               alt="icon"
               data-inject-svg
             />
@@ -110,7 +110,7 @@ const Header = () => (
           >
             <img
               className="icon bg-primary"
-              src="assets/img/icons/social/twitter.svg"
+              src="/assets/img/icons/social/twitter.svg"
               alt="icon"
               data-inject-svg
             />

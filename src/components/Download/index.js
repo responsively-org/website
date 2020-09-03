@@ -58,7 +58,7 @@ const Download = () => {
                 <div className="icon-round bg-primary mx-auto mb-4">
                   <img
                     className="icon"
-                    src="assets/img/logos/brand/apple.svg"
+                    src="/assets/img/logos/brand/apple.svg"
                     alt="icon"
                   />
                 </div>
@@ -83,7 +83,7 @@ const Download = () => {
                 <div className="icon-round bg-primary mx-auto mb-4">
                   <img
                     className="icon"
-                    src="assets/img/icons/custom/windows-icon.svg"
+                    src="/assets/img/icons/custom/windows-icon.svg"
                     alt="icon"
                   />
                 </div>
@@ -108,7 +108,7 @@ const Download = () => {
                 <div className="icon-round bg-primary mx-auto mb-4">
                   <img
                     className="icon"
-                    src="assets/img/icons/custom/linux-icon.svg"
+                    src="/assets/img/icons/custom/linux-icon.svg"
                     alt="icon"
                   />
                 </div>
@@ -138,7 +138,7 @@ const Download = () => {
             version="1.1"
             preserveAspectRatio="none"
             className="injected-svg"
-            data-src="assets/img/dividers/divider-3.svg"
+            data-src="/assets/img/dividers/divider-3.svg"
           >
             <path d="M0,0 C6.83050094,50 15.1638343,75 25,75 C41.4957514,75 62.4956597,0 81.2456597,0 C93.7456597,0 99.9971065,0 100,0 L100,100 L0,100"></path>
           </svg>
@@ -181,7 +181,7 @@ const Download = () => {
             version="1.1"
             preserveAspectRatio="none"
             className="injected-svg"
-            data-src="assets/img/dividers/divider-2.svg"
+            data-src="/assets/img/dividers/divider-2.svg"
           >
             <path d="M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z"></path>
           </svg>
