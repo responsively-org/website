@@ -4,7 +4,7 @@ import "./style.css";
 
 const BrowserExtensions = () => {
   return (
-    <section className="has-divider bg-primary-2-alt">
+    <section id="browserExtensions" className="has-divider bg-primary-2-alt">
       <div className="divider flip-y">
         <img
           src="assets/img/dividers/divider-2.svg"
