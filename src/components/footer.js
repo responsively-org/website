@@ -3,6 +3,7 @@ import "core-js/features/array/from";
 import mrUtil from "../assets/js/mrare/util";
 import { SVGInjector } from "@tanem/svg-injector";
 import AOS from "aos";
+import { Link } from "gatsby";
 
 const Footer = () => {
   useEffect(() => {
@@ -28,9 +29,9 @@ const Footer = () => {
                 <div className="h3 text-center mb-md-0">
                   Start building beautiful websites
                 </div>
-                <a href="/download" className="btn btn-lg btn-white">
+                <Link href="/download" className="btn btn-lg btn-white">
                   Download Now
-                </a>
+                </Link>
                 <div className="d-block d-sm-block d-md-block d-lg-none flex-column flex-sm-row justify-content-center ml-sm-4 mt-4 mt-sm-0">
                   <a
                     className="ml-lg-3"
@@ -129,8 +130,8 @@ const Footer = () => {
           <div className="col col-md-auto text-center">
             <small className="text-muted">
               &copy;2020 Responsively App, All rights reserved and subject to
-              the <a href="/privacy-policy.html">Privacy Policy</a> and{" "}
-              <a href="/terms-and-conditions.html">Terms and Conditions</a>.
+              the <Link to="/privacy-policy">Privacy Policy</Link> and{" "}
+              <Link to="/terms-and-conditions">Terms and Conditions</Link>.
             </small>
           </div>
         </div>

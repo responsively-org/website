@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Contributors from "../components/Contributors";
 import BrowserExtensions from "../components/BrowserExtensions";
+import { Link } from "gatsby";
 
 const Index = ({ location }) => {
   return (
@@ -25,12 +26,12 @@ const Index = ({ location }) => {
                   make your job easier.
                 </p>
                 <div className="d-flex flex-column flex-sm-row justify-content-center mt-4">
-                  <a
-                    href="/download"
+                  <Link
+                    to="/download"
                     className="btn btn-lg btn-outline-primary mx-2"
                   >
                     <span>Download now and use it for free!</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="d-block d-sm-block d-md-block d-lg-none flex-column flex-sm-row justify-content-center mt-4 ">
                   <a

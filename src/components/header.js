@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "gatsby";
 
 const Header = () => (
   <div className="navbar-container bg-primary-3">
@@ -50,9 +51,13 @@ const Header = () => (
           <div className="py-2 py-lg-0">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a href="/#Features" className="nav-link" aria-expanded="false">
+                <Link
+                  to="/#Features"
+                  className="nav-link"
+                  aria-expanded="false"
+                >
                   Features
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a
@@ -67,9 +72,9 @@ const Header = () => (
               </li>
             </ul>
           </div>
-          <a href="/download" className="btn btn-primary ml-lg-3">
+          <Link to="/download" className="btn btn-primary ml-lg-3">
             Download now
-          </a>
+          </Link>
           <a
             className="ml-lg-3 d-none d-lg-block"
             href="https://www.producthunt.com/posts/responsively?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-responsively"
