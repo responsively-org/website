@@ -29,7 +29,7 @@ const Footer = () => {
                 <div className="h3 text-center mb-md-0">
                   Start building beautiful websites
                 </div>
-                <Link href="/download" className="btn btn-lg btn-white">
+                <Link to="/download" className="btn btn-lg btn-white">
                   Download Now
                 </Link>
                 <div className="d-block d-sm-block d-md-block d-lg-none flex-column flex-sm-row justify-content-center ml-sm-4 mt-4 mt-sm-0">

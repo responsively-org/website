@@ -1,0 +1,11 @@
+.GallaxyBG {
+  position: relative;
+}
+
+.GallaxyBG__img {
+  position: absolute;
+  top: 10px;
+  left: -900px;
+  transform: scaleX(-1);
+  z-index: 1;
+}
