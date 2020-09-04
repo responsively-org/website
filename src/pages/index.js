@@ -5,7 +5,6 @@ import SEO from "../components/seo";
 import Contributors from "../components/Contributors";
 import BrowserExtensions from "../components/BrowserExtensions";
 import { Link } from "gatsby";
-import GallaxyBG from "../components/GallaxyBG";
 
 const Index = ({ location }) => {
   return (

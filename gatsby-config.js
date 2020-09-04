@@ -1,11 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Responsively App`,
-    author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
-    },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A dev-tool that aids faster and precise responsive web development.`,
     siteUrl: `https://responsively.app/`,
     social: {
       twitter: `ResponsivelyApp`,
@@ -61,8 +57,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Responsively Blog`,
+        short_name: `Responsively`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
