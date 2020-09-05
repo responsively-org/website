@@ -4,6 +4,7 @@ module.exports = {
     description: `A dev-tool that aids faster and precise responsive web development.`,
     siteUrl: `https://responsively.app/`,
     social: {
+      image: "https://responsively.app/assets/img/responsively-image.png",
       twitter: `ResponsivelyApp`,
     },
   },
@@ -61,5 +62,6 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-meta-redirect`,
+    `gatsby-plugin-advanced-sitemap`,
   ],
 };

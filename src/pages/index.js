@@ -9,7 +9,7 @@ import { Link } from "gatsby";
 const Index = ({ location }) => {
   return (
     <Layout location={location} title="A Web Developer's Browser">
-      <SEO title="All posts" />
+      <SEO title="A Web Developer's Browser" location={location} />
       <>
         <section
           id="Home"

@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 const Index = ({ location }) => {
   return (
     <Layout location={location} title="Privacy Policy">
-      <SEO title="All posts" />
+      <SEO title="Privacy Policy" location={location} />
       <section className="text-center header-desktop-app" id="privacyPolicy">
         <div className="container">
           <div className="row justify-content-center mb-5">

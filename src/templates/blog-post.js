@@ -4,12 +4,13 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import GallaxyBG from "../components/GallaxyBG";
+import Bio from "../components/Bio";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
-  console.log("post", post);
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
+  console.log("post.frontmatter", post.frontmatter);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -24,10 +25,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <article>
               <header>
                 <h1>{post.frontmatter.title}</h1>
-                <p>{post.frontmatter.date}</p>
+                <p>
+                  By {post.frontmatter.author} on {post.frontmatter.date}
+                </p>
               </header>
               <section dangerouslySetInnerHTML={{ __html: post.html }} />
-              <hr />
+              <Bio
+                name={post.frontmatter.author}
+                pic={post.frontmatter.authorPic}
+              />
             </article>
 
             <nav>
@@ -80,6 +86,8 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        author
+        authorPic
       }
     }
   }

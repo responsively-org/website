@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-const SEO = ({ description, lang, meta, title }) => {
+const SEO = ({ description, lang, meta, title, location }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +19,7 @@ const SEO = ({ description, lang, meta, title }) => {
             title
             description
             social {
+              image
               twitter
             }
           }
@@ -54,11 +55,23 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: site.siteMetadata.social.image,
+        },
+        {
+          property: `twitter:image`,
+          content: site.siteMetadata.social.image,
+        },
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
+          content: site.siteMetadata.social.twitter,
+        },
+        {
+          name: `twitter:site`,
           content: site.siteMetadata.social.twitter,
         },
         {
@@ -71,6 +84,10 @@ const SEO = ({ description, lang, meta, title }) => {
         },
       ].concat(meta)}
     >
+      <link
+        rel="canonical"
+        href={`https://responsively.app${location ? location.pathname : ""}`}
+      />
       <link
         rel="preload"
         as="font"

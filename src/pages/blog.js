@@ -6,19 +6,17 @@ import SEO from "../components/seo";
 import GallaxyBG from "../components/GallaxyBG";
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+    <Layout location={location} title="Blog">
+      <SEO title="Blog" location={location} />
       <div className="bg-primary-3">
         <GallaxyBG />
         <section className="contentWithBG has-divider">
           <div className="container text-light ">
             <h1>Blog</h1>
             {posts.map(({ node }) => {
-              console.log("node", node);
               const title = node.frontmatter.title || node.fields.slug;
               return (
                 <article key={node.fields.slug}>
@@ -28,7 +26,9 @@ const BlogIndex = ({ data, location }) => {
                         {title}
                       </Link>
                     </h3>
-                    <small>{node.frontmatter.date}</small>
+                    <small>
+                      By {node.frontmatter.author} on {node.frontmatter.date}
+                    </small>
                   </header>
                   <section>
                     <p
@@ -67,6 +67,8 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            author
+            authorPic
           }
         }
       }
