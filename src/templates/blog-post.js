@@ -10,7 +10,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
-  console.log("post.frontmatter", post.frontmatter);
 
   return (
     <Layout location={location} title={siteTitle}>
