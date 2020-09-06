@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
     isPermanent: true,
   });
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`);
+  const blogPost = path.resolve(`./src/templates/BlogPost/index.js`);
   const result = await graphql(
     `
       {

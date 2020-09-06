@@ -30,13 +30,13 @@ const BlogIndex = ({ data, location }) => {
                       By {node.frontmatter.author} on {node.frontmatter.date}
                     </small>
                   </header>
-                  <section>
+                  <div style={{ padding: "1rem 0" }}>
                     <p
                       dangerouslySetInnerHTML={{
                         __html: node.frontmatter.description || node.excerpt,
                       }}
                     />
-                  </section>
+                  </div>
                 </article>
               );
             })}

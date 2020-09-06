@@ -1,16 +1,17 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import GallaxyBG from "../components/GallaxyBG";
-import Bio from "../components/Bio";
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import GallaxyBG from "../../components/GallaxyBG";
+import Bio from "../../components/Bio";
+
+import "./style.scss";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
-  console.log("post.frontmatter", post.frontmatter);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -20,19 +21,28 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <div className="bg-primary-3">
         <GallaxyBG />
-        <section className="contentWithBG has-divider">
-          <div className="container text-light ">
+        <section className="BlogPost contentWithBG has-divider">
+          <div className="BlogPost__content container text-light ">
             <article>
               <header>
                 <h1>{post.frontmatter.title}</h1>
                 <p>
-                  By {post.frontmatter.author} on {post.frontmatter.date}
+                  By{" "}
+                  <a
+                    href={post.frontmatter.authorTwitterUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {post.frontmatter.author}
+                  </a>
+                  &nbsp;on {post.frontmatter.date}
                 </p>
               </header>
               <section dangerouslySetInnerHTML={{ __html: post.html }} />
               <Bio
                 name={post.frontmatter.author}
                 pic={post.frontmatter.authorPic}
+                twitter={post.frontmatter.authorTwitterUrl}
               />
             </article>
 
@@ -88,6 +98,7 @@ export const pageQuery = graphql`
         description
         author
         authorPic
+        authorTwitterUrl
       }
     }
   }

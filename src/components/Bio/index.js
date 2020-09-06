@@ -1,14 +1,24 @@
 import React from "react";
 
-import "./style.css";
+import "./style.scss";
 
-const Bio = ({ name, pic }) => {
+const Bio = ({ name, pic, twitter }) => {
   return (
-    <div>
+    <div className="Bio">
       <img className="Bio__image" alt={name} src={pic} />
-      <p>
+      <p className="Bio__name">
         <strong>{name}</strong>
       </p>
+      {twitter && (
+        <a
+          className="Bio__twitter"
+          href={twitter}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Follow on Twitter →
+        </a>
+      )}
     </div>
   );
 };

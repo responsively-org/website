@@ -66,6 +66,11 @@ const Header = () => (
                   RoadMap
                 </a>
               </li>
+              <li className="nav-item">
+                <Link to="/blog" className="nav-link" aria-expanded="false">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
           <Link to="/download" className="btn btn-primary ml-lg-3">
