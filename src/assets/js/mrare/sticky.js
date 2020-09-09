@@ -5,16 +5,18 @@
 // Initialises the srollMonitor plugin and provides interface to watcher objects
 // for sticking elements to the top of viewport while scrolling
 
-import jQuery from 'jquery';
-import scrollMonitor from 'scrollmonitor';
+import jQuery from "jquery";
+import scrollMonitor from "scrollmonitor";
 
 const mrSticky = (($) => {
   /**
    * Check for scrollMonitor dependency
    * scrollMonitor - https://github.com/stutrek/scrollMonitor
    */
-  if (typeof scrollMonitor === 'undefined') {
-    throw new Error('mrSticky requires scrollMonitor.js (https://github.com/stutrek/scrollMonitor)');
+  if (typeof scrollMonitor === "undefined") {
+    throw new Error(
+      "mrSticky requires scrollMonitor.js (https://github.com/stutrek/scrollMonitor)"
+    );
   }
 
   /**
@@ -23,47 +25,47 @@ const mrSticky = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  const NAME = 'mrSticky';
-  const VERSION = '1.4.0';
-  const DATA_KEY = 'mr.sticky';
+  const NAME = "mrSticky";
+  const VERSION = "1.4.0";
+  const DATA_KEY = "mr.sticky";
   const EVENT_KEY = `.${DATA_KEY}`;
-  const DATA_API_KEY = '.data-api';
+  const DATA_API_KEY = ".data-api";
   const JQUERY_NO_CONFLICT = $.fn[NAME];
   const NO_OFFSET = 0;
 
   const ClassName = {
-    FIXED_TOP: 'position-fixed',
-    ABSOLUTE_BOTTOM: 'sticky-bottom',
-    FIXED_BOTTOM: 'sticky-viewport-bottom',
-    SCROLLED: 'scrolled',
+    FIXED_TOP: "position-fixed",
+    ABSOLUTE_BOTTOM: "sticky-bottom",
+    FIXED_BOTTOM: "sticky-viewport-bottom",
+    SCROLLED: "scrolled",
   };
 
   const Css = {
-    HEIGHT: 'min-height',
-    WIDTH: 'max-width',
-    SPACE_TOP: 'top',
-    SPACE_BOTTOM: 'bottom',
+    HEIGHT: "min-height",
+    WIDTH: "max-width",
+    SPACE_TOP: "top",
+    SPACE_BOTTOM: "bottom",
   };
 
   const Event = {
     LOAD_DATA_API: `load${EVENT_KEY}${DATA_API_KEY}`,
-    WINDOW_RESIZE: 'resize',
-    ALERT_CLOSED: 'closed.bs.alert',
-    TOGGLE_SHOW: 'show.bs.collapse',
-    TOGGLE_HIDDEN: 'hidden.bs.collapse',
+    WINDOW_RESIZE: "resize",
+    ALERT_CLOSED: "closed.bs.alert",
+    TOGGLE_SHOW: "show.bs.collapse",
+    TOGGLE_HIDDEN: "hidden.bs.collapse",
   };
 
   const Options = {
-    BELOW_NAV: 'below-nav',
-    TOP: 'top',
-    BOTTOM: 'bottom',
+    BELOW_NAV: "below-nav",
+    TOP: "top",
+    BOTTOM: "bottom",
   };
 
   const Selector = {
-    DATA_ATTR: 'sticky',
-    DATA_STICKY: '[data-sticky]',
+    DATA_ATTR: "sticky",
+    DATA_STICKY: "[data-sticky]",
     NAV_STICKY: 'body > div.navbar-container [data-sticky="top"]',
-    ALERT: '.alert-dismissible',
+    ALERT: ".alert-dismissible",
   };
 
   /**
@@ -76,7 +78,7 @@ const mrSticky = (($) => {
     constructor(element) {
       const $element = $(element);
       const stickyData = $element.data(Selector.DATA_ATTR);
-      const stickyUntil = $element.closest('section') || null;
+      const stickyUntil = $element.closest("section") || null;
       this.element = element;
       this.stickBelowNav = stickyData === Options.BELOW_NAV;
       this.stickBottom = stickyData === Options.BOTTOM;
@@ -107,28 +109,29 @@ const mrSticky = (($) => {
       const $element = $(element);
       const notNavElement = !this.isNavElement;
 
-      let offset = this.stickBelowNav
-        && this.navIsSticky
-        && notNavElement
-        ? { top: this.navHeight } : NO_OFFSET;
+      let offset =
+        this.stickBelowNav && this.navIsSticky && notNavElement
+          ? { top: this.navHeight }
+          : NO_OFFSET;
 
-      offset = this.stickBottom
-        && notNavElement
-        ? { bottom: -$element.outerHeight } : offset;
+      offset =
+        this.stickBottom && notNavElement
+          ? { bottom: -$element.outerHeight }
+          : offset;
 
       const watcher = scrollMonitor.create(element, offset);
       // ensure that we're always watching the place the element originally was
       watcher.lock();
 
-      const untilWatcher = this.stickyUntil !== null ? scrollMonitor.create(
-        this.stickyUntil,
-        { bottom: -(watcher.height + offset.top) },
-      ) : null;
-
+      const untilWatcher =
+        this.stickyUntil !== null
+          ? scrollMonitor.create(this.stickyUntil, {
+              bottom: -(watcher.height + offset.top),
+            })
+          : null;
 
       this.watcher = watcher;
       this.untilWatcher = untilWatcher;
-      this.navHeight = this.navHeight;
 
       // For navs that start at top, stick them immediately to avoid a jump
       if (this.isNavElement && watcher.top === 0 && !this.navIsAbsolute) {
@@ -155,9 +158,11 @@ const mrSticky = (($) => {
       // Add fixed when element leaves via top of viewport or if nav is sitting at top
       $element.toggleClass(
         ClassName.FIXED_TOP,
-        this.watcher.isAboveViewport
-        || (!this.navIsAbsolute && !this.stickBottom
-          && (this.isNavElement && this.watcher.top === 0)),
+        this.watcher.isAboveViewport ||
+          (!this.navIsAbsolute &&
+            !this.stickBottom &&
+            this.isNavElement &&
+            this.watcher.top === 0)
       );
 
       // Used to apply styles to the nav based on "scrolled" class
@@ -165,24 +170,22 @@ const mrSticky = (($) => {
       // such as avoiding a jump on first scroll etc.
       $element.toggleClass(
         ClassName.SCROLLED,
-        this.watcher.isAboveViewport
-          && this.isNavElement
-          && !this.stickBottom,
+        this.watcher.isAboveViewport && this.isNavElement && !this.stickBottom
       );
 
       // Fix to bottom when element enters via bottom of viewport and has data-sticky="bottom"
       $element.toggleClass(
         ClassName.FIXED_BOTTOM,
-        (this.watcher.isFullyInViewport || this.watcher.isAboveViewport) && this.stickBottom,
+        (this.watcher.isFullyInViewport || this.watcher.isAboveViewport) &&
+          this.stickBottom
       );
 
       if (!this.stickBottom) {
         $element.css(
           Css.SPACE_TOP,
-          this.watcher.isAboveViewport
-          && this.navIsSticky
-          && this.stickBelowNav
-            ? this.navHeight : NO_OFFSET,
+          this.watcher.isAboveViewport && this.navIsSticky && this.stickBelowNav
+            ? this.navHeight
+            : NO_OFFSET
         );
       }
     }
@@ -243,7 +246,6 @@ const mrSticky = (($) => {
       // Set a min-height to prevent "jumping" when sticking to top
       // but not applied to the nav element itself unless it is overlay (absolute) nav
       if ((!this.navIsAbsolute && this.isNavElement) || notNavElement) {
-
         // navHeight should only be recalculated when the nav is not open/toggled
         // Don't allow the navHeight to be set until the nav is fully hidden
         if (!this.navToggled) {
@@ -260,7 +262,7 @@ const mrSticky = (($) => {
       const $navElement = this.navElement || $(Selector.NAV_STICKY).first();
       this.navElement = $navElement;
       this.navHeight = $navElement.outerHeight();
-      this.navIsAbsolute = $navElement.css('position') === 'absolute';
+      this.navIsAbsolute = $navElement.css("position") === "absolute";
       this.navIsSticky = $navElement.length > 0;
     }
 
@@ -286,7 +288,7 @@ const mrSticky = (($) => {
     const stickyElements = $.makeArray($(Selector.DATA_STICKY));
 
     /* eslint-disable no-plusplus */
-    for (let i = stickyElements.length; i--;) {
+    for (let i = stickyElements.length; i--; ) {
       const $sticky = $(stickyElements[i]);
       Sticky.jQueryInterface.call($sticky, $sticky.data());
     }
