@@ -1,0 +1,22 @@
+.github-contributors__thanks {
+  padding: 0 2rem;
+  max-width: 40rem;
+  margin: auto;
+}
+
+.github-contributors__users {
+  padding: 0 2rem;
+  max-width: 40rem;
+  margin: 2rem auto;
+}
+
+.github-contributors__avatar {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin: 0.1rem 0.2rem;
+  display: inline-block;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  background-size: contain;
+}

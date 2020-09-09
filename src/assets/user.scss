@@ -1,0 +1,48 @@
+//
+//
+// user.scss
+//
+// Place your own custom CSS or SCSS rules below this line, these rules will override any Bootstrap and theme variables.
+
+.video-preview {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.navbar-links-container {
+  padding: 1rem 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.contentWithBG {
+  z-index: 2;
+  min-height: 100vh;
+}
+
+.navbar {
+  padding: 0.5rem 1rem;
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 980px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+#privacyPolicy p {
+  text-align: justify !important;
+}
+
+#privacyPolicy ol,
+#privacyPolicy li {
+  text-align: left !important;
+}
