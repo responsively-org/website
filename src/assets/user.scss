@@ -46,3 +46,17 @@ html {
 #privacyPolicy li {
   text-align: left !important;
 }
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1.5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.navbar-logo-img {
+  margin-right: 5px;
+}

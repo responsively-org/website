@@ -1,5 +1,4 @@
-// custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
-
-import "prismjs/themes/prism.css"
+import "jquery/dist/jquery.min.js";
+import "popper.js/dist/popper.min";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap/dist/css/bootstrap.css";
