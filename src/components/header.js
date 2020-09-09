@@ -1,31 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "gatsby";
-import "bootstrap";
-import $ from "jquery";
-import Sticky from "../assets/js/mrare/sticky";
-
-import "bootstrap/dist/css/bootstrap.css";
+import Sticky from "sticky-js";
 
 const Header = () => {
+  const navRef = useRef();
   useEffect(() => {
-    const stickyElements = $.makeArray($("[data-sticky]"));
-
-    /* eslint-disable no-plusplus */
-    for (let i = stickyElements.length; i--; ) {
-      const $sticky = $(stickyElements[i]);
-      Sticky.jQueryInterface.call($sticky, $sticky.data());
+    if (!navRef.current) {
+      return;
     }
-  }, []);
+    console.log(navRef.current.clientHeight);
+    const headerHeight = navRef.current.clientHeight;
+    navRef.current.parentNode.style.height = `${headerHeight}px`;
+    new Sticky(".navbar").update();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navRef.current?.clientHeight]);
 
   return (
     <div className="navbar-container bg-primary-3">
       <nav
+        ref={navRef}
         className="navbar navbar-expand-lg navbar-dark bg-primary-3"
         data-sticky="top"
       >
         <div className="container">
           <Link className="navbar-brand" to="/">
-            <img src="/assets/img/logo.svg" alt="Responsively" width="60px" />
+            <img
+              src="/assets/img/logo.svg"
+              alt="Responsively"
+              width="60px"
+              className="navbar-logo-img"
+            />
             Responsively
           </Link>
           <iframe
