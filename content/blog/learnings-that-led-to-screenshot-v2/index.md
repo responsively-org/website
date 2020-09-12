@@ -50,7 +50,7 @@ In v2, we took a completely different approach than the usual screenshotting log
 4. Do a screen capture. This will give us the full page screenshot.
 5. Reset the device viewport height and zoom level.
 
-This might be a little confusing, please check the illustration below for a better understanding.
+Please check the illustration below for a better understanding.
 
 <br/>
 <div class="BlogPost__image-wrapper">
