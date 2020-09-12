@@ -15,7 +15,7 @@ By design, Chromium only allows the viewport visible portion of the rendered web
 
 ## Screenshot Mechanism v1
 
-To overcome the above challenge, v1 mechanism was following the usual mechanism that is followed by most of the screens capturing browser extensions. For the sake of simplicity, here I'm cutting down some nitty-gritty details in it.
+To overcome the above challenge, v1 mechanism was designed based on the logic followed by most of the screens capturing browser extensions. For the sake of simplicity, here I'm cutting down some nitty-gritty details in it.
 Steps:
 
 1. Identify the screen viewport dimensions and rendered page dimensions.
