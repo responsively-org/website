@@ -38,7 +38,7 @@ Steps:
 Over time, we faced the following problems with the above-described mechanism:
 
 1. The performance is unbearable for huge pages where we have to do a lot of scrolling and capturing. And then we need to stitch these images together, even though we used the best available libraries for doing this, this is so much image processing.
-2. The final output has some misaligned/overlapped portions. This is mainly caused by lazy loaded content/dynamic elements on the page that get displayed based on the scroll position. This change in the page height is messing with the final stitched image.
+2. The final output has some misaligned/overlapped portions. This is mainly caused by lazy loaded content/dynamic elements on the page that get displayed based on the scroll position. This change in the page height was messing with the final stitched image.
 
 ## Mechanism v2
 
@@ -63,7 +63,7 @@ Please check the illustration below for a better understanding.
 
 ## Few other minor changes that improved the speed
 
-1. Previously we were capturing the images and then adding a white background while processing it. Yes, the Chromium screenshot has transparent BG if there is no background set for the page. So we removed that additional step to process the background by setting a white BG for the document `body` before triggering the capture and removing it after.
+1. Previously we were capturing the images and then adding a white background while processing it. Yes, Chromium produces the screenshot with transparent background if there is no background set for the page. So we removed that additional step to process the image with white background overlay by setting a `background-color: white;` style for the document `body` before triggering the capture and removing it after.
 2. We changed the final output to `jpeg` format instead of `png` and found it faster. Chromium captures the image into a `NativeImage` object which has to be converted to one of the usable formats.
 
 <br />
