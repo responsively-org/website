@@ -18,7 +18,7 @@ By design, Chromium only allows the viewport visible portion of the rendered web
 To overcome the above challenge, v1 mechanism was following the usual mechanism that is followed by most of the screens capturing browser extensions. For the sake of simplicity, here I'm cutting down some nitty-gritty details in it.
 Steps:
 
-1. Identify the screen viewport dimensions and rendered page's dimensions.
+1. Identify the screen viewport dimensions and rendered page dimensions.
 2. Starting from the top-left of the page, repeatedly do the following until it reaches the bottom-right of the page.
    1. Capture the visible portion of the page.
    2. Scroll the page to the end of current viewport and repeat from the previous step.
