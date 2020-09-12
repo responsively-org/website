@@ -42,7 +42,7 @@ Over time, we faced the following problems with the above-described mechanism:
 
 ## Mechanism v2
 
-In v2, we took a completely different approach than the usual screenshotting logic. We avoided the high CPU intensive work by _eliminating the iterative capture of portions and stitching them_. This became possible because we use chromium's `webview` for rendering the device previews.
+In v2, we took a completely different approach than the usual screenshotting logic. We avoided the high CPU intensive work by _eliminating the iterative capture of portions and stitching them_. This became possible because we use Chromium's `webview` for rendering the device previews.
 
 1. We do the initial full page scroll to make any lazy loaded content rendered on the screen. And then get the height of the page.
 2. Temporarily change the height of the `webview` to the height of the page. Now the full page is inside the device's viewport.
