@@ -64,7 +64,7 @@ Please check the illustration below for a better understanding.
 ## Few other minor changes that improved the speed
 
 1. Previously we were capturing the images and then adding a white background while processing it. Yes, the Chromium screenshot has transparent BG if there is no background set for the page. So we removed that additional step to process the background by setting a white BG for the document `body` before triggering the capture and removing it after.
-2. We changed the final out to `jpeg` format instead of `png` and found it faster. Chromium captures the image into a `NativeImage` object which has to be converted to one of the usable formats.
+2. We changed the final output to `jpeg` format instead of `png` and found it faster. Chromium captures the image into a `NativeImage` object which has to be converted to one of the usable formats.
 
 <br />
 
