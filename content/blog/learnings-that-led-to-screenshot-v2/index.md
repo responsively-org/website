@@ -1,6 +1,6 @@
 ---
 title: Learnings that led to Screenshot v2 (3-5x speed improvement over v1)
-date: "2020-09-06T20:00:00.000Z"
+date: "2020-09-15T12:00:00.000Z"
 description: In this post we are sharing the learnings from mechanism v1 that laid the base for v2.
 author: Manoj Vivek
 authorPic: /assets/img/blog-authors/manoj-vivek.jpeg
