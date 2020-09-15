@@ -7,11 +7,11 @@ authorPic: /assets/img/blog-authors/manoj-vivek.jpeg
 authorTwitterUrl: https://twitter.com/vivek_jonam
 ---
 
-Responsively App's screenshot functionality was powered by the mechanism v1 up into a week back that had some performance problems and occasional misalignments in the full-page screenshots. In this post we will talk about the process we went through in making it better.
+Responsively App's screenshot functionality was powered by the mechanism v1 up until a week back. This mechanism had some performance problems and occasional misalignments in the full-page screenshots. In this post we will talk about the process we went through in making it better.
 
 #### Screen capture challenges in Chromium
 
-By design, Chromium only allows the viewport visible portion of the rendered webpage. So you cannot capture the elements that are not visible on the viewport.
+By design, Chromium only allows to **screen capture** the viewport visible portion of the rendered webpage. So you cannot capture the elements that are not visible on the viewport.
 
 ## Screenshot Mechanism v1
 
