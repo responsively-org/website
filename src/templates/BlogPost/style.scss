@@ -1,0 +1,28 @@
+.BlogPost {
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__content {
+    padding-bottom: 1rem !important;
+  }
+}
+
+.BlogPost img {
+  object-fit: contain;
+}
+
+.BlogPost li {
+  margin-bottom: 1rem !important;
+}
+
+.BlogPost code {
+  padding: 0 0.2rem !important;
+}
+
+.BlogPost section {
+  padding: 2rem 0 !important;
+}
