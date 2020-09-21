@@ -55,7 +55,7 @@ const Index = ({ location }) => {
                     src="https://ghbtns.com/github-btn.html?user=responsively-org&amp;repo=responsively-app&amp;type=star&amp;count=true"
                     frameBorder="0"
                     scrolling="0"
-                    width="100px"
+                    width="120px"
                     height="30px"
                   ></iframe>
                 </div>
