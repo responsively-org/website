@@ -19,6 +19,12 @@ exports.createPages = async ({ graphql, actions }) => {
     toPath: "/terms-and-conditions",
     isPermanent: true,
   });
+  createRedirect({
+    fromPath: "/join-slack",
+    toPath:
+      "https://join.slack.com/t/responsively/shared_invite/zt-haoieftz-IsMw64H6jXC23pJ16ROLzw",
+    isPermanent: true,
+  });
 
   const blogPost = path.resolve(`./src/templates/BlogPost/index.js`);
   const result = await graphql(
