@@ -20,23 +20,22 @@ const BlogIndex = ({ data, location }) => {
               const title = node.frontmatter.title || node.fields.slug;
               return (
                 <article key={node.fields.slug}>
-                  <header>
-                    <h3>
-                      <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                        {title}
-                      </Link>
-                    </h3>
-                    <small>
-                      By {node.frontmatter.author} on {node.frontmatter.date}
-                    </small>
-                  </header>
-                  <div style={{ padding: "1rem 0" }}>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description || node.excerpt,
-                      }}
-                    />
-                  </div>
+                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                    <header>
+                      <h3>{title}</h3>
+                      <small>
+                        By {node.frontmatter.author} on {node.frontmatter.date}
+                      </small>
+                    </header>
+                    <div style={{ padding: "1rem 0" }}>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: node.frontmatter.description || node.excerpt,
+                        }}
+                      />
+                    </div>
+                    <p style={{ textDecoration: "underline" }}>Read More →</p>
+                  </Link>
                 </article>
               );
             })}
