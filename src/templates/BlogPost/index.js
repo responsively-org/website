@@ -23,6 +23,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <div className="bg-primary-3">
         <GallaxyBG />
         <section className="BlogPost contentWithBG has-divider">
+          <div className="BlogPost__breadcrumb container text-light">
+            <Link to="/blog">Blog</Link> → {post.frontmatter.title}
+          </div>
           <div className="BlogPost__content container text-light ">
             <article>
               <header>
