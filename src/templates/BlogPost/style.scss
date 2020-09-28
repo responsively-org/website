@@ -13,6 +13,11 @@
   &__breadcrumb {
     padding: 2rem 0 1rem !important;
   }
+
+  &__authorInfo {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .BlogPost img {

@@ -7,6 +7,7 @@ import GallaxyBG from "../../components/GallaxyBG";
 import Bio from "../../components/Bio";
 
 import "./style.scss";
+import SocialSharer from "../../components/SocialSharer";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
@@ -30,24 +31,37 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <article>
               <header>
                 <h1>{post.frontmatter.title}</h1>
-                <p>
-                  By{" "}
-                  <a
-                    href={post.frontmatter.authorTwitterUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {post.frontmatter.author}
-                  </a>
-                  &nbsp;on {post.frontmatter.date}
-                </p>
+                <div className="BlogPost__authorInfo">
+                  <p>
+                    By{" "}
+                    <a
+                      href={post.frontmatter.authorTwitterUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {post.frontmatter.author}
+                    </a>
+                    &nbsp;on {post.frontmatter.date}
+                  </p>
+                  <SocialSharer
+                    title={post.frontmatter.title}
+                    url={`https://responsively.app${location?.pathname}`}
+                  />
+                </div>
               </header>
               <section dangerouslySetInnerHTML={{ __html: post.html }} />
-              <Bio
-                name={post.frontmatter.author}
-                pic={post.frontmatter.authorPic}
-                twitter={post.frontmatter.authorTwitterUrl}
-              />
+              <div className="BlogPost__authorInfo">
+                <Bio
+                  name={post.frontmatter.author}
+                  pic={post.frontmatter.authorPic}
+                  twitter={post.frontmatter.authorTwitterUrl}
+                />
+                <SocialSharer
+                  showCaption={true}
+                  title={post.frontmatter.title}
+                  url={`https://responsively.app${location?.pathname}`}
+                />
+              </div>
             </article>
 
             <nav>
@@ -90,6 +104,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
