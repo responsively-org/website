@@ -25,6 +25,20 @@ const Index = ({ location }) => {
                   A must-have DevTool for all Front-End developers that will
                   make your job easier.
                 </p>
+                <p className="lead">
+                  ...and it is{" "}
+                  <a
+                    href="https://github.com/responsively-org/responsively-app"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    open-source
+                  </a>{" "}
+                  too!{" "}
+                  <span role="img" aria-label="tada">
+                    🎉
+                  </span>
+                </p>
                 <div className="d-flex flex-column flex-sm-row justify-content-center mt-4">
                   <Link
                     to="/download"
