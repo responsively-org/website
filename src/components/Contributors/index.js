@@ -1,6 +1,25 @@
 import React, { useEffect, useState } from "react";
 
+import missingContributors from "./missing-contributors.json";
+
 import "./style.css";
+
+const fixContributors = (list) => {
+  if (list == null) return [];
+
+  const mrfelfel = list.find((x) => x.login === "mjyahaghi");
+  if (mrfelfel != null) {
+    mrfelfel.login = "mrfelfel";
+    mrfelfel.avatar_url =
+      "https://avatars3.githubusercontent.com/u/19575588?v=4&s=96";
+  }
+
+  return list.concat(
+    missingContributors.filter(
+      (mc) => list.find((x) => x.login === mc.login) == null
+    )
+  );
+};
 
 const Contributors = () => {
   const [contributors, setContributors] = useState([]);
@@ -11,7 +30,7 @@ const Contributors = () => {
           "https://api.github.com/repos/responsively-org/responsively-app/contributors?per_page=100"
         ).then((response) => response.text())
       ).filter((contributor) => contributor.type === "User");
-      setContributors(contributors);
+      setContributors(fixContributors(contributors));
     })();
   }, []);
 
@@ -33,7 +52,9 @@ const Contributors = () => {
             <a
               key={contributor.login}
               href={`https://github.com/${contributor.login}`}
-              title={`${contributor.contributions} contributions from ${contributor.login}`}
+              title={`${contributor.contributions} contribution${
+                contributor.contributions === 1 ? "" : "s"
+              } from ${contributor.login}`}
               target="_blank"
               rel="noreferrer"
               className="github-contributors__avatar"
