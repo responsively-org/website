@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import missingContributors from "./missing-contributors.json";
+
 import "./style.css";
 
 const fixContributors = (list) => {
@@ -12,30 +14,11 @@ const fixContributors = (list) => {
       "https://avatars3.githubusercontent.com/u/19575588?v=4&s=96";
   }
 
-  if (list.find((x) => x.login === "JayArya") == null) {
-    list.push({
-      login: "JayArya",
-      avatar_url: "https://avatars0.githubusercontent.com/u/42388314?v=4&s=96",
-      contributions: 1,
-    });
-  }
-
-  if (list.find((x) => x.login === "rossmoody") == null) {
-    list.push({
-      login: "rossmoody",
-      avatar_url: "https://avatars1.githubusercontent.com/u/29072694?v=4&s=96",
-      contributions: 1,
-    });
-  }
-
-  if (list.find((x) => x.login === "jonathanurias96") == null) {
-    list.push({
-      login: "jonathanurias96",
-      avatar_url: "https://avatars2.githubusercontent.com/u/57416786?v=4&s=96",
-      contributions: 1,
-    });
-  }
-  return list;
+  return list.concat(
+    missingContributors.filter(
+      (mc) => list.find((x) => x.login === mc.login) == null
+    )
+  );
 };
 
 const Contributors = () => {
