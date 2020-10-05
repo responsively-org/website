@@ -2,6 +2,42 @@ import React, { useEffect, useState } from "react";
 
 import "./style.css";
 
+const fixContributors = (list) => {
+  if (list == null) return [];
+
+  const mrfelfel = list.find((x) => x.login === "mjyahaghi");
+  if (mrfelfel != null) {
+    mrfelfel.login = "mrfelfel";
+    mrfelfel.avatar_url =
+      "https://avatars3.githubusercontent.com/u/19575588?v=4&s=96";
+  }
+
+  if (list.find((x) => x.login === "JayArya") == null) {
+    list.push({
+      login: "JayArya",
+      avatar_url: "https://avatars0.githubusercontent.com/u/42388314?v=4&s=96",
+      contributions: 1,
+    });
+  }
+
+  if (list.find((x) => x.login === "rossmoody") == null) {
+    list.push({
+      login: "rossmoody",
+      avatar_url: "https://avatars1.githubusercontent.com/u/29072694?v=4&s=96",
+      contributions: 1,
+    });
+  }
+
+  if (list.find((x) => x.login === "jonathanurias96") == null) {
+    list.push({
+      login: "jonathanurias96",
+      avatar_url: "https://avatars2.githubusercontent.com/u/57416786?v=4&s=96",
+      contributions: 1,
+    });
+  }
+  return list;
+};
+
 const Contributors = () => {
   const [contributors, setContributors] = useState([]);
   useEffect(() => {
@@ -11,7 +47,7 @@ const Contributors = () => {
           "https://api.github.com/repos/responsively-org/responsively-app/contributors?per_page=100"
         ).then((response) => response.text())
       ).filter((contributor) => contributor.type === "User");
-      setContributors(contributors);
+      setContributors(fixContributors(contributors));
     })();
   }, []);
 
@@ -33,7 +69,9 @@ const Contributors = () => {
             <a
               key={contributor.login}
               href={`https://github.com/${contributor.login}`}
-              title={`${contributor.contributions} contributions from ${contributor.login}`}
+              title={`${contributor.contributions} contribution${
+                contributor.contributions === 1 ? "" : "s"
+              } from ${contributor.login}`}
               target="_blank"
               rel="noreferrer"
               className="github-contributors__avatar"
