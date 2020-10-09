@@ -60,3 +60,38 @@ html {
 .navbar-logo-img {
   margin-right: 5px;
 }
+
+.command-container {
+  display: flex;
+  align-items: center;
+  .command-code {
+    width: 91%;
+    overflow-y: auto;
+    margin-right: 0.5em;
+    pre {
+      font-size: 87.5%;
+      color: #f3f1f2;
+      margin-bottom: 0;
+      height: 3em;
+      line-height: 3em;
+      padding: 0 8px;
+      background-color: #352d2f;
+      font-weight: 700;
+      border-radius: 4px;
+      text-align: left;
+      border: 1px solid;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  .copy-btn {
+    .copy-icon {
+      color: #352d2f;
+      cursor: pointer;
+      &:hover {
+        color: #fd2d55;
+      }
+    }
+  }
+}

@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
-
+  import React, { useEffect, useState } from "react";
+import Clipboard from 'clipboard'
 import "./style.css";
+import ClipboardIcon from './ClipboardIcon';
+import $ from 'jquery';
 
 const Download = () => {
   const [macURL, setMacURL] = useState(null);
   const [windowsURL, setWindowsURL] = useState(null);
   const [linuxURL, setLinuxURL] = useState(null);
+  const [rpmURL, setRpmURL] = useState("https://github.com/responsively-org/responsively-app/releases/download/v[VERSION]/Responsively-App-[VERSION].x86_64.rpm")
 
   useEffect(() => {
     (async () => {
@@ -25,7 +28,26 @@ const Download = () => {
       setWindowsURL(
         `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-Setup-${versionName}.exe`
       );
+      setRpmURL(
+        `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/Responsively-App-${versionName}.x86_64.rpm`
+      );
     })();
+    const cp = new Clipboard('.copy-icon');
+    const $copyBtn = $('.copy-icon');
+    $copyBtn.tooltip({
+      delay: {show: 0, hide: 1000},
+      title: "Copied!",
+      trigger: "click"
+    });
+    $copyBtn.on('click', () => {
+      setTimeout(() => {
+        $copyBtn.tooltip('hide');
+      }, 1000);
+    })
+    return () => {
+      cp.destroy();
+      $copyBtn.tooltip('dispose');
+    }
   }, []);
 
   return (
@@ -122,6 +144,55 @@ const Download = () => {
                 >
                   <span className="m-1">Download for Linux</span>
                 </a>
+              </div>
+            </div>
+          </div>
+          <div className="row mb-4">
+            <div className="col">
+              <h2>And installable from your command line</h2>
+            </div>
+          </div>
+          <div className="row mb-4">
+            <div
+              className="col-md-4 mb-2"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="bg-light rounded p-3">
+                <div className="command-container">
+                  <div className="command-code"><pre id="brew-cmd">$ brew cask install responsively</pre></div>
+                  <div className="copy-btn">
+                    <ClipboardIcon className="copy-icon" data-clipboard-text="brew cask install responsively" height={30} width={30}/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-md-4 mb-2"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="bg-light rounded p-3">
+              <div className="command-container">
+                  <div className="command-code"><pre id="choco-cmd">&gt; choco install responsively</pre></div>
+                  <div className="copy-btn">
+                    <ClipboardIcon className="copy-icon" data-clipboard-text="choco install responsively" height={30} width={30}/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-md-4 mb-2"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="bg-light rounded p-3">
+              <div className="command-container">
+                  <div className="command-code"><pre id="rpm-cmd">$ sudo rpm -i {rpmURL}</pre></div>
+                  <div className="copy-btn">
+                    <ClipboardIcon className="copy-icon" data-clipboard-text={`sudo rpm -i ${rpmURL}`} height={30} width={30}/>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
