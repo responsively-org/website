@@ -65,9 +65,8 @@ html {
   display: flex;
   align-items: center;
   .command-code {
-    width: 91%;
-    overflow-y: auto;
-    margin-right: 0.5em;
+    width: calc(100% - 2.5% - 30px);
+    margin-right: 2.5%;
     pre {
       font-size: 87.5%;
       color: #f3f1f2;
@@ -80,6 +79,7 @@ html {
       border-radius: 4px;
       text-align: left;
       border: 1px solid;
+      overflow-y: hidden;
       &::-webkit-scrollbar {
         display: none;
       }
