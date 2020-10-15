@@ -73,6 +73,15 @@
       "okText": "Open",
       "dismissText": "Dismiss",
       "minOpenCount": 31
+    },
+    {
+      "id": "slack-intro",
+      "title": "Do you have something to discuss with the Responsively Team?",
+      "text": "Please join us on our slack workspace and say hi! 👋",
+      "link": "https://responsively.app/join-slack",
+      "okText": "Open",
+      "dismissText": "Dismiss",
+      "minOpenCount": 38
     }
   ]
 }
