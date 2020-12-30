@@ -163,12 +163,12 @@ const Download = () => {
               <div className="bg-light rounded p-3">
                 <div className="command-container">
                   <div className="command-code">
-                    <pre id="brew-cmd">$ brew cask install responsively</pre>
+                    <pre id="brew-cmd">$ brew install --cask responsively</pre>
                   </div>
                   <div className="copy-btn">
                     <ClipboardIcon
                       className="copy-icon"
-                      data-clipboard-text="brew cask install responsively"
+                      data-clipboard-text="brew install --cask responsively"
                       height={30}
                       width={30}
                     />
