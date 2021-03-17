@@ -26,7 +26,7 @@ const Header = () => {
           <Link className="navbar-brand" to="/">
             <img
               src="/assets/img/logo.svg"
-              alt="Responsively"
+              alt="Responsively logo"
               width="60px"
               className="navbar-logo-img"
             />
