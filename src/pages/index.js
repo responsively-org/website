@@ -29,6 +29,7 @@ const Index = ({ location }) => {
                   ...and it is{" "}
                   <a
                     href="https://github.com/responsively-org/responsively-app"
+                    title="Responsively Github"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -85,6 +86,9 @@ const Index = ({ location }) => {
                   src="/assets/img/screenshot.png"
                   alt="Screenshot"
                   className="rounded screenshot-img"
+                  width="1000"
+                  height="563"
+                  lazy-loading
                 />
               </div>
             </div>
@@ -153,6 +157,7 @@ const Index = ({ location }) => {
                   Your contributions are welcome&nbsp;
                   <a
                     href="https://github.com/responsively-org/responsively-app"
+                    title="Contribute to Responsively"
                     target="_blank"
                     rel="noreferrer"
                   >
