@@ -1,8 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For Join-3</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <circle fill="#000000" opacity="0.3" cx="8" cy="16" r="2"></circle>
-        <path d="M9,19 L5.00096004,19 C4.96315967,14.3606423 6.04480907,10.9610276 8.41240045,8.89946335 C10.6738787,6.93029637 13.8932784,5.99355491 18.0040306,6.00000246 L17.9977567,9.99999754 C14.7751756,9.99494305 12.4778257,10.6633977 11.0391383,11.9161251 C9.70656404,13.0764552 8.97080234,15.4164797 9,19 Z" fill="#000000" fill-rule="nonzero" transform="translate(11.502017, 12.499985) scale(-1, 1) translate(-11.502017, -12.499985) "></path>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><g fill="#000"><circle cx="8" cy="16" opacity=".3" r="2"/><path d="m9 19h-3.99903996c-.03780037-4.6393577 1.04384903-8.0389724 3.41144041-10.10053665 2.26147825-1.96916698 5.48087795-2.90590844 9.59163015-2.89946089l-.0062739 3.99999508c-3.2225811-.00505449-5.519931.66340016-6.9586184 1.91612756-1.33257426 1.1603301-2.06833596 3.5003546-2.0391383 7.0838749z" fill-rule="nonzero" transform="matrix(-1 0 0 1 23.004034 0)"/></g></g></svg>

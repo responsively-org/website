@@ -1,8 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For Half-heart</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon points="0 0 24 0 24 24 0 24" opacity="0"></polygon>
-        <path d="M16.5,4.5 C14.8905,4.5 13.00825,6.32463215 12,7.5 C10.99175,6.32463215 9.1095,4.5 7.5,4.5 C4.651,4.5 3,6.72217984 3,9.55040872 C3,12.6834696 6,16 12,19.5 C18,16 21,12.75 21,9.75 C21,6.92177112 19.349,4.5 16.5,4.5 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-        <path d="M12,19.5 C6,16 3,12.6834696 3,9.55040872 C3,6.72217984 4.651,4.5 7.5,4.5 C9.1095,4.5 10.99175,6.32463215 12,7.5 L12,19.5 Z" fill="#000000" fill-rule="nonzero"></path>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><g fill="#000" fill-rule="nonzero"><path d="m16.5 4.5c-1.6095 0-3.49175 1.82463215-4.5 3-1.00825-1.17536785-2.8905-3-4.5-3-2.849 0-4.5 2.22217984-4.5 5.05040872 0 3.13306088 3 6.44959128 9 9.94959128 6-3.5 9-6.75 9-9.75 0-2.82822888-1.651-5.25-4.5-5.25z" opacity=".3"/><path d="m12 19.5c-6-3.5-9-6.8165304-9-9.94959128 0-2.82822888 1.651-5.05040872 4.5-5.05040872 1.6095 0 3.49175 1.82463215 4.5 3z"/></g></g></svg>

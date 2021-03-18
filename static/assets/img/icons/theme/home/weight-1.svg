@@ -1,8 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For Weight#1</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <path d="M8.34232922,9 L15.6576708,9 C17.0342737,9 18.234223,9.93689212 18.5680983,11.2723931 L21,21 L3,21 L5.43190172,11.2723931 C5.76577697,9.93689212 6.96572629,9 8.34232922,9 Z M11.264,18 L12.608,18 L12.608,12.336 L11.376,12.336 L9.512,13.704 L10.208,14.656 L11.264,13.84 L11.264,18 Z" fill="#000000"></path>
-        <circle fill="#000000" opacity="0.3" cx="12" cy="5.5" r="2.5"></circle>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><g fill="#000"><path d="m8.34232922 9h7.31534158c1.3766029 0 2.5765522.93689212 2.9104275 2.2723931l2.4319017 9.7276069h-18l2.43190172-9.7276069c.33387525-1.33550098 1.53382457-2.2723931 2.9104275-2.2723931zm2.92167078 9h1.344v-5.664h-1.232l-1.864 1.368.696.952 1.056-.816z"/><circle cx="12" cy="5.5" opacity=".3" r="2.5"/></g></g></svg>

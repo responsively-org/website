@@ -1,9 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For RSS</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <circle fill="#000000" cx="6" cy="18" r="3"></circle>
-        <path d="M16.5,21 L13.5,21 C13.5,15.2010101 8.79898987,10.5 3,10.5 L3,7.5 C10.4558441,7.5 16.5,13.5441559 16.5,21 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-        <path d="M22.5,21 L19.5,21 C19.5,12.163444 11.836556,4.5 3,4.5 L3,1.5 C13.4934102,1.5 22.5,10.5065898 22.5,21 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><g fill="#000"><circle cx="6" cy="18" r="3"/><path d="m16.5 21h-3c0-5.7989899-4.70101013-10.5-10.5-10.5v-3c7.4558441 0 13.5 6.0441559 13.5 13.5z" fill-rule="nonzero" opacity=".3"/><path d="m22.5 21h-3c0-8.836556-7.663444-16.5-16.5-16.5v-3c10.4934102 0 19.5 9.0065898 19.5 19.5z" fill-rule="nonzero" opacity=".3"/></g></g></svg>

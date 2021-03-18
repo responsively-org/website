@@ -1,7 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For Cap-2</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle fill="#000000" opacity="0.3" cx="12" cy="7" r="2"></circle>
-        <path d="M11,19 L4,19 L4,7 L7.03051599,7 C7.01035184,7.16416693 7,7.33099545 7,7.5 C7,9.67706212 8.71775968,11.4930404 11,11.9099837 L11,19 Z M13,19 L13,11.9099837 C15.2822403,11.4930404 17,9.67706212 17,7.5 C17,7.33099545 16.9896482,7.16416693 16.969484,7 L20,7 L20,19 L13,19 Z" fill="#000000"></path>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="#000" fill-rule="evenodd"><circle cx="12" cy="7" opacity=".3" r="2"/><path d="m11 19h-7v-12h3.03051599c-.02016415.16416693-.03051599.33099545-.03051599.5 0 2.17706212 1.71775968 3.9930404 4 4.4099837zm2 0v-7.0900163c2.2822403-.4169433 4-2.23292158 4-4.4099837 0-.16900455-.0103518-.33583307-.030516-.5h3.030516v12z"/></g></svg>
