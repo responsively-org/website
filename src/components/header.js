@@ -124,6 +124,7 @@ const Header = () => {
             </a>
             <a
               href="https://twitter.com/ResponsivelyApp"
+              title="Responsively Twitter"
               target="_blank"
               className="nav-link"
               aria-expanded="false"
