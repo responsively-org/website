@@ -87,7 +87,6 @@ const Index = ({ location }) => {
                   alt="Screenshot"
                   className="rounded screenshot-img"
                   width="1000"
-                  height="563"
                   lazy-loading
                 />
               </div>
