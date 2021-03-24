@@ -1,8 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For TV#2</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <path d="M3,5 L21,5 C21.5522847,5 22,5.44771525 22,6 L22,17 C22,17.5522847 21.5522847,18 21,18 L3,18 C2.44771525,18 2,17.5522847 2,17 L2,6 C2,5.44771525 2.44771525,5 3,5 Z M9.632,10.066 L11.032,10.066 L11.032,9.044 L7.035,9.044 L7.035,10.066 L8.435,10.066 L8.435,14 L9.632,14 L9.632,10.066 Z M14.935,14 L16.846,9.044 L15.523,9.044 L14.382,12.558 L14.354,12.558 L13.206,9.044 L11.862,9.044 L13.738,14 L14.935,14 Z" fill="#000000"></path>
-        <rect fill="#000000" opacity="0.3" x="3" y="19" width="18" height="1" rx="0.5"></rect>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><g fill="#000"><path d="m3 5h18c.5522847 0 1 .44771525 1 1v11c0 .5522847-.4477153 1-1 1h-18c-.55228475 0-1-.4477153-1-1v-11c0-.55228475.44771525-1 1-1zm6.632 5.066h1.4v-1.022h-3.997v1.022h1.4v3.934h1.197zm5.303 3.934 1.911-4.956h-1.323l-1.141 3.514h-.028l-1.148-3.514h-1.344l1.876 4.956z"/><rect height="1" opacity=".3" rx=".5" width="18" x="3" y="19"/></g></g></svg>

@@ -1,8 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For H1</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <polygon fill="#000000" points="4.634 19 4.634 5.51 6.363 5.51 6.363 11.267 13.811 11.267 13.811 5.51 15.54 5.51 15.54 19 13.811 19 13.811 12.939 6.363 12.939 6.363 19"></polygon>
-        <polygon fill="#000000" opacity="0.3" points="18.998 19 18.998 6.992 20.632 5.358 20.632 19"></polygon>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><g fill="#000"><path d="m4.634 19v-13.49h1.729v5.757h7.448v-5.757h1.729v13.49h-1.729v-6.061h-7.448v6.061z"/><path d="m18.998 19v-12.008l1.634-1.634v13.642z" opacity=".3"/></g></g></svg>

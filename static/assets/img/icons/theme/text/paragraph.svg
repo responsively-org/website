@@ -1,7 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For Paragraph</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <path d="M10.754,19.864 L10.754,12.54 C8.15,12.54 6.029,10.419 6.029,7.815 C6.029,5.211 8.15,3.09 10.754,3.09 L16.319,3.09 L16.319,19.864 L14.681,19.864 L14.681,4.728 L12.413,4.728 L12.413,19.864 L10.754,19.864 Z" fill="#000000"></path>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><path d="m10.754 19.864v-7.324c-2.604 0-4.725-2.121-4.725-4.725s2.121-4.725 4.725-4.725h5.565v16.774h-1.638v-15.136h-2.268v15.136z" fill="#000"/></g></svg>

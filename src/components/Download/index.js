@@ -243,6 +243,7 @@ const Download = () => {
               If you are a linux user, please follow the{" "}
               <a
                 href="https://docs.appimage.org/introduction/quickstart.html#ref-how-to-run-appimage"
+                title="How to run an AppImage"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -256,6 +257,7 @@ const Download = () => {
               Please feel free to contact us on{" "}
               <a
                 href="https://github.com/responsively-org/responsively-app/issues"
+                title="Responsively issues"
                 target="_blank"
                 rel="noreferrer"
               >

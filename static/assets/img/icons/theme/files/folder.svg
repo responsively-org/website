@@ -1,7 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For Folder</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <path d="M3.5,21 L20.5,21 C21.3284271,21 22,20.3284271 22,19.5 L22,8.5 C22,7.67157288 21.3284271,7 20.5,7 L10,7 L7.43933983,4.43933983 C7.15803526,4.15803526 6.77650439,4 6.37867966,4 L3.5,4 C2.67157288,4 2,4.67157288 2,5.5 L2,19.5 C2,20.3284271 2.67157288,21 3.5,21 Z" fill="#000000" opacity="0.3"></path>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><path d="m3.5 21h17c.8284271 0 1.5-.6715729 1.5-1.5v-11c0-.82842712-.6715729-1.5-1.5-1.5h-10.5l-2.56066017-2.56066017c-.28130457-.28130457-.66283544-.43933983-1.06066017-.43933983h-2.87867966c-.82842712 0-1.5.67157288-1.5 1.5v14c0 .8284271.67157288 1.5 1.5 1.5z" fill="#000" opacity=".3"/></g></svg>
