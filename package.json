@@ -51,6 +51,7 @@
     "ion-rangeslider": "^2.3.1",
     "isotope-layout": "~3.0.6",
     "jarallax": "^1.12.1",
+    "javascript-time-ago": "^2.3.4",
     "jquery": "^3.5.1",
     "jquery-countdown": "~2.2.0",
     "node-sass": "^4.14.1",

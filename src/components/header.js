@@ -8,7 +8,6 @@ const Header = () => {
     if (!navRef.current) {
       return;
     }
-    console.log(navRef.current.clientHeight);
     const headerHeight = navRef.current.clientHeight;
     navRef.current.parentNode.style.height = `${headerHeight}px`;
     new Sticky(".navbar").update();

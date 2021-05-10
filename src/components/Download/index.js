@@ -3,11 +3,18 @@ import Clipboard from "clipboard";
 import "./style.css";
 import ClipboardIcon from "./ClipboardIcon";
 import $ from "jquery";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
+
+TimeAgo.addDefaultLocale(en);
+const timeAgo = new TimeAgo("en-US");
 
 const Download = () => {
   const [macURL, setMacURL] = useState(null);
   const [windowsURL, setWindowsURL] = useState(null);
   const [linuxURL, setLinuxURL] = useState(null);
+  const [version, setVersion] = useState(null);
+  const [publishedTs, setPublishedTs] = useState(null);
   const [rpmURL, setRpmURL] = useState(
     "https://github.com/responsively-org/responsively-app/releases/download/v[VERSION]/Responsively-App-[VERSION].x86_64.rpm"
   );
@@ -20,6 +27,8 @@ const Download = () => {
         ).then((res) => res.text())
       );
       const tagName = res.tag_name;
+      setVersion(tagName);
+      setPublishedTs(new Date(res.published_at));
       var versionName = tagName.substring(1);
       setMacURL(
         `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.dmg`
@@ -65,6 +74,26 @@ const Download = () => {
               <div className="lead mb-4">
                 You are one step away from improving your web development speed!
               </div>
+              <small className="d-flex justify-content-center">
+                {publishedTs ? (
+                  <span className="">
+                    {version} - Released {timeAgo.format(publishedTs)}.
+                  </span>
+                ) : null}
+              </small>
+              <small>
+                <a
+                  href="https://headwayapp.co/responsively-changelog"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-primary"
+                >
+                  &nbsp;What's New?{" "}
+                  <span role="img" aria-label="tada">
+                    🎉
+                  </span>
+                </a>
+              </small>
             </div>
           </div>
           <div className="row mb-4">
