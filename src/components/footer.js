@@ -66,6 +66,7 @@ const Footer = () => {
               <li className="nav-item">
                 <a
                   href="https://twitter.com/ResponsivelyApp"
+                  title="Twitter Responsively"
                   className="nav-link"
                   target="_blank"
                   rel="noreferrer"
@@ -81,6 +82,7 @@ const Footer = () => {
               <li className="nav-item">
                 <a
                   href="https://github.com/responsively-org/responsively-app"
+                  title="Github Responsively"
                   className="nav-link"
                   target="_blank"
                   rel="noreferrer"

@@ -29,6 +29,7 @@ const Index = ({ location }) => {
                   ...and it is{" "}
                   <a
                     href="https://github.com/responsively-org/responsively-app"
+                    title="Responsively Github"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -85,6 +86,8 @@ const Index = ({ location }) => {
                   src="/assets/img/screenshot.png"
                   alt="Screenshot"
                   className="rounded screenshot-img"
+                  width="1000"
+                  lazy-loading
                 />
               </div>
             </div>
@@ -114,7 +117,7 @@ const Index = ({ location }) => {
                     data-inject-svg
                   />
                 </div>
-                <h4>Instant Preview</h4>
+                <h3>Instant Preview</h3>
                 <p className="lead mx-xl-3">
                   Preview all target screens in a single window side-by-side.
                   <br />
@@ -130,7 +133,7 @@ const Index = ({ location }) => {
                     data-inject-svg
                   />
                 </div>
-                <h4>Developer First</h4>
+                <h3>Developer First</h3>
                 <p className="lead mx-xl-3">
                   Use your already-familiar dev-tools from the browser.
                   <br />
@@ -146,13 +149,14 @@ const Index = ({ location }) => {
                     data-inject-svg
                   />
                 </div>
-                <h4>Open source</h4>
+                <h3>Open source</h3>
                 <p className="lead mx-xl-3">
                   Lets improve it together!
                   <br />
                   Your contributions are welcome&nbsp;
                   <a
                     href="https://github.com/responsively-org/responsively-app"
+                    title="Contribute to Responsively"
                     target="_blank"
                     rel="noreferrer"
                   >

@@ -41,12 +41,12 @@ const Contributors = () => {
   return (
     <section>
       <div className="justify-content-center text-center">
-        <h4 className="github-contributors__thanks">
+        <h3 className="github-contributors__thanks">
           Thanks to all of our {contributors.length} contributors!{" "}
           <span role="img" aria-label="appreciation">
             🎉👏
           </span>
-        </h4>
+        </h3>
         <div className="github-contributors__users">
           {contributors.map((contributor) => (
             <a

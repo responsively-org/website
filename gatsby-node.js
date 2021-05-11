@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
   createRedirect({
     fromPath: "/join-slack",
     toPath:
-      "https://join.slack.com/t/responsively/shared_invite/zt-idalysr9-Qj_PDSYmabcxi6nXJ4YvGQ",
+      "https://join.slack.com/t/responsively/shared_invite/zt-pioy7vhw-BPBC3QqstMiCxiAhLBRArg",
     isPermanent: true,
   });
 

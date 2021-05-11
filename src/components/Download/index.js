@@ -192,12 +192,12 @@ const Download = () => {
               <div className="bg-light rounded p-3">
                 <div className="command-container">
                   <div className="command-code">
-                    <pre id="brew-cmd">$ brew cask install responsively</pre>
+                    <pre id="brew-cmd">$ brew install --cask responsively</pre>
                   </div>
                   <div className="copy-btn">
                     <ClipboardIcon
                       className="copy-icon"
-                      data-clipboard-text="brew cask install responsively"
+                      data-clipboard-text="brew install --cask responsively"
                       height={30}
                       width={30}
                     />
@@ -272,6 +272,7 @@ const Download = () => {
               If you are a linux user, please follow the{" "}
               <a
                 href="https://docs.appimage.org/introduction/quickstart.html#ref-how-to-run-appimage"
+                title="How to run an AppImage"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -285,6 +286,7 @@ const Download = () => {
               Please feel free to contact us on{" "}
               <a
                 href="https://github.com/responsively-org/responsively-app/issues"
+                title="Responsively issues"
                 target="_blank"
                 rel="noreferrer"
               >

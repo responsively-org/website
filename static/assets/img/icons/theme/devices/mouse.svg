@@ -1,9 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For Mouse</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <rect fill="#000000" opacity="0.3" x="6" y="5" width="12" height="18" rx="6"></rect>
-        <path d="M11.5,2 L12.5,2 C12.7761424,2 13,2.22385763 13,2.5 L13,5 L11,5 L11,2.5 C11,2.22385763 11.2238576,2 11.5,2 Z" fill="#000000"></path>
-        <rect fill="#000000" x="11" y="16" width="2" height="5" rx="1"></rect>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><g fill="#000"><rect height="18" opacity=".3" rx="6" width="12" x="6" y="5"/><path d="m11.5 2h1c.2761424 0 .5.22385763.5.5v2.5h-2v-2.5c0-.27614237.2238576-.5.5-.5z"/><rect height="5" rx="1" width="2" x="11" y="16"/></g></g></svg>

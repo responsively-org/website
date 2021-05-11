@@ -14,7 +14,7 @@
     {
       "id": "github-repo-intro",
       "title": "Do you know Responsively is an open-source project?",
-      "text": "Please show us your support by staring our GitHub repo.",
+      "text": "Please show us your support by starring our GitHub repo.",
       "link": "https://github.com/responsively-org/responsively-app/stargazers",
       "okText": "Open",
       "dismissText": "Dismiss",
@@ -68,7 +68,7 @@
     {
       "id": "github-repo-intro-1",
       "title": "Do you know Responsively is an open-source project?",
-      "text": "Please show us your support by staring our GitHub repo.",
+      "text": "Please show us your support by starring our GitHub repo.",
       "link": "https://github.com/responsively-org/responsively-app/stargazers",
       "okText": "Open",
       "dismissText": "Dismiss",

@@ -1,8 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For Umbrella</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <path d="M11.5,3 L11.5,3 C16.1944204,3 20,6.80557963 20,11.5 L20,12 L3,12 L3,11.5 C3,6.80557963 6.80557963,3 11.5,3 Z" fill="#000000"></path>
-        <path d="M11,12 L13,12 L13,18.75 C13,20.5449254 11.5449254,22 9.75,22 C7.95507456,22 6.5,20.5449254 6.5,18.75 L6.5,18 L8.5,18 L8.5,18.75 C8.5,19.4403559 9.05964406,20 9.75,20 C10.4403559,20 11,19.4403559 11,18.75 L11,12 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><g fill="#000"><path d="m11.5 3c4.6944204 0 8.5 3.80557963 8.5 8.5v.5h-17v-.5c0-4.69442037 3.80557963-8.5 8.5-8.5z"/><path d="m11 12h2v6.75c0 1.7949254-1.4550746 3.25-3.25 3.25-1.79492544 0-3.25-1.4550746-3.25-3.25v-.75h2v.75c0 .6903559.55964406 1.25 1.25 1.25.6903559 0 1.25-.5596441 1.25-1.25z" fill-rule="nonzero" opacity=".3"/></g></g></svg>

@@ -25,7 +25,7 @@ const Header = () => {
           <Link className="navbar-brand" to="/">
             <img
               src="/assets/img/logo.svg"
-              alt="Responsively"
+              alt="Responsively logo"
               width="60px"
               className="navbar-logo-img"
             />
@@ -123,6 +123,7 @@ const Header = () => {
             </a>
             <a
               href="https://twitter.com/ResponsivelyApp"
+              title="Responsively Twitter"
               target="_blank"
               className="nav-link"
               aria-expanded="false"

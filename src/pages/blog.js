@@ -22,7 +22,7 @@ const BlogIndex = ({ data, location }) => {
                 <article key={node.fields.slug}>
                   <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                     <header>
-                      <h3>{title}</h3>
+                      <h2>{title}</h2>
                       <small>
                         By {node.frontmatter.author} on {node.frontmatter.date}
                       </small>

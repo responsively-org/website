@@ -1,9 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon For Wallet</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect opacity="0" x="0" y="0" width="24" height="24"></rect>
-        <circle fill="#000000" opacity="0.3" cx="20.5" cy="12.5" r="1.5"></circle>
-        <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 6.500000) rotate(-15.000000) translate(-12.000000, -6.500000) " x="3" y="3" width="18" height="7" rx="1"></rect>
-        <path d="M22,9.33681558 C21.5453723,9.12084552 21.0367986,9 20.5,9 C18.5670034,9 17,10.5670034 17,12.5 C17,14.4329966 18.5670034,16 20.5,16 C21.0367986,16 21.5453723,15.8791545 22,15.6631844 L22,18 C22,19.1045695 21.1045695,20 20,20 L4,20 C2.8954305,20 2,19.1045695 2,18 L2,6 C2,4.8954305 2.8954305,4 4,4 L20,4 C21.1045695,4 22,4.8954305 22,6 L22,9.33681558 Z" fill="#000000"></path>
-    </g>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="m0 0h24v24h-24z" opacity="0"/><g fill="#000"><circle cx="20.5" cy="12.5" opacity=".3" r="1.5"/><rect height="7" opacity=".3" rx="1" transform="matrix(.96592583 -.25881905 .25881905 .96592583 -1.273434 3.327311)" width="18" x="3" y="3"/><path d="m22 9.33681558c-.4546277-.21597006-.9632014-.33681558-1.5-.33681558-1.9329966 0-3.5 1.5670034-3.5 3.5s1.5670034 3.5 3.5 3.5c.5367986 0 1.0453723-.1208455 1.5-.3368156v2.3368156c0 1.1045695-.8954305 2-2 2h-16c-1.1045695 0-2-.8954305-2-2v-12c0-1.1045695.8954305-2 2-2h16c1.1045695 0 2 .8954305 2 2z"/></g></g></svg>
