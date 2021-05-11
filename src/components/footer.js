@@ -93,36 +93,6 @@ const Footer = () => {
                   />
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  href="https://www.producthunt.com/posts/responsively"
-                  className="nav-link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    className="icon undefined"
-                    src="/assets/img/logos/brand/ph.svg"
-                    alt="product hunt social icon"
-                    data-inject-svg
-                  />
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  href="https://www.indiehackers.com/product/responsively-app"
-                  className="nav-link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    className="icon undefined"
-                    src="/assets/img/logos/brand/indie-hackers.svg"
-                    alt="indie hackers social icon"
-                    data-inject-svg
-                  />
-                </a>
-              </li>
             </ul>
           </div>
         </div>
