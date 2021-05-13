@@ -82,6 +82,15 @@
       "okText": "Open",
       "dismissText": "Dismiss",
       "minOpenCount": 38
-    }
+    },
+    {
+      "id": "twitter-handle-intro-2",
+      "title": "Are you on Twitter?",
+      "text": "We are too! @ResponsivelyApp. Give us a follow!",
+      "link": "https://twitter.com/ResponsivelyApp",
+      "okText": "Open",
+      "dismissText": "Dismiss",
+      "minOpenCount": 45
+    },
   ]
 }
