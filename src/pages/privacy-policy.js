@@ -1,4 +1,5 @@
 import React from "react";
+import { CarbonAds } from "../components/CarbonAds";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -12,6 +13,7 @@ const Index = ({ location }) => {
           <div className="row justify-content-center mb-5">
             <div className="col-xl-9 col-lg-8 col-md-9">
               <h1 className="display-4">Privacy Policy</h1>
+              <CarbonAds />
 
               <p>
                 It is Responsively App's policy to respect your privacy

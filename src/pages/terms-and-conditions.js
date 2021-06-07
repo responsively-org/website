@@ -1,4 +1,5 @@
 import React from "react";
+import { CarbonAds } from "../components/CarbonAds";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -12,6 +13,7 @@ const Index = ({ location }) => {
           <div className="row justify-content-center mb-5">
             <div className="col-xl-9 col-lg-8 col-md-9">
               <h1 className="display-4">Terms and Conditions</h1>
+              <CarbonAds />
               <p>
                 These terms and conditions outline the rules and regulations for
                 the use of Responsively App's Website, the desktop app and the

@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import GallaxyBG from "../components/GallaxyBG";
+import { CarbonAds } from "../components/CarbonAds";
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -40,6 +41,7 @@ const BlogIndex = ({ data, location }) => {
               );
             })}
           </div>
+          <CarbonAds />
         </section>
       </div>
     </Layout>

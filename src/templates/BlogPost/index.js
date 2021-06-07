@@ -8,6 +8,7 @@ import Bio from "../../components/Bio";
 
 import "./style.scss";
 import SocialSharer from "../../components/SocialSharer";
+import { CarbonAds } from "../../components/CarbonAds";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
@@ -49,6 +50,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   />
                 </div>
               </header>
+              <CarbonAds />
               <section dangerouslySetInnerHTML={{ __html: post.html }} />
               <div className="BlogPost__authorInfo">
                 <Bio
