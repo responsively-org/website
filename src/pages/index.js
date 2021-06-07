@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 import Contributors from "../components/Contributors";
 import BrowserExtensions from "../components/BrowserExtensions";
 import { Link } from "gatsby";
+import { CarbonAds } from "../components/CarbonAds";
 
 const Index = ({ location }) => {
   return (
@@ -76,8 +77,9 @@ const Index = ({ location }) => {
                 </div>
               </div>
             </div>
+            <CarbonAds />
             <div
-              className="row justify-content-center mt-6"
+              className="row justify-content-center mt-4"
               data-aos="fade-up"
               data-delay="100"
             >

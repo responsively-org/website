@@ -5,6 +5,7 @@ import ClipboardIcon from "./ClipboardIcon";
 import $ from "jquery";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
+import { CarbonAds } from "../CarbonAds";
 
 TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo("en-US");
@@ -69,7 +70,7 @@ const Download = () => {
       >
         <div className="container">
           <div className="row text-center">
-            <div className="col pb-5">
+            <div className="col pb-2">
               <h1>Download Responsively App</h1>
               <div className="lead mb-4">
                 You are one step away from improving your web development speed!
@@ -96,6 +97,7 @@ const Download = () => {
               </small>
             </div>
           </div>
+          <CarbonAds />
           <div className="row mb-4">
             <div className="col">
               <h2>Available for all major operating systems</h2>
