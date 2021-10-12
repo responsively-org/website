@@ -9,7 +9,7 @@ import Download from "../components/Download";
 const Index = ({ location }) => {
   return (
     <Layout location={location} title="Download the app">
-      <SEO title="Download the App(free!)" location={location} />
+      <SEO title="Download the App (free!)" location={location} />
       <>
         <Download />
         <BrowserExtensions />
