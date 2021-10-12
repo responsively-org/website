@@ -86,6 +86,17 @@ const Header = () => {
                   </a>
                 </li>
                 <li className="nav-item">
+                  <a
+                    href="https://opencollective.com/responsively"
+                    className="nav-link"
+                    aria-expanded="false"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Sponsor
+                  </a>
+                </li>
+                <li className="nav-item">
                   <Link to="/blog" className="nav-link" aria-expanded="false">
                     Blog
                   </Link>
@@ -96,21 +107,9 @@ const Header = () => {
               Download now
             </Link>
             <a
-              className="ml-lg-3 d-none d-lg-block"
-              href="https://www.producthunt.com/posts/responsively?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-responsively"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=200375&theme=light&period=daily"
-                alt="Responsively - Develop responsive web-apps 5x faster | Product Hunt Embed"
-                height="38px"
-              />
-            </a>
-            <a
               href="https://github.com/responsively-org/responsively-app"
               target="_blank"
-              className="nav-link ml-lg-2 d-block d-sm-block d-md-block d-lg-none flex-column flex-sm-row justify-content-center"
+              className="nav-link"
               aria-expanded="false"
               rel="noreferrer"
             >

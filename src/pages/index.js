@@ -50,22 +50,6 @@ const Index = ({ location }) => {
                   </Link>
                 </div>
                 <div className="d-block d-sm-block d-md-block d-lg-none flex-column flex-sm-row justify-content-center mt-4 ">
-                  <a
-                    className="ml-lg-3"
-                    href="https://www.producthunt.com/posts/responsively?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-responsively"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=200375&theme=light&period=daily"
-                      alt="Responsively - Develop responsive web-apps 5x faster! | Product Hunt Embed"
-                      style={{ width: 250, height: 50 }}
-                      width="250px"
-                      height="50px"
-                    />
-                  </a>
-                </div>
-                <div className="d-block d-sm-block d-md-block d-lg-none flex-column flex-sm-row justify-content-center mt-4 ">
                   <iframe
                     title="Github Stars"
                     src="https://ghbtns.com/github-btn.html?user=responsively-org&amp;repo=responsively-app&amp;type=star&amp;count=true"

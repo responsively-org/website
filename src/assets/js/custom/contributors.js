@@ -17,8 +17,8 @@ const populateContributors = () => {
     const humanContributors = json.filter((contributor) => contributor.type === "User");
     let html = '';
     document.getElementById(
-      'github-contributors__thanks',
-    ).innerText = `Thanks to all of our ${humanContributors.length} contributors! 🎉👏`;
+      "github-contributors__thanks"
+    ).innerText = `Thanks to all of our contributors! 🎉👏`;
     humanContributors.forEach((contributor) => {
       html += generateProfile(contributor);
     });
