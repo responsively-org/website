@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import missingContributors from "./missing-contributors.json";
+import mockSwitch from "./MockSwitch.jpg";
 
 import "./style.css";
 
@@ -42,7 +43,33 @@ const Contributors = () => {
     <section>
       <div className="justify-content-center text-center">
         <h3 className="github-contributors__thanks">
-          Thanks to all of our {contributors.length} contributors!{" "}
+          Our Gold Sponsors!&nbsp;
+          <span role="img" aria-label="appreciation">
+            🤝
+          </span>
+        </h3>
+        <div className="github-contributors__sponsors">
+          <a
+            href="https://mockswitch.com/"
+            target="__blank"
+            rel="noreferrer"
+            className="github-contributors__sponsors__logo"
+          >
+            <img src={mockSwitch} alt="mock switch logo" height={120} />
+          </a>
+          <a
+            className="github-contributors__sponsors__logo github-contributors__sponsors__logo-placeholder"
+            target="__blank"
+            rel="noreferrer"
+            href="https://opencollective.com/responsively"
+          >
+            See your company logo here!
+          </a>
+        </div>
+      </div>
+      <div className="justify-content-center text-center">
+        <h3 className="github-contributors__thanks">
+          Thanks to all of our contributors!{" "}
           <span role="img" aria-label="appreciation">
             🎉👏
           </span>

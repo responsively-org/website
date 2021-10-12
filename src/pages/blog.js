@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import GallaxyBG from "../components/GallaxyBG";
 import { CarbonAds } from "../components/CarbonAds";
+import Contributors from "../components/Contributors";
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
@@ -42,6 +43,41 @@ const BlogIndex = ({ data, location }) => {
             })}
           </div>
           <CarbonAds />
+          <div class="divider flip-x">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              width="100%"
+              height="96px"
+              viewBox="0 0 100 100"
+              version="1.1"
+              preserveAspectRatio="none"
+              class="injected-svg"
+              data-src="/assets/img/dividers/divider-3.svg"
+              data-inject-svg="true"
+            >
+              <path d="M0,0 C6.83050094,50 15.1638343,75 25,75 C41.4957514,75 62.4956597,0 81.2456597,0 C93.7456597,0 99.9971065,0 100,0 L100,100 L0,100"></path>
+            </svg>
+          </div>
+          <section class="has-divider bg-white">
+            <Contributors />
+            <div class="divider flip-x">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                width="100%"
+                height="96px"
+                viewBox="0 0 100 100"
+                version="1.1"
+                preserveAspectRatio="none"
+                class="injected-svg"
+                data-src="/assets/img/dividers/divider-3.svg"
+                data-inject-svg="true"
+              >
+                <path d="M0,0 C6.83050094,50 15.1638343,75 25,75 C41.4957514,75 62.4956597,0 81.2456597,0 C93.7456597,0 99.9971065,0 100,0 L100,100 L0,100"></path>
+              </svg>
+            </div>
+          </section>
         </section>
       </div>
     </Layout>
