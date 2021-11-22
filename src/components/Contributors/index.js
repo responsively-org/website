@@ -50,14 +50,6 @@ const Contributors = () => {
         </h3>
         <div className="github-contributors__sponsors">
           <a
-            href="https://mockswitch.com/"
-            target="__blank"
-            rel="noreferrer"
-            className="github-contributors__sponsors__logo"
-          >
-            <img src={mockSwitch} alt="mock switch logo" height={120} />
-          </a>
-          <a
             className="github-contributors__sponsors__logo github-contributors__sponsors__logo-placeholder"
             target="__blank"
             rel="noreferrer"
