@@ -18,8 +18,7 @@ const Header = () => {
     <div className="navbar-container bg-primary-3">
       <nav
         ref={navRef}
-        className="navbar navbar-expand-lg navbar-dark bg-primary-3"
-        data-sticky="top"
+        className="navbar navbar-expand-lg navbar sticky-top navbar-dark bg-primary-3"
       >
         <div className="container">
           <Link className="navbar-brand" to="/">
