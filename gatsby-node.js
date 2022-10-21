@@ -20,9 +20,9 @@ exports.createPages = async ({ graphql, actions }) => {
     isPermanent: true,
   });
   createRedirect({
-    fromPath: "/join-slack",
+    fromPath: "/join-discord",
     toPath:
-      "https://join.slack.com/t/responsively/shared_invite/zt-v9qbu18y-7IsMswXSb1QTIKe5aD4oUw",
+      "https://discord.gg/tFG4E7bgkr",
     isPermanent: true,
   });
 
