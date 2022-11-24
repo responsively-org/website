@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import missingContributors from "./missing-contributors.json";
-import mockSwitch from "./MockSwitch.jpg";
 
 import "./style.css";
 

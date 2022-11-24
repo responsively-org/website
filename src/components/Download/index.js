@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import cx from "classnames";
 import Clipboard from "clipboard";
 import "./style.css";
 import ClipboardIcon from "./ClipboardIcon";
@@ -11,14 +12,35 @@ TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo("en-US");
 
 const Download = () => {
-  const [macURL, setMacURL] = useState(null);
-  const [windowsURL, setWindowsURL] = useState(null);
-  const [linuxURL, setLinuxURL] = useState(null);
   const [version, setVersion] = useState(null);
+  const [betaVersion, setBetaVersion] = useState(null);
+  const [enableBeta, setEnableBeta] = useState(false);
   const [publishedTs, setPublishedTs] = useState(null);
+  const [betaPublishedTs, setBetaPublishedTs] = useState(null);
   const [rpmURL, setRpmURL] = useState(
     "https://github.com/responsively-org/responsively-app/releases/download/v[VERSION]/Responsively-App-[VERSION].x86_64.rpm"
   );
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const beta = queryParams.get("beta");
+    if (beta === "true") {
+      setEnableBeta(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const res = JSON.parse(
+        await fetch(
+          "https://api.github.com/repos/manojVivek/responsively-app/releases"
+        ).then((res) => res.text())
+      );
+      const latestRelease = res[0];
+      setBetaVersion(latestRelease.tag_name);
+      setBetaPublishedTs(new Date(latestRelease.published_at));
+    })();
+  }, []);
 
   useEffect(() => {
     (async () => {
@@ -31,15 +53,6 @@ const Download = () => {
       setVersion(tagName);
       setPublishedTs(new Date(res.published_at));
       var versionName = tagName.substring(1);
-      setMacURL(
-        `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.dmg`
-      );
-      setLinuxURL(
-        `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.AppImage`
-      );
-      setWindowsURL(
-        `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-Setup-${versionName}.exe`
-      );
       setRpmURL(
         `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/Responsively-App-${versionName}.x86_64.rpm`
       );
@@ -62,6 +75,36 @@ const Download = () => {
     };
   }, []);
 
+  const getMacURL = () => {
+    const _version = enableBeta ? betaVersion : version;
+    if (_version === null) {
+      return null;
+    }
+    const tagName = _version;
+    var versionName = tagName.substring(1);
+    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.dmg`;
+  };
+
+  const getLinuxURL = () => {
+    const _version = enableBeta ? betaVersion : version;
+    if (_version === null) {
+      return null;
+    }
+    const tagName = _version;
+    var versionName = tagName.substring(1);
+    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.AppImage`;
+  };
+
+  const getWindowsURL = () => {
+    const _version = enableBeta ? betaVersion : version;
+    if (_version === null) {
+      return null;
+    }
+    const tagName = _version;
+    var versionName = tagName.substring(1);
+    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-Setup-${versionName}.exe`;
+  };
+
   return (
     <>
       <section
@@ -69,16 +112,48 @@ const Download = () => {
         className="bg-primary-3 text-light text-center has-divider"
       >
         <div className="container">
-          <div className="row text-center">
+          <div className="row text-center justify-content-center">
+            <CarbonAds />
+          </div>
+          <div className="row text-center mt-4">
             <div className="col pb-2">
               <h1>Download Responsively App</h1>
               <div className="lead mb-4">
                 You are one step away from improving your web development speed!
               </div>
+              <ul className="nav nav-pills justify-content-center mb-4">
+                <li className="nav-item">
+                  <a
+                    className={cx("nav-link", { active: !enableBeta })}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setEnableBeta(false);
+                    }}
+                  >
+                    Stable (Outdated)
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className={cx("nav-link", { active: enableBeta })}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setEnableBeta(true);
+                    }}
+                  >
+                    Beta
+                  </a>
+                </li>
+              </ul>
+
               <small className="d-flex justify-content-center">
                 {publishedTs ? (
                   <span className="">
-                    {version} - Released {timeAgo.format(publishedTs)}.
+                    {enableBeta ? betaVersion : version} - Released{" "}
+                    {timeAgo.format(enableBeta ? betaPublishedTs : publishedTs)}
+                    .
                   </span>
                 ) : null}
               </small>
@@ -97,7 +172,6 @@ const Download = () => {
               </small>
             </div>
           </div>
-          <CarbonAds />
           <div className="row mb-4">
             <div className="col">
               <h2>Available for all major operating systems</h2>
@@ -121,7 +195,7 @@ const Download = () => {
                   id="macOs"
                   className="m-1 btn btn-outline-primary mx-2"
                   href={
-                    macURL ||
+                    getMacURL() ||
                     "https://github.com/responsively-org/responsively-app/releases"
                   }
                 >
@@ -146,7 +220,7 @@ const Download = () => {
                   id="windowsOs"
                   className="m-1 btn btn-outline-primary mx-2"
                   href={
-                    windowsURL ||
+                    getWindowsURL() ||
                     "https://github.com/responsively-org/responsively-app/releases"
                   }
                 >
@@ -171,7 +245,7 @@ const Download = () => {
                   id="linuxOs"
                   className="m-1 btn btn-outline-primary mx-2"
                   href={
-                    linuxURL ||
+                    getLinuxURL() ||
                     "https://github.com/responsively-org/responsively-app/releases"
                   }
                 >
