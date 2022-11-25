@@ -21,13 +21,22 @@
       "minOpenCount": 0
     },
     {
+      "id": "beta-app",
+      "title": "The app version you are using is a bit outdated.",
+      "text": "We are revamping the app with the latest browser engine. Please download and try the beta version.",
+      "link": "https://responsively.app/download/?beta=true",
+      "okText": "Open",
+      "dismissText": "Dismiss",
+      "minOpenCount": 4
+    },
+    {
       "id": "open-collective-intro",
       "title": "Do you enjoy the App?",
       "text": "Please show us your support on Open collective by backing Responsively.",
       "link": "https://opencollective.com/responsively",
       "okText": "Open",
       "dismissText": "Dismiss",
-      "minOpenCount": 4
+      "minOpenCount": 7
     },
     {
       "id": "twitter-handle-intro",
@@ -36,7 +45,7 @@
       "link": "https://twitter.com/ResponsivelyApp",
       "okText": "Open",
       "dismissText": "Dismiss",
-      "minOpenCount": 8
+      "minOpenCount": 10
     },
     {
       "id": "open-collective-intro-1",
