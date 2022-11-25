@@ -4,12 +4,30 @@ import Clipboard from "clipboard";
 import "./style.css";
 import ClipboardIcon from "./ClipboardIcon";
 import $ from "jquery";
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en";
 import { CarbonAds } from "../CarbonAds";
+import PlatformsDownload from "./PlatformsDownload";
+import { motion, AnimatePresence } from "framer-motion/dist/framer-motion";
 
-TimeAgo.addDefaultLocale(en);
-const timeAgo = new TimeAgo("en-US");
+const variants = {
+  enter: (direction) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+  },
+};
 
 const Download = () => {
   const [version, setVersion] = useState(null);
@@ -75,36 +93,6 @@ const Download = () => {
     };
   }, []);
 
-  const getMacURL = () => {
-    const _version = enableBeta ? betaVersion : version;
-    if (_version === null) {
-      return null;
-    }
-    const tagName = _version;
-    var versionName = tagName.substring(1);
-    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.dmg`;
-  };
-
-  const getLinuxURL = () => {
-    const _version = enableBeta ? betaVersion : version;
-    if (_version === null) {
-      return null;
-    }
-    const tagName = _version;
-    var versionName = tagName.substring(1);
-    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.AppImage`;
-  };
-
-  const getWindowsURL = () => {
-    const _version = enableBeta ? betaVersion : version;
-    if (_version === null) {
-      return null;
-    }
-    const tagName = _version;
-    var versionName = tagName.substring(1);
-    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-Setup-${versionName}.exe`;
-  };
-
   return (
     <>
       <section
@@ -147,113 +135,30 @@ const Download = () => {
                   </a>
                 </li>
               </ul>
-
-              <small className="d-flex justify-content-center">
-                {publishedTs ? (
-                  <span className="">
-                    {enableBeta ? betaVersion : version} - Released{" "}
-                    {timeAgo.format(enableBeta ? betaPublishedTs : publishedTs)}
-                    .
-                  </span>
-                ) : null}
-              </small>
-              <small>
-                <a
-                  href="https://headwayapp.co/responsively-changelog"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-primary"
-                >
-                  &nbsp;What's New?{" "}
-                  <span role="img" aria-label="tada">
-                    🎉
-                  </span>
-                </a>
-              </small>
             </div>
           </div>
-          <div className="row mb-4">
-            <div className="col">
-              <h2>Available for all major operating systems</h2>
-            </div>
-          </div>
-          <div className="row text-center mb-4" id="manual">
-            <div
-              className="col-md-4 mb-2"
-              data-aos="fade-up"
-              data-aos-delay="100"
+          <AnimatePresence
+            initial={false}
+            custom={enableBeta ? 1 : -1}
+            exitBeforeEnter
+          >
+            <motion.div
+              key={enableBeta ? "beta" : "stable"}
+              custom={enableBeta ? 1 : -1}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                duration: 0.3,
+              }}
             >
-              <div className="bg-light rounded p-3">
-                <div className="icon-round bg-primary mx-auto mb-4">
-                  <img
-                    className="icon"
-                    src="/assets/img/logos/brand/apple.svg"
-                    alt="icon"
-                  />
-                </div>
-                <a
-                  id="macOs"
-                  className="m-1 btn btn-outline-primary mx-2"
-                  href={
-                    getMacURL() ||
-                    "https://github.com/responsively-org/responsively-app/releases"
-                  }
-                >
-                  <span className="m-1">Download for Mac</span>
-                </a>
-              </div>
-            </div>
-            <div
-              className="col-md-4 mb-2"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="bg-light rounded p-3">
-                <div className="icon-round bg-primary mx-auto mb-4">
-                  <img
-                    className="icon"
-                    src="/assets/img/icons/custom/windows-icon.svg"
-                    alt="icon"
-                  />
-                </div>
-                <a
-                  id="windowsOs"
-                  className="m-1 btn btn-outline-primary mx-2"
-                  href={
-                    getWindowsURL() ||
-                    "https://github.com/responsively-org/responsively-app/releases"
-                  }
-                >
-                  <span className="m-1">Download for Windows</span>
-                </a>
-              </div>
-            </div>
-            <div
-              className="col-md-4 mb-2"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="bg-light rounded p-3">
-                <div className="icon-round bg-primary mx-auto mb-4">
-                  <img
-                    className="icon"
-                    src="/assets/img/icons/custom/linux-icon.svg"
-                    alt="icon"
-                  />
-                </div>
-                <a
-                  id="linuxOs"
-                  className="m-1 btn btn-outline-primary mx-2"
-                  href={
-                    getLinuxURL() ||
-                    "https://github.com/responsively-org/responsively-app/releases"
-                  }
-                >
-                  <span className="m-1">Download for Linux</span>
-                </a>
-              </div>
-            </div>
-          </div>
+              <PlatformsDownload
+                version={enableBeta ? betaVersion : version}
+                publishedTs={enableBeta ? betaPublishedTs : publishedTs}
+              />
+            </motion.div>
+          </AnimatePresence>
           <div className="row mb-4">
             <div className="col">
               <div className="lead">Or install from the command line:</div>
