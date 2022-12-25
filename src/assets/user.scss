@@ -80,6 +80,7 @@ html {
       text-align: left;
       border: 1px solid;
       overflow-y: hidden;
+      scrollbar-width: none;
       &::-webkit-scrollbar {
         display: none;
       }
