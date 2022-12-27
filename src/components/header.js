@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import Sticky from "sticky-js";
-import { Helmet } from "react-helmet";
 
 const Header = () => {
   const navRef = useRef();
@@ -17,10 +16,6 @@ const Header = () => {
 
   return (
     <div className="navbar-container bg-primary-3">
-      <Helmet>
-        <script defer src="https://analytics.responsively.app/tracker.js" />
-      </Helmet>
-
       <nav
         ref={navRef}
         className="navbar navbar-expand-lg navbar sticky-top navbar-dark bg-primary-3"
