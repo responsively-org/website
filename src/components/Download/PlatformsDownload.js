@@ -5,13 +5,22 @@ TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo("en-US");
 
 const PlatformsDownload = ({ version, publishedTs }) => {
-  const getMacURL = () => {
+  const getIntelMacURL = () => {
     if (version === null) {
       return null;
     }
     const tagName = version;
     var versionName = tagName.substring(1);
     return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.dmg`;
+  };
+
+  const getArmMacURL = () => {
+    if (version === null) {
+      return null;
+    }
+    const tagName = version;
+    var versionName = tagName.substring(1);
+    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}-arm64.dmg`;
   };
 
   const getLinuxURL = () => {
@@ -82,15 +91,27 @@ const PlatformsDownload = ({ version, publishedTs }) => {
                 <span className="text-primary m-1 font-weight-bold">
                   {version}
                 </span>
+                {publishedTs?.getTime() > 1669841204000 ? (
+                  <a
+                    id="macOs"
+                    className="m-1 btn btn-outline-primary mx-2"
+                    href={
+                      getArmMacURL() ||
+                      "https://github.com/responsively-org/responsively-app/releases"
+                    }
+                  >
+                    <span className="m-1">Download for Apple Silicon</span>
+                  </a>
+                ) : null}
                 <a
                   id="macOs"
                   className="m-1 btn btn-outline-primary mx-2"
                   href={
-                    getMacURL() ||
+                    getIntelMacURL() ||
                     "https://github.com/responsively-org/responsively-app/releases"
                   }
                 >
-                  <span className="m-1">Download for Mac</span>
+                  <span className="m-1">Download for Intel Mac</span>
                 </a>
               </div>
             </div>
