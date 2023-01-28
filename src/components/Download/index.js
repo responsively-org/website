@@ -36,45 +36,27 @@ const Download = () => {
   const [publishedTs, setPublishedTs] = useState(null);
   const [betaPublishedTs, setBetaPublishedTs] = useState(null);
   const [rpmURL, setRpmURL] = useState(
-    "https://github.com/responsively-org/responsively-app/releases/download/v[VERSION]/Responsively-App-[VERSION].x86_64.rpm"
+    "https://github.com/responsively-org/responsively-app-releases/releases/download/v[VERSION]/Responsively-App-[VERSION].x86_64.rpm"
   );
 
   useEffect(() => {
-    const queryParams = new URLSearchParams(window.location.search);
-    const beta = queryParams.get("beta");
-    if (beta === "true") {
-      setEnableBeta(true);
-    }
-  }, []);
-
-  useEffect(() => {
     (async () => {
       const res = JSON.parse(
         await fetch(
-          "https://api.github.com/repos/manojVivek/responsively-app/releases"
+          "https://api.github.com/repos/responsively-org/responsively-app-releases/releases"
         ).then((res) => res.text())
       );
       const latestRelease = res[0];
-      setBetaVersion(latestRelease.tag_name);
-      setBetaPublishedTs(new Date(latestRelease.published_at));
-    })();
-  }, []);
-
-  useEffect(() => {
-    (async () => {
-      const res = JSON.parse(
-        await fetch(
-          "https://api.github.com/repos/manojVivek/responsively-app/releases/latest"
-        ).then((res) => res.text())
-      );
-      const tagName = res.tag_name;
+      const tagName = latestRelease.tag_name;
+      console.log("latestRelease", latestRelease);
       setVersion(tagName);
-      setPublishedTs(new Date(res.published_at));
+      setPublishedTs(new Date(latestRelease.published_at));
       var versionName = tagName.substring(1);
       setRpmURL(
-        `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/Responsively-App-${versionName}.x86_64.rpm`
+        `https://github.com/responsively-org/responsively-app-releases/releases/download/${tagName}/Responsively-App-${versionName}.x86_64.rpm`
       );
     })();
+
     const cp = new Clipboard(".copy-icon");
     const $copyBtn = $(".copy-icon");
     $copyBtn.tooltip({
@@ -119,19 +101,7 @@ const Download = () => {
                       setEnableBeta(false);
                     }}
                   >
-                    Stable (Outdated)
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className={cx("nav-link", { active: enableBeta })}
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setEnableBeta(true);
-                    }}
-                  >
-                    Beta
+                    Latest
                   </a>
                 </li>
               </ul>

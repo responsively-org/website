@@ -11,7 +11,7 @@ const PlatformsDownload = ({ version, publishedTs }) => {
     }
     const tagName = version;
     var versionName = tagName.substring(1);
-    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.dmg`;
+    return `https://github.com/responsively-org/responsively-app-releases/releases/download/${tagName}/ResponsivelyApp-${versionName}.dmg`;
   };
 
   const getArmMacURL = () => {
@@ -20,7 +20,7 @@ const PlatformsDownload = ({ version, publishedTs }) => {
     }
     const tagName = version;
     var versionName = tagName.substring(1);
-    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}-arm64.dmg`;
+    return `https://github.com/responsively-org/responsively-app-releases/releases/download/${tagName}/ResponsivelyApp-${versionName}-arm64.dmg`;
   };
 
   const getLinuxURL = () => {
@@ -29,7 +29,7 @@ const PlatformsDownload = ({ version, publishedTs }) => {
     }
     const tagName = version;
     var versionName = tagName.substring(1);
-    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-${versionName}.AppImage`;
+    return `https://github.com/responsively-org/responsively-app-releases/releases/download/${tagName}/ResponsivelyApp-${versionName}.AppImage`;
   };
 
   const getWindowsURL = () => {
@@ -38,7 +38,7 @@ const PlatformsDownload = ({ version, publishedTs }) => {
     }
     const tagName = version;
     var versionName = tagName.substring(1);
-    return `https://github.com/responsively-org/responsively-app/releases/download/${tagName}/ResponsivelyApp-Setup-${versionName}.exe`;
+    return `https://github.com/responsively-org/responsively-app-releases/releases/download/${tagName}/ResponsivelyApp-Setup-${versionName}.exe`;
   };
 
   return (
@@ -97,7 +97,7 @@ const PlatformsDownload = ({ version, publishedTs }) => {
                     className="m-1 btn btn-outline-primary mx-2"
                     href={
                       getArmMacURL() ||
-                      "https://github.com/responsively-org/responsively-app/releases"
+                      "https://github.com/responsively-org/responsively-app-releases/releases"
                     }
                   >
                     <span className="m-1">Download for Apple Silicon</span>
@@ -108,7 +108,7 @@ const PlatformsDownload = ({ version, publishedTs }) => {
                   className="m-1 btn btn-outline-primary mx-2"
                   href={
                     getIntelMacURL() ||
-                    "https://github.com/responsively-org/responsively-app/releases"
+                    "https://github.com/responsively-org/responsively-app-releases/releases"
                   }
                 >
                   <span className="m-1">Download for Intel Mac</span>
@@ -138,7 +138,7 @@ const PlatformsDownload = ({ version, publishedTs }) => {
                   className="m-1 btn btn-outline-primary mx-2"
                   href={
                     getWindowsURL() ||
-                    "https://github.com/responsively-org/responsively-app/releases"
+                    "https://github.com/responsively-org/responsively-app-releases/releases"
                   }
                 >
                   <span className="m-1">Download for Windows</span>
@@ -168,7 +168,7 @@ const PlatformsDownload = ({ version, publishedTs }) => {
                   className="m-1 btn btn-outline-primary mx-2"
                   href={
                     getLinuxURL() ||
-                    "https://github.com/responsively-org/responsively-app/releases"
+                    "https://github.com/responsively-org/responsively-app-releases/releases"
                   }
                 >
                   <span className="m-1">Download for Linux</span>
