@@ -102,7 +102,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-            <Link to="/download" className="btn btn-primary ml-lg-3">
+            <Link to="/download" className="btn btn-primary px-2 ml-lg-1">
               Download now
             </Link>
             <a
