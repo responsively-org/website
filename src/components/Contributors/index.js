@@ -52,6 +52,18 @@ const Contributors = () => {
             className="github-contributors__sponsors__logo github-contributors__sponsors__logo-placeholder"
             target="__blank"
             rel="noreferrer"
+            href="https://www.bairesdev.com/?ref=Responsively"
+          >
+            <img
+              src="/assets/img/logos/bairesdev-logo-blue-new.svg"
+              alt="BairesDev"
+              width="264"
+            />
+          </a>
+          <a
+            className="github-contributors__sponsors__logo github-contributors__sponsors__logo-placeholder"
+            target="__blank"
+            rel="noreferrer"
             href="https://opencollective.com/responsively"
           >
             See your company logo here!
