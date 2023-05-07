@@ -95,6 +95,22 @@ const Footer = () => {
                   />
                 </a>
               </li>
+              <li className="nav-item">
+                <a
+                  href="https://responsively.app/join-discord"
+                  title="Discord Responsively"
+                  className="nav-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    className="icon undefined"
+                    src="/assets/img/icons/social/discord.svg"
+                    alt="discord social icon"
+                    data-inject-svg
+                  />
+                </a>
+              </li>
             </ul>
           </div>
         </div>

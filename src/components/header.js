@@ -134,6 +134,21 @@ const Header = () => {
                 data-inject-svg
               />
             </a>
+            <a
+              href="https://responsively.app/join-discord"
+              title="Responsively Discord"
+              target="_blank"
+              className="nav-link"
+              aria-expanded="false"
+              rel="noreferrer"
+            >
+              <img
+                className="icon bg-primary"
+                src="/assets/img/icons/social/discord.svg"
+                alt="icon"
+                data-inject-svg
+              />
+            </a>
           </div>
         </div>
       </nav>
