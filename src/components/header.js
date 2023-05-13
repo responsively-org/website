@@ -74,24 +74,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a
-                    href="https://github.com/responsively-org/responsively-app/projects/12?fullscreen=true"
-                    className="nav-link"
-                    aria-expanded="false"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    RoadMap
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    href="https://opencollective.com/responsively"
-                    className="nav-link"
-                    aria-expanded="false"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <a href="/sponsor" className="nav-link" aria-expanded="false">
                     Sponsor
                   </a>
                 </li>
