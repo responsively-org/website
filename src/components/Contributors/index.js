@@ -62,9 +62,7 @@ const Contributors = () => {
           </a>
           <a
             className="github-contributors__sponsors__logo github-contributors__sponsors__logo-placeholder"
-            target="__blank"
-            rel="noreferrer"
-            href="https://opencollective.com/responsively"
+            href="/sponsor/#become-a-sponsor"
           >
             See your company logo here!
           </a>
