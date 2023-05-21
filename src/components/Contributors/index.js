@@ -43,8 +43,6 @@ const Contributors = () => {
         "https://opencollective.com/responsively/members.json"
       ).then((response) => response.json());
 
-      console.log("sponosrs", sponsors);
-
       const allSponsors = sponsors
         .flat()
         .filter(
@@ -75,23 +73,22 @@ const Contributors = () => {
           return a.name.localeCompare(b.name);
         });
 
-        allSponsors.push(
-          {
-            image: "https://avatars.githubusercontent.com/u/11783457?v=4",
-            name: "Daniel Einars",
-            profile: "https://github.com/polaroidkidd",
-            amount: 10,
-            lastDonation: new Date("2023-03-01").getTime(),
-          },
-          {
-            image: "https://avatars.githubusercontent.com/u/25272108?v=4",
-            name: "Trista Lanette Pollard",
-            profile: "https://github.com/tlanettepollard",
-            amount: 50,
-            lastDonation: new Date("2023-02-12").getTime(),
-          }
-        );
-      console.log("allSponsors", allSponsors);
+      allSponsors.push(
+        {
+          image: "https://avatars.githubusercontent.com/u/11783457?v=4",
+          name: "Daniel Einars",
+          profile: "https://github.com/polaroidkidd",
+          amount: 10,
+          lastDonation: new Date("2023-03-01").getTime(),
+        },
+        {
+          image: "https://avatars.githubusercontent.com/u/25272108?v=4",
+          name: "Trista Lanette Pollard",
+          profile: "https://github.com/tlanettepollard",
+          amount: 50,
+          lastDonation: new Date("2023-02-12").getTime(),
+        }
+      );
       setAllSponsors(allSponsors);
     })();
   }, []);
