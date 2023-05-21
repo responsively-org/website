@@ -63,11 +63,11 @@ export const Sponsor = () => {
             and create positive associations with your company.
           </p>
           <p className="text-justify">
-            By sponsoring Responsively App, you will have access to a community
-            of top talent in the open-source software development space. You can
-            leverage this community to find new talent, collaborate with other
-            sponsors, and build long-term relationships with developers who
-            share your values.
+            By sponsoring Responsively App, you will put yourselves in front of
+            a community of top talent in the open-source software development
+            space. You can leverage this community to gain new talent,
+            collaborate with other sponsors, and build long-term relationships
+            with developers who share your values.
           </p>
           <p className="text-justify">
             If you're building a product or service that is relevant to the web
