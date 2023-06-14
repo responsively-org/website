@@ -73,7 +73,7 @@ export const Sponsor = () => {
             If you're building a product or service that is relevant to the web
             development community, sponsoring Responsively App is a great way to
             increase your visibility through the badges on our website. Your
-            sponsorship will help us reach a wider audience and generate more
+            sponsorship will help you reach a wider audience and generate more
             leads for your company.
           </p>
           <div className="border-bottom border-muted my-4" />
