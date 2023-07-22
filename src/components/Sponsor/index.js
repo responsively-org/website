@@ -23,28 +23,27 @@ export const Sponsor = () => {
           </p>
           <p className="text-justify">
             Sponsorships can be done through the following ways:
-            <ul className="lead mt-2">
-              <li>
-                <a
-                  href="https://github.com/sponsors/responsively-org"
-                  target="_blank"
-                  className="text-primary"
-                  rel="noreferrer"
-                >
-                  GitHub Sponsors
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://opencollective.com/responsively"
-                  target="_blank"
-                  className="text-primary"
-                  rel="noreferrer"
-                >
-                  Open Collective
-                </a>
-              </li>
-            </ul>
+            <div
+              class="d-flex justify-content-center my-4"
+              style={{ gap: "10px" }}
+            >
+              <a
+                className="btn btn-md btn-white"
+                href="https://github.com/sponsors/responsively-org"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub Sponsors
+              </a>
+              <a
+                className="btn btn-md btn-white"
+                href="https://opencollective.com/responsively"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open Collective
+              </a>
+            </div>
           </p>
           <p className="text-justify">
             Both recurring and one-time sponsorships are accepted. Recurring
