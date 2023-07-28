@@ -11,17 +11,19 @@ import {PrimaryFeatures} from '@/components/PrimaryFeatures';
 import {SecondaryFeatures} from '@/components/SecondaryFeatures';
 import {Testimonials} from '@/components/Testimonials';
 import Image from 'next/image';
+import {BlurBG} from '@/components/BlurBG';
 
 export default function Home() {
   return (
     <div className="relative">
-      <Image
+      {/* <Image
         className="absolute top-0 max-w-none -translate-y-1/4"
         src={backgroundImage}
         alt=""
         style={{objectFit: 'cover', objectPosition: 'center'}}
         unoptimized
-      />
+      /> */}
+      <BlurBG bgColor="none" bubbleType="2" />
       <Head>
         <title>TaxPal - Accounting made simple for small businesses</title>
         <meta
@@ -36,7 +38,6 @@ export default function Home() {
         <SecondaryFeatures />
         <CallToAction />
         <Testimonials />
-        <Pricing />
         <Faqs />
       </main>
       <Footer />

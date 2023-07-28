@@ -5,10 +5,10 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-features.jpg'
-import screenshotExpenses from '@/images/screenshots/expenses.png'
-import screenshotPayroll from '@/images/screenshots/payroll.png'
-import screenshotReporting from '@/images/screenshots/reporting.png'
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import allDevicesSideBySide from '@/images/screenshots/all-devices-side-by-side.png';
+import screenshotPayroll from '@/images/screenshots/payroll.png';
+import screenshotReporting from '@/images/screenshots/reporting.png';
+import screenshotVatReturns from '@/images/screenshots/vat-returns.png';
 import {BlurBG} from './BlurBG';
 
 const features = [
@@ -16,27 +16,26 @@ const features = [
     title: 'All Devices at once',
     description:
       "See all devices at once, side-by-side. No more fiddling around with the devtools resizer. It's all there, at a glance.",
-    image: screenshotExpenses,
+    image: allDevicesSideBySide,
   },
   {
     title: 'Mirrored Interactions',
     description:
       'Any click, scroll or navigation that you perform in one device will be replicated to all devices in real-time.',
     image: screenshotPayroll,
-    video:
-      'https://responsively-org.github.io/responsively-app/assets/video/mirrored-interactions.mp4',
+    video: '/assets/videos/interactions-mirrored.mp4',
   },
   {
-    title: 'Preview Suits for Quick Context Switching',
+    title: 'Quick Context Switching',
     description:
-      "Save your favorite device combinations as suits and quickly switch between them when you're testing.",
-    image: screenshotVatReturns,
+      "Save your favorite device combinations as Preview Suits and quickly switch between them when you're testing.",
+    video: '/assets/videos/preview-suites.mp4',
   },
   {
     title: 'Extensive Device Profiles',
     description:
       'Responsively comes with a large collection of device profiles out of the box. You can also add your own custom devices.',
-    image: screenshotReporting,
+    video: '/assets/videos/device-manager.mp4',
   },
 ];
 
@@ -62,7 +61,7 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden bg-emerald-600 pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden pb-28 pt-20 sm:py-32"
     >
       {/* <Image
         className="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
@@ -72,9 +71,7 @@ export function PrimaryFeatures() {
         height={1636}
         unoptimized
       /> */}
-      <div className="absolute max-w-none">
-        <BlurBG />
-      </div>
+      <BlurBG />
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
@@ -91,7 +88,7 @@ export function PrimaryFeatures() {
         >
           {({selectedIndex}) => (
             <>
-              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
+              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 md:overflow-x-auto md:px-2 lg:col-span-5">
                 <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
                   {features.map((feature, featureIndex) => (
                     <div

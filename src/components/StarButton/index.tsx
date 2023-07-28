@@ -1,21 +1,35 @@
 import {Icon} from '@iconify/react';
 import {NavLink} from '../NavLink';
+import {useEffect, useState} from 'react';
 
 export const StarButton = () => {
-  console.log('StarButton');
+  const [count, setCount] = useState<number>(20400);
+
+  useEffect(() => {
+    // get start count from github api for responsively-org/responsively-app repo
+    fetch('https://api.github.com/repos/responsively-org/responsively-app')
+      .then(response => response.json())
+      .then(data => {
+        setCount(data.stargazers_count);
+      })
+      .catch(error => {
+        console.error('Error while getting the star count:', error);
+      });
+  }, []);
+
   return (
     <div className="group hidden md:block">
       <NavLink
         href="https://github.com/responsively-org/responsively-app/stargazers"
         target="_blank"
       >
-        <span className="flex items-center">
+        <span className="flex items-center gap-1">
           <Icon
             icon="material-symbols:star-outline-rounded"
             fontSize={22}
-            className="transition-transform duration-300 group-hover:scale-125"
-          />{' '}
-          {'  '}19,885 Stars
+            className="origin-center transition-transform duration-300 group-hover:scale-125"
+          />
+          {count.toLocaleString()} Stars
         </span>
       </NavLink>
     </div>
