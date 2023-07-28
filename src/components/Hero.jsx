@@ -49,10 +49,10 @@ export function Hero() {
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/download">Download Now</Button>
-        <Button variant="outline">
+        {/* <Button variant="outline">
           <Icon icon="akar-icons:github-fill" className="h-5 w-5" />
           <span className="ml-3">Learn More</span>
-        </Button>
+        </Button> */}
       </div>
       <div className="mt-24 md:mt-36 lg:mt-24">
         <CarbonAds />
