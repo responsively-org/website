@@ -9,74 +9,79 @@ import screenshotExpenses from '@/images/screenshots/expenses.png'
 import screenshotPayroll from '@/images/screenshots/payroll.png'
 import screenshotReporting from '@/images/screenshots/reporting.png'
 import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import {BlurBG} from './BlurBG';
 
 const features = [
   {
-    title: 'Payroll',
+    title: 'All Devices at once',
     description:
-      "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
-    image: screenshotPayroll,
-  },
-  {
-    title: 'Claim expenses',
-    description:
-      "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
+      "See all devices at once, side-by-side. No more fiddling around with the devtools resizer. It's all there, at a glance.",
     image: screenshotExpenses,
   },
   {
-    title: 'VAT handling',
+    title: 'Mirrored Interactions',
     description:
-      "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
+      'Any click, scroll or navigation that you perform in one device will be replicated to all devices in real-time.',
+    image: screenshotPayroll,
+    video:
+      'https://responsively-org.github.io/responsively-app/assets/video/mirrored-interactions.mp4',
+  },
+  {
+    title: 'Preview Suits for Quick Context Switching',
+    description:
+      "Save your favorite device combinations as suits and quickly switch between them when you're testing.",
     image: screenshotVatReturns,
   },
   {
-    title: 'Reporting',
+    title: 'Extensive Device Profiles',
     description:
-      'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
+      'Responsively comes with a large collection of device profiles out of the box. You can also add your own custom devices.',
     image: screenshotReporting,
   },
-]
+];
 
 export function PrimaryFeatures() {
-  let [tabOrientation, setTabOrientation] = useState('horizontal')
+  let [tabOrientation, setTabOrientation] = useState('horizontal');
 
   useEffect(() => {
-    let lgMediaQuery = window.matchMedia('(min-width: 1024px)')
+    let lgMediaQuery = window.matchMedia('(min-width: 1024px)');
 
-    function onMediaQueryChange({ matches }) {
-      setTabOrientation(matches ? 'vertical' : 'horizontal')
+    function onMediaQueryChange({matches}) {
+      setTabOrientation(matches ? 'vertical' : 'horizontal');
     }
 
-    onMediaQueryChange(lgMediaQuery)
-    lgMediaQuery.addEventListener('change', onMediaQueryChange)
+    onMediaQueryChange(lgMediaQuery);
+    lgMediaQuery.addEventListener('change', onMediaQueryChange);
 
     return () => {
-      lgMediaQuery.removeEventListener('change', onMediaQueryChange)
-    }
-  }, [])
+      lgMediaQuery.removeEventListener('change', onMediaQueryChange);
+    };
+  }, []);
 
   return (
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden bg-blue-600 pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden bg-emerald-600 pb-28 pt-20 sm:py-32"
     >
-      <Image
+      {/* <Image
         className="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
         src={backgroundImage}
         alt=""
         width={2245}
         height={1636}
         unoptimized
-      />
+      /> */}
+      <div className="absolute max-w-none">
+        <BlurBG />
+      </div>
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Everything you need to run your books.
+            Elevate your web development experience with the comprehensive toolset!
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            Well everything you need if you aren’t that picky about minor
-            details like tax compliance.
+            Well everything you need to be make pixel perfect responsive websites with ease.
           </p>
         </div>
         <Tab.Group
@@ -84,7 +89,7 @@ export function PrimaryFeatures() {
           className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
           vertical={tabOrientation === 'vertical'}
         >
-          {({ selectedIndex }) => (
+          {({selectedIndex}) => (
             <>
               <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
                 <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
@@ -126,7 +131,7 @@ export function PrimaryFeatures() {
                 </Tab.List>
               </div>
               <Tab.Panels className="lg:col-span-7">
-                {features.map((feature) => (
+                {features.map(feature => (
                   <Tab.Panel key={feature.title} unmount={false}>
                     <div className="relative sm:px-6 lg:hidden">
                       <div className="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
@@ -135,13 +140,23 @@ export function PrimaryFeatures() {
                       </p>
                     </div>
                     <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
-                      <Image
-                        className="w-full"
-                        src={feature.image}
-                        alt=""
-                        priority
-                        sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                      />
+                      {feature.video ? (
+                        <video
+                          autoPlay
+                          loop
+                          sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                        >
+                          <source src={feature.video} />
+                        </video>
+                      ) : (
+                        <Image
+                          className="w-full"
+                          src={feature.image}
+                          alt=""
+                          priority
+                          sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
+                        />
+                      )}
                     </div>
                   </Tab.Panel>
                 ))}
@@ -151,5 +166,5 @@ export function PrimaryFeatures() {
         </Tab.Group>
       </Container>
     </section>
-  )
+  );
 }
