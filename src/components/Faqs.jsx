@@ -2,60 +2,94 @@ import Image from 'next/image'
 
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-faqs.jpg'
+import Link from 'next/link';
 
 const faqs = [
   [
     {
-      question: 'Does TaxPal handle VAT?',
+      question: 'Does Responsively App render the page with the same engine as the browser?',
       answer:
-        'Well no, but if you move your company offshore you can probably ignore it.',
+        'No, Responsively App is built on top of Electron and uses Chromium as its rendering engine.',
     },
     {
-      question: 'Can I pay for my subscription via purchase order?',
-      answer: 'Absolutely, we are happy to take your money in all forms.',
+      question: 'Does Responsively App accurately render as real devices?',
+      answer:
+        'Responsively App tries to render pages as close as possible to real devices but it may not be 100% accurate.',
     },
     {
-      question: 'How do I apply for a job at TaxPal?',
+      question: 'Is Responsively App a good replacement for real devices?',
       answer:
-        'We only hire our customers, so subscribe for a minimum of 6 months and then let’s talk.',
+        'No, Responsively App is not a replacement for real devices. It is a tool that renders pages in viewport sizes of various devices, but it does not emulate their behavior.',
     },
   ],
   [
     {
-      question: 'What was that testimonial about tax fraud all about?',
+      question: 'Is Responsively App free?',
       answer:
-        'TaxPal is just a software application, ultimately your books are your responsibility.',
+        'Yes, Responsively App is free to use and open source. You can find the source code on GitHub.',
+    },
+
+    {
+      question: 'How do I report a bug?',
+      answer: (
+        <>
+          Please open an issue on our{' '}
+          <a
+            href="https://github.com/responsively-org/responsively-app/issues"
+            className="underline"
+          >
+            GitHub repo
+          </a>{' '}
+          and we'll look into it.
+        </>
+      ),
     },
     {
-      question:
-        'TaxPal sounds horrible but why do I still feel compelled to purchase?',
-      answer:
-        'This is the power of excellent visual design. You just can’t resist it, no matter how poorly it actually functions.',
-    },
-    {
-      question:
-        'I found other companies called TaxPal, are you sure you can use this name?',
-      answer:
-        'Honestly not sure at all. We haven’t actually incorporated or anything, we just thought it sounded cool and made this website.',
+      question: 'How do I request a feature?',
+      answer: (
+        <>
+          Please open an issue on our{' '}
+          <a
+            href="https://github.com/responsively-org/responsively-app/issues"
+            className="underline"
+          >
+            GitHub repo
+          </a>{' '}
+          explainng your need and we'll look into it.
+        </>
+      ),
     },
   ],
   [
     {
-      question: 'How do you generate reports?',
-      answer:
-        'You just tell us what data you need a report for, and we get our kids to create beautiful charts for you using only the finest crayons.',
+      question: 'How can I support Responsively App?',
+      answer: (
+        <>
+          You can support in a lot of ways and we have details of in our{' '}
+          <Link href="/sponsor" className="underline">
+            Sponsorship
+          </Link>{' '}
+          page.
+        </>
+      ),
     },
     {
-      question: 'Can we expect more inventory features?',
-      answer: 'In life it’s really better to never expect anything at all.',
-    },
-    {
-      question: 'I lost my password, how do I get into my account?',
-      answer:
-        'Send us an email and we will send you a copy of our latest password spreadsheet so you can find your information.',
+      question: 'How can I contribute to Responsively App?',
+      answer: (
+        <>
+          Please checkout our{' '}
+          <a
+            href="https://github.com/responsively-org/responsively-app/issues"
+            className="underline"
+          >
+            GitHub repo
+          </a>{' '}
+          for issues that needs help and give them a try.
+        </>
+      ),
     },
   ],
-]
+];
 
 export function Faqs() {
   return (
@@ -81,8 +115,15 @@ export function Faqs() {
             Frequently asked questions
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            If you can’t find what you’re looking for, email our support team
-            and if you’re lucky someone will get back to you.
+            If you can’t find what you’re looking for, please open an issue on our{' '}
+            <a
+              href="https://github.com/responsively-org/responsively-app"
+              target="_blank"
+              className="underline"
+            >
+              GitHub
+            </a>
+            .
           </p>
         </div>
         <ul
@@ -106,5 +147,5 @@ export function Faqs() {
         </ul>
       </Container>
     </section>
-  )
+  );
 }
