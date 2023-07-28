@@ -22,6 +22,7 @@ const features = [
       </>
     ),
     image: screenshotProfitLoss,
+    video: '/assets/videos/unified-inspector.mp4',
     icon: <Icon icon="ph:binoculars" fontSize={30} />,
   },
   {
@@ -29,15 +30,15 @@ const features = [
     summary: 'Take full page screenshots of all devices at once with a single click.',
     description:
       'You can also take screenshots of individual devices by clicking on the camera icon in the device toolbar. And a quick screenshot of the viewport too.',
-    image: screenshotInventory,
+    video: '/assets/videos/screenshot.mp4',
     icon: <Icon icon="ph:camera" fontSize={30} />,
   },
   {
     name: 'Basic Browser features',
     summary: 'In addition to the above, you get all the basic browser features.',
     description:
-      'You get all the basic browser features like cookie management, local storage, session storage, etc. You can also use the Chrome Devtools as in a normal browser.',
-    image: screenshotContacts,
+      'You get all the basic browser features like cookie management, local storage, session storage, bookmarks, etc. You can also use the devtools as in any browser.',
+    video: '/assets/videos/other-features.mp4',
     icon: <Icon icon="ph:browser" fontSize={30} />,
   },
 ];
@@ -117,7 +118,10 @@ function FeaturesDesktop() {
                   aria-hidden={featureIndex !== selectedIndex}
                 >
                   <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
-                    <Image className="w-full" src={feature.image} alt="" sizes="52.75rem" />
+                    {/* <Image className="w-full" src={feature.image} alt="" sizes="52.75rem" /> */}
+                    <video autoPlay loop sizes="52.75rem">
+                      <source src={feature.video} />
+                    </video>
                   </div>
                 </Tab.Panel>
               ))}

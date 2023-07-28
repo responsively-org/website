@@ -3,12 +3,8 @@ import Image from 'next/image'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { Container } from '@/components/Container'
-import backgroundImage from '@/images/background-features.jpg'
+import {Container} from '@/components/Container';
 import allDevicesSideBySide from '@/images/screenshots/all-devices-side-by-side.png';
-import screenshotPayroll from '@/images/screenshots/payroll.png';
-import screenshotReporting from '@/images/screenshots/reporting.png';
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png';
 import {BlurBG} from './BlurBG';
 
 const features = [
@@ -22,7 +18,6 @@ const features = [
     title: 'Mirrored Interactions',
     description:
       'Any click, scroll or navigation that you perform in one device will be replicated to all devices in real-time.',
-    image: screenshotPayroll,
     video: '/assets/videos/interactions-mirrored.mp4',
   },
   {

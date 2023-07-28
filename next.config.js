@@ -4,6 +4,7 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
-}
+  transpilePackages: ['react-tweet'],
+};
 
 module.exports = nextConfig

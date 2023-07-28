@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <Container className="pb-16 pt-20 text-center lg:pt-32">
       <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-        Develop responsive web apps{' '}
+        Master the Art of Crafting Responsive Web Apps like{' '}
         <span className="relative whitespace-nowrap text-emerald-600">
           <svg
             aria-hidden="true"
@@ -32,7 +32,7 @@ export function Hero() {
             </defs>
           </svg>
 
-          <span className="relative">5x faster!</span>
+          <span className="relative">a Pro!</span>
         </span>{' '}
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
