@@ -75,6 +75,8 @@ function MobileNavigation() {
           >
             <MobileNavLink href="#features">Features</MobileNavLink>
             <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
+            <MobileNavLink href="/sponsor">Sponsor</MobileNavLink>
+            <MobileNavLink href="/join-discord">Join Discord</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -94,6 +96,8 @@ export function Header() {
             <div className="hidden md:flex md:gap-x-6">
               <NavLink href="#features">Features</NavLink>
               <NavLink href="#testimonials">Testimonials</NavLink>
+              <NavLink href="/sponsor">Sponsor</NavLink>
+              <NavLink href="/join-discord">Join Discord</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
