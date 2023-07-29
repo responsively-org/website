@@ -7,7 +7,7 @@ import {Icon} from '@iconify/react';
 
 export function Footer() {
   return (
-    <footer className="relative z-10 bg-slate-50">
+    <footer className="relative z-10 mt-8 bg-slate-50">
       <Container>
         <div className="py-16">
           <Link href="/">

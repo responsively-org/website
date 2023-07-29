@@ -1,8 +1,9 @@
-import cx from 'classnames';
+import clsx from 'clsx';
 
 interface Props {
   bgColor?: string;
   bubbleType?: string;
+  height?: string;
 }
 
 const Bubbles1 = () => {
@@ -128,9 +129,14 @@ const bubblesMap: {[key: string]: JSX.Element} = {
   '2': <BluePurpleRedBubbles />,
 };
 
-export const BlurBG = ({bgColor = 'bg-emerald-500', bubbleType = '2'}: Props) => {
+export const BlurBG = ({bgColor = 'bg-emerald-500', bubbleType = '2', height = ''}: Props) => {
   return (
-    <div className={cx('absolute top-0 h-full w-full', {[bgColor]: !!bgColor})}>
+    <div
+      className={clsx('h-inherit absolute top-0 w-full overflow-hidden', {
+        [bgColor]: !!bgColor,
+        height: !!height,
+      })}
+    >
       {bubblesMap[bubbleType]}
     </div>
   );

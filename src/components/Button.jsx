@@ -26,7 +26,7 @@ const variantStyles = {
   },
 };
 
-export function Button({variant = 'solid', color = 'slate', className = '', href, ...props}) {
+export function Button({variant = 'solid', color = 'slate', className = '', href = '', ...props}) {
   className = clsx(baseStyles[variant], variantStyles[variant][color], className);
 
   return href ? (
