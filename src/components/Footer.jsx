@@ -7,10 +7,12 @@ import {Icon} from '@iconify/react';
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50">
+    <footer className="relative z-10 bg-slate-50">
       <Container>
         <div className="py-16">
-          <Logo className="mx-auto h-10 w-auto" />
+          <Link href="/">
+            <Logo className="mx-auto h-10 w-auto" />
+          </Link>
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex flex-wrap justify-center gap-x-6">
               <NavLink href="/#features">Features</NavLink>

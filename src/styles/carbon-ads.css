@@ -11,17 +11,18 @@
 #carbonads {
   display: flex;
   max-width: 330px;
-  background-color: hsl(0, 0%, 10%);
+  /* background-color: hsl(0, 0%, 10%); */
+  background-color: hsl(0, 0%, 99%);
   box-shadow: 0 0 1px hsla(0, 0%, 0%, 0.5);
 }
 
 #carbonads a {
-  color: #ddd;
+  /* color: #ddd; */
   text-decoration: none;
 }
 
 #carbonads a:hover {
-  color: #ddd;
+  /* color: #ddd; */
 }
 
 #carbonads span {
@@ -56,8 +57,9 @@
 #carbonads .carbon-poweredby {
   display: block;
   padding: 6px 8px;
-  background: #1e2021;
-  color: #aaa;
+  /* background: #1e2021; */
+  background: repeating-linear-gradient( -45deg, transparent, transparent 5px, hsla(0, 0%, 0%, 0.025) 5px, hsla(0, 0%, 0%, 0.025) 10px) hsla(203, 11%, 95%, 0.8);
+  /* color: #aaa; */
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;

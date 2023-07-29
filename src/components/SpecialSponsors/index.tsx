@@ -1,8 +1,3 @@
-import logoLaravel from '@/images/logos/laravel.svg';
-import logoMirage from '@/images/logos/mirage.svg';
-import logoStatamic from '@/images/logos/statamic.svg';
-import logoStaticKit from '@/images/logos/statickit.svg';
-import logoTransistor from '@/images/logos/transistor.svg';
 import logoBairesDev from '@/images/logos/bairesdev.svg';
 import logoGitHub from '@/images/logos/github.png';
 import Image from 'next/image';
@@ -42,7 +37,7 @@ export const SpecialSponsors = () => {
               {group.map(company => (
                 <li key={company.name} className="flex rounded">
                   <Link href={company.url} target="_blank">
-                    <Image src={company.logo} alt={company.name} unoptimized height={64} />
+                    <Image src={company.logo} alt={company.name} unoptimized width={224} />
                   </Link>
                 </li>
               ))}
