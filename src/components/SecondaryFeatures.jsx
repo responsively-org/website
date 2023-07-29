@@ -21,7 +21,6 @@ const features = [
         details.
       </>
     ),
-    image: screenshotProfitLoss,
     video: '/assets/videos/unified-inspector.mp4',
     icon: <Icon icon="ph:binoculars" fontSize={30} />,
   },
