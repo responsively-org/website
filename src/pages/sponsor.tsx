@@ -95,6 +95,7 @@ export default function Sponsor() {
       </Container>
       <SponsorsAndContributors />
       <Footer />
+
     </>
   );
 }
