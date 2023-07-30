@@ -122,7 +122,7 @@ function FeaturesDesktop() {
                   aria-hidden={featureIndex !== selectedIndex}
                 >
                   <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
-                    <video autoPlay loop sizes="52.75rem">
+                    <video autoPlay loop muted playsInline name="media" sizes="52.75rem">
                       <source src={feature.video} />
                     </video>
                   </div>
