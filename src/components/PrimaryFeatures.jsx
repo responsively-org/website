@@ -18,19 +18,20 @@ const features = [
     title: 'Mirrored Interactions',
     description:
       'Any click, scroll or navigation that you perform in one device will be replicated to all devices in real-time.',
-    video: '/assets/videos/interactions-mirrored.mp4',
+    video:
+      'https://responsively-org.github.io/responsively-app/assets/video/interactions-mirrored.mp4',
   },
   {
     title: 'Quick Context Switching',
     description:
       "Save your favorite device combinations as Preview Suits and quickly switch between them when you're testing.",
-    video: '/assets/videos/preview-suites.mp4',
+    video: 'https://responsively-org.github.io/responsively-app/assets/video/preview-suites.mp4',
   },
   {
     title: 'Extensive Device Profiles',
     description:
       'Responsively comes with a large collection of device profiles out of the box. You can also add your own custom devices.',
-    video: '/assets/videos/device-manager.mp4',
+    video: 'https://responsively-org.github.io/responsively-app/assets/video/device-manager.mp4',
   },
 ];
 

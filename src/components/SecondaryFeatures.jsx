@@ -16,7 +16,7 @@ const features = [
         details.
       </>
     ),
-    video: '/assets/videos/unified-inspector.mp4',
+    video: 'https://responsively-org.github.io/responsively-app/assets/video/unified-inspector.mp4',
     icon: <Icon icon="ph:binoculars" fontSize={30} />,
   },
   {
@@ -24,7 +24,7 @@ const features = [
     summary: 'Take full page screenshots of all devices at once with a single click.',
     description:
       'You can also take screenshots of individual devices by clicking on the camera icon in the device toolbar. And a quick screenshot of the viewport too.',
-    video: '/assets/videos/screenshot.mp4',
+    video: 'https://responsively-org.github.io/responsively-app/assets/video/screenshot.mp4',
     icon: <Icon icon="ph:camera" fontSize={30} />,
   },
   {
@@ -32,7 +32,7 @@ const features = [
     summary: 'In addition to the above, you get all the basic browser features.',
     description:
       'You get all the basic browser features like cookie management, local storage, session storage, bookmarks, etc. You can also use the devtools as in any browser.',
-    video: '/assets/videos/other-features.mp4',
+    video: 'https://responsively-org.github.io/responsively-app/assets/video/other-features.mp4',
     icon: <Icon icon="ph:browser" fontSize={30} />,
   },
 ];
