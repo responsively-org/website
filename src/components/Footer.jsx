@@ -7,7 +7,7 @@ import {Icon} from '@iconify/react';
 
 export function Footer() {
   return (
-    <footer className="relative z-10 mt-8 bg-slate-50">
+    <footer className="relative z-10 bg-slate-50">
       <Container>
         <div className="py-16">
           <Link href="/">
@@ -19,6 +19,7 @@ export function Footer() {
               <NavLink href="/#testimonials">Testimonials</NavLink>
               <NavLink href="/download">Download</NavLink>
               <NavLink href="/sponsor">Sponsor</NavLink>
+              <NavLink href="/blog">Blog</NavLink>
               <NavLink href="/join-discord">Join Discord</NavLink>
             </div>
           </nav>
@@ -50,7 +51,7 @@ export function Footer() {
               />
             </Link>
           </div>
-          <p className="mt-6 text-sm text-slate-500 sm:mt-0">
+          <p className="mt-6 text-center text-sm text-slate-500 sm:mt-0">
             Copyright &copy; {new Date().getFullYear()} Responsively App. All rights reserved.
           </p>
         </div>

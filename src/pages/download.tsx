@@ -71,7 +71,7 @@ export default function Download() {
             >
               <div className="flex flex-col px-8">
                 <span className="text-base">{version} - Changelog</span>
-                <span className="text-sm">Released {timeAgo.format(releaseTs)}</span>
+                <span className="text-xs">Released {timeAgo.format(releaseTs)}</span>
               </div>
             </Button>
           </p>
@@ -92,7 +92,12 @@ export default function Download() {
             />
           </div>
         </div>
-        <h1 className="my-4 mt-8 text-center font-display text-2xl tracking-tight sm:text-3xl md:text-4xl">
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center" aria-hidden="true">
+            <div className="w-full border-t border-slate-300" />
+          </div>
+        </div>
+        <h1 className="my-8 mt-8 text-center font-display text-2xl tracking-tight sm:text-3xl md:text-4xl">
           Thanks to our sponsors and contributors!
         </h1>
         <SponsorsAndContributors />
