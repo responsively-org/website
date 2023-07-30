@@ -137,6 +137,9 @@ export function PrimaryFeatures() {
                         <video
                           autoPlay
                           loop
+                          muted
+                          playsInline
+                          name="media"
                           sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
                         >
                           <source src={feature.video} />
