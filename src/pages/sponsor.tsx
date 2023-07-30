@@ -90,12 +90,10 @@ export default function Sponsor() {
           Thank you again for considering sponsoring Responsively App. Your support will help us
           continue to innovate and improve our app, and make a meaningful contribution to the
           open-source software development community.
-
         </p>
       </Container>
       <SponsorsAndContributors />
       <Footer />
-
     </>
   );
 }
