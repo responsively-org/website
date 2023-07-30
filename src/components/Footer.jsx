@@ -52,7 +52,9 @@ export function Footer() {
             </Link>
           </div>
           <p className="mt-6 text-center text-sm text-slate-500 sm:mt-0">
-            Copyright &copy; {new Date().getFullYear()} Responsively App. All rights reserved.
+            Copyright &copy; {new Date().getFullYear()} Responsively App. All rights reserved and
+            subject to the <Link href="/privacy-policy">Privacy Policy</Link> and{' '}
+            <Link href="/terms-and-conditions">Terms and Conditions</Link>.
           </p>
         </div>
       </Container>
