@@ -34,13 +34,13 @@ export default function Sponsor() {
         <div className="my-8 flex w-full justify-center gap-4">
           <Button
             href="https://github.com/sponsors/responsively-org"
-            onClick={() => plausible('sponsor-click', {props: {platform: 'github'}})}
+            onClick={() => plausible('sponsorClick', {props: {platform: 'github'}})}
           >
             GitHub Sponsors
           </Button>
           <Button
             href="https://opencollective.com/responsively"
-            onClick={() => plausible('sponsor-click', {props: {platform: 'openCollective'}})}
+            onClick={() => plausible('sponsorClick', {props: {platform: 'openCollective'}})}
           >
             Open Collective
           </Button>
