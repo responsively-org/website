@@ -1,6 +1,6 @@
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
-
+import {usePlausible} from 'next-plausible';
 import Head from 'next/head';
 
 import {Button} from '@/components/Button';
@@ -17,6 +17,7 @@ TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo('en-US');
 
 export default function Download() {
+  const plausible = usePlausible();
   const [macURL, setMacURL] = useState('');
   const [macIntelURL, setMacIntelURL] = useState('');
   const [winURL, setWinURL] = useState('');
@@ -76,10 +77,30 @@ export default function Download() {
             </Button>
           </p>
           <div className="mt-8 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button href={macURL}>Mac (Apple Silicon)</Button>
-            <Button href={macIntelURL}>Mac (Intel)</Button>
-            <Button href={winURL}>Windows</Button>
-            <Button href={linuxURL}>Linux</Button>
+            <Button
+              href={macURL}
+              onClick={() => plausible('appDownload', {props: {arch: 'mac-silicon'}})}
+            >
+              Mac (Apple Silicon)
+            </Button>
+            <Button
+              href={macIntelURL}
+              onClick={() => plausible('appDownload', {props: {arch: 'mac-intel'}})}
+            >
+              Mac (Intel)
+            </Button>
+            <Button
+              href={winURL}
+              onClick={() => plausible('appDownload', {props: {arch: 'windows'}})}
+            >
+              Windows
+            </Button>
+            <Button
+              href={linuxURL}
+              onClick={() => plausible('appDownload', {props: {arch: 'linux'}})}
+            >
+              Linux
+            </Button>
           </div>
 
           <div className="my-8">

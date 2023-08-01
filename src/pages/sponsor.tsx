@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import {usePlausible} from 'next-plausible';
 
 import {Button} from '@/components/Button';
 import {Header} from '@/components/Header';
@@ -9,6 +9,7 @@ import {BlurBG} from '@/components/BlurBG';
 import {SponsorsAndContributors} from '@/components/SponsorsAndContributors';
 
 export default function Sponsor() {
+  const plausible = usePlausible();
   return (
     <>
       <Head>
@@ -31,8 +32,18 @@ export default function Sponsor() {
           Sponsorships can be done through the following ways:
         </p>
         <div className="my-8 flex w-full justify-center gap-4">
-          <Button href="https://github.com/sponsors/responsively-org">GitHub Sponsors</Button>
-          <Button href="https://opencollective.com/responsively">Open Collective</Button>
+          <Button
+            href="https://github.com/sponsors/responsively-org"
+            onClick={() => plausible('sponsor-click', {props: {platform: 'github'}})}
+          >
+            GitHub Sponsors
+          </Button>
+          <Button
+            href="https://opencollective.com/responsively"
+            onClick={() => plausible('sponsor-click', {props: {platform: 'openCollective'}})}
+          >
+            Open Collective
+          </Button>
         </div>
         <p className="mt-4 text-base tracking-tight text-gray-500">
           Both recurring and one-time sponsorships are accepted. Recurring sponsorships are
