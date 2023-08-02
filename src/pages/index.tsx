@@ -27,6 +27,7 @@ export default function Home() {
           name="description"
           content="A dev-tool that aids faster and precise responsive web development."
         />
+        <link rel="canonical" href="https://responsively.app/" />
       </Head>
 
       <main className="relative">
