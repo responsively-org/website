@@ -44,12 +44,14 @@ export const SpecialSponsors = () => {
                 </li>
               ))}
               {groupIndex === 1 && (
-                <NavLink href="/sponsor">
-                  <div className="flex h-16 items-center gap-2 rounded-md font-medium text-gray-500 hover:text-gray-800">
-                    <Icon icon="ion:shapes" className="" fontSize={36} aria-label="Sponsor Us" />
-                    See your logo here
-                  </div>
-                </NavLink>
+                <li>
+                  <NavLink href="/sponsor">
+                    <div className="flex h-16 items-center gap-2 rounded-md font-medium text-gray-500 hover:text-gray-800">
+                      <Icon icon="ion:shapes" className="" fontSize={36} aria-label="Sponsor Us" />
+                      See your logo here
+                    </div>
+                  </NavLink>
+                </li>
               )}
             </ul>
           </li>
