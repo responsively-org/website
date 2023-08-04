@@ -1,9 +1,9 @@
-import {Tab} from '@headlessui/react';
+import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
 
-import {Container} from '@/components/Container';
-import {Key} from '@/components/Key';
-import {Icon} from '@iconify/react';
+import { Container } from '@/components/Container';
+import { Key } from '@/components/Key';
+import { Icon } from '@iconify/react';
 
 const features = [
   {
@@ -37,9 +37,9 @@ const features = [
   },
 ];
 
-function Feature({feature, isActive, className, ...props}) {
+function Feature({ feature, isActive, className, ...props }) {
   return (
-    <div className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')} {...props}>
+    <article className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')} {...props}>
       <div className={clsx('w-9 rounded-lg', isActive ? 'text-emerald-600' : '')}>
         {feature.icon}
       </div>
@@ -53,7 +53,7 @@ function Feature({feature, isActive, className, ...props}) {
       </h3>
       <p className="mt-2 font-display text-xl text-slate-900">{feature.summary}</p>
       <p className="mt-4 text-sm text-slate-600">{feature.description}</p>
-    </div>
+    </article>
   );
 }
 
@@ -66,17 +66,20 @@ function FeaturesMobile() {
           <div className="relative mt-10 pb-10">
             <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
             <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                name="media"
-                sizes="52.75rem"
-                className="w-full"
-              >
-                <source src={feature.video} />
-              </video>
+              <figure>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  name="media"
+                  sizes="52.75rem"
+                  className="w-full"
+                >
+                  <source src={feature.video} />
+                </video>
+                <figcaption className="sr-only">{feature.name}</figcaption>
+              </figure>
             </div>
           </div>
         </div>
@@ -88,7 +91,7 @@ function FeaturesMobile() {
 function FeaturesDesktop() {
   return (
     <Tab.Group as="div" className="hidden lg:mt-20 lg:block">
-      {({selectedIndex}) => (
+      {({ selectedIndex }) => (
         <>
           <Tab.List className="grid grid-cols-3 gap-x-8">
             {features.map((feature, featureIndex) => (
@@ -118,7 +121,7 @@ function FeaturesDesktop() {
                     'px-5 transition duration-500 ease-in-out [&:not(:focus-visible)]:focus:outline-none',
                     featureIndex !== selectedIndex && 'opacity-60'
                   )}
-                  style={{transform: `translateX(-${selectedIndex * 100}%)`}}
+                  style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
                   aria-hidden={featureIndex !== selectedIndex}
                 >
                   <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
@@ -145,16 +148,18 @@ export function SecondaryFeatures() {
       className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
+        <header className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             Not to miss the Nifty Utilities
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
             Embrace the power of our Versatile Utility Collection to make your life easier.
           </p>
+        </header>
+        <div>
+          <FeaturesMobile />
+          <FeaturesDesktop />
         </div>
-        <FeaturesMobile />
-        <FeaturesDesktop />
       </Container>
     </section>
   );
