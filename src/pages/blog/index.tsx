@@ -1,15 +1,13 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import {PostMeta, getSortedPostsData} from '../../lib/posts';
+import { PostMeta, getSortedPostsData } from '../../lib/posts';
 
-import {Button} from '@/components/Button';
-import {Header} from '@/components/Header';
-import {Footer} from '@/components/Footer';
-import {Container} from '@/components/Container';
-import {BlurBG} from '@/components/BlurBG';
-import {SponsorsAndContributors} from '@/components/SponsorsAndContributors';
-import {BlogPostTile} from '@/components/BlogPostTile';
-import {CarbonAds} from '@/components/CarbonAds';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { Container } from '@/components/Container';
+import { BlurBG } from '@/components/BlurBG';
+import { BlogPostTile } from '@/components/BlogPostTile';
+import { CarbonAds } from '@/components/CarbonAds';
+import { SkipToContent } from '@/components/SkipToContent';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -24,27 +22,34 @@ interface Props {
   allPostsData: PostMeta[];
 }
 
-export default function Blog({allPostsData}: Props) {
+export default function Blog({ allPostsData }: Props) {
   return (
     <>
       <Head>
-        <title>Support Responsively App</title>
+        <title>Responsively App Blog</title>
+        <meta name="description" content="Latest posts from the Responsively App blog" />
       </Head>
+
+      <SkipToContent />
 
       <div className="relative min-h-screen overflow-hidden">
         <Header />
         <BlurBG bgColor="none" bubbleType="2" />
         <Container className="relative mb-20 text-justify">
-          <h1 className="my-8 font-display text-3xl tracking-tight sm:text-4xl md:text-5xl">
-            Responsively Blog
-          </h1>
-          <div className="min-h-[50vh]">
-            <ul className="list-none">
-              {allPostsData.map(post => (
-                <BlogPostTile key={post.slug} post={post} />
-              ))}
-            </ul>
-          </div>
+          <main id="main-content">
+            <h1 className="my-8 font-display text-3xl tracking-tight sm:text-4xl md:text-5xl">
+              Responsively Blog
+            </h1>
+            <div className="min-h-[50vh]">
+              <ul className="list-none">
+                {allPostsData.map((post, index) => (
+                  <li key={post.slug}>
+                    <BlogPostTile post={post} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </main>
         </Container>
         <CarbonAds />
       </div>
@@ -52,3 +57,4 @@ export default function Blog({allPostsData}: Props) {
     </>
   );
 }
+

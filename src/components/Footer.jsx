@@ -3,14 +3,14 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
-import {Icon} from '@iconify/react';
+import { Icon } from '@iconify/react';
 
 export function Footer() {
   return (
     <footer className="relative z-10 bg-slate-50">
       <Container>
         <div className="py-16">
-          <Link href="/">
+          <Link href="/" aria-label='Home Page'>
             <Logo className="mx-auto h-10 w-auto" />
           </Link>
           <nav className="mt-10 text-sm" aria-label="quick links">
