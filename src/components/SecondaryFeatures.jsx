@@ -1,3 +1,6 @@
+import { useRef, memo } from 'react';
+import useIntersectionObserver from '@react-hook/intersection-observer'
+
 import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
 
@@ -124,11 +127,7 @@ function FeaturesDesktop() {
                   style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
                   aria-hidden={featureIndex !== selectedIndex}
                 >
-                  <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
-                    <video autoPlay loop muted playsInline name="media" sizes="52.75rem">
-                      <source src={feature.video} />
-                    </video>
-                  </div>
+                  <FeatureVideo feature={feature} />
                 </Tab.Panel>
               ))}
             </div>
@@ -139,6 +138,25 @@ function FeaturesDesktop() {
     </Tab.Group>
   );
 }
+
+const FeatureVideo = memo(function FeatureVideo({ feature }) {
+  const containerRef = useRef()
+  const lockRef = useRef(false)
+  const { isIntersecting } = useIntersectionObserver(containerRef)
+  if (isIntersecting) {
+    lockRef.current = true
+  }
+
+  return (
+    <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10" ref={containerRef}>
+      {lockRef.current && (
+        <video autoPlay loop muted playsInline name="media" sizes="52.75rem">
+          <source src={feature.video} />
+        </video>
+      )}
+    </div>
+  )
+});
 
 export function SecondaryFeatures() {
   return (
