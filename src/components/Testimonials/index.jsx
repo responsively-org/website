@@ -27,6 +27,7 @@ const tweets = [
   '1660872526434652162',
   '1645844479390384132',
   '1400212191857442817',
+  '1696537206347952248',
 ];
 
 export function Testimonials() {
@@ -46,26 +47,13 @@ export function Testimonials() {
           </p>
         </div>
       </Container>
-      <ul
-        role="list"
-        className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 px-8 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
-      >
-        {[0, 1, 2, 4, 5].map((column, columnIndex) => (
-          <li key={columnIndex}>
-            <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
-              {tweets.map((tweetId, idx) => {
-                if (idx % 5 === columnIndex) {
-                  return (
-                    <li key={tweetId}>
-                      <Tweet id={tweetId} />
-                    </li>
-                  );
-                }
-              })}
-            </ul>
-          </li>
-        ))}
-      </ul>
+      <div className="mx-auto mt-16 max-w-2xl px-8 sm:px-8 lg:mt-20 lg:max-w-none">
+      <div className="masonry sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 column-gap-6">
+        {tweets.map((tweetId) => (
+          <Tweet key={tweetId} id={tweetId} />
+        ))}  
+      </div>
+    </div>
     </section>
   );
 }
