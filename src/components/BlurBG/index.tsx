@@ -132,7 +132,7 @@ const bubblesMap: {[key: string]: JSX.Element} = {
 export const BlurBG = ({bgColor = 'bg-emerald-500', bubbleType = '2', height = ''}: Props) => {
   return (
     <div
-      className={clsx('absolute top-0 w-full overflow-hidden', {
+      className={clsx('absolute top-0 h-screen w-full overflow-hidden md:h-full', {
         [bgColor]: !!bgColor,
         height: !!height,
       })}
