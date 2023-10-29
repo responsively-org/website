@@ -102,7 +102,7 @@ export function PrimaryFeatures() {
                             'font-display text-lg [&:not(:focus-visible)]:focus:outline-none',
                             selectedIndex === featureIndex
                               ? 'text-emerald-600 lg:text-white'
-                              : 'text-emerald-100 hover:text-white lg:text-white'
+                              : 'text-emerald-300 hover:text-white lg:text-white'
                           )}
                         >
                           <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none" />
