@@ -25,6 +25,7 @@ interface Props {
 }
 
 export default function BlogPost({ post }: Props) {
+  console.log('post', post.coverImg);
   return (
     <>
       <Head>
@@ -42,9 +43,14 @@ export default function BlogPost({ post }: Props) {
             <h1 className="my-8 font-display text-3xl tracking-tight sm:text-4xl md:text-5xl">
               {post.title}
             </h1>
+
             <div className="flex justify-between">
               <div className="flex gap-4">
-                <img src={post.authorPic} alt={post.author} className="h-10 w-10 rounded-full bg-gray-50" />
+                <img
+                  src={post.authorPic}
+                  alt={post.author}
+                  className="h-10 w-10 rounded-full bg-gray-50"
+                />
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-gray-900">
                     <a href={post.authorTwitterUrl}>
@@ -64,9 +70,12 @@ export default function BlogPost({ post }: Props) {
                 </time>
               </div>
             </div>
-            <CarbonAds />
-            <article className="prose prose-slate lg:prose-xl">
-              <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+            {post.coverImg != null ? (
+              <img src={post.coverImg} alt="" className="my-4 w-full" />
+            ) : null}
+            {/* <CarbonAds /> */}
+            <article className="prose prose-slate mx-auto lg:prose-xl">
+              <div dangerouslySetInnerHTML={{__html: post.contentHtml}} />
             </article>
           </main>
         </Container>
@@ -75,4 +84,3 @@ export default function BlogPost({ post }: Props) {
     </>
   );
 }
-

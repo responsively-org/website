@@ -41,7 +41,7 @@ export default function Blog({ allPostsData }: Props) {
               Responsively Blog
             </h1>
             <div className="min-h-[50vh]">
-              <ul className="list-none">
+              <ul className="flex list-none flex-col gap-8">
                 {allPostsData.map((post, index) => (
                   <li key={post.slug}>
                     <BlogPostTile post={post} />
@@ -57,4 +57,3 @@ export default function Blog({ allPostsData }: Props) {
     </>
   );
 }
-

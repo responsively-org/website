@@ -15,6 +15,7 @@ export type PostMeta = {
   author: string;
   authorPic: string;
   authorTwitterUrl: string;
+  coverImg?: string;
 };
 
 export type Post = PostMeta & {
