@@ -31,6 +31,23 @@ export default function BlogPost({ post }: Props) {
       <Head>
         <title>{post.title} - Responsively App Blog</title>
         <meta name="description" content={`Read ${post.title} on the Responsively App Blog`} />
+        <meta property="og:title" content={`${post.title} - Responsively App Blog`} />
+        <meta
+          property="og:description"
+          content={`Read ${post.title} on the Responsively App Blog`}
+        />
+        <meta property="og:image" content={post.coverImg} />
+        <meta property="og:url" content={`https://responsively.app/blog/${post.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:site" content="@ResponsivelyApp" />
+        <meta property="twitter:creator" content="@ResponsivelyApp" />
+        <meta property="twitter:title" content={`${post.title} - Responsively App Blog`} />
+        <meta
+          property="twitter:description"
+          content={`Read ${post.title} on the Responsively App Blog`}
+        />
+        <meta property="twitter:image" content={post.coverImg} />
       </Head>
 
       <SkipToContent />
