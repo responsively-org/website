@@ -100,7 +100,7 @@ export const SponsorsAndContributors = () => {
             🏆
           </span>
         </h3>
-        <div className="my-8 flex items-center justify-center">
+        <div className="my-8 flex flex-col items-center justify-center lg:flex-row">
           <a
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
@@ -116,6 +116,14 @@ export const SponsorsAndContributors = () => {
             href="https://www.bairesdev.com/?ref=Responsively"
           >
             <img src="/assets/img/logos/baires-dev.svg" alt="BairesDev" width="264" />
+          </a>
+          <a
+            className="flex h-32 items-center rounded-xl p-5"
+            target="__blank"
+            rel="noreferrer"
+            href="https://www.browserstack.com/?utm_source=responsively&utm_medium=partnered&ref=responsively_browser-source"
+          >
+            <img src="/assets/img/logos/browserStack.svg" alt="BrowserStack" width="264" />
           </a>
           <a
             className="flex h-28 items-center rounded-xl bg-indigo-50 p-5"

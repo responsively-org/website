@@ -1,9 +1,10 @@
 import logoBairesDev from '@/images/logos/bairesdev.svg';
+import logoBrowserStack from '@/images/logos/browserStack.svg';
 import logoGitHub from '@/images/logos/github.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Icon } from '@iconify/react';
-import { NavLink } from '../NavLink';
+import {Icon} from '@iconify/react';
+import {NavLink} from '../NavLink';
 
 const sponsors = [
   [
@@ -20,7 +21,14 @@ const sponsors = [
       url: 'https://www.bairesdev.com/?ref=Responsively',
     },
   ],
-]
+  [
+    {
+      name: 'BrowserStack',
+      logo: logoBrowserStack,
+      url: 'https://www.browserstack.com/?utm_source=responsively&utm_medium=partnered&ref=responsively_browser-source',
+    },
+  ],
+];
 
 export const SpecialSponsors = () => {
   return (
@@ -28,13 +36,13 @@ export const SpecialSponsors = () => {
       <p className="font-display text-base text-slate-900">Supported by these amazing sponsors</p>
       <ul
         role="list"
-        className="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
+        className="mt-8 flex flex-col items-center justify-center gap-8 sm:gap-x-0 sm:gap-y-10 lg:flex-row xl:flex-row xl:gap-x-12 xl:gap-y-0"
       >
         {sponsors.map((group, groupIndex) => (
           <li key={groupIndex}>
             <ul
               role="list"
-              className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0"
+              className="flex flex-col items-center gap-y-8 sm:gap-x-12 sm:gap-y-0 md:flex-row"
             >
               {group.map(company => (
                 <li key={company.name} className="flex rounded">
@@ -43,22 +51,18 @@ export const SpecialSponsors = () => {
                   </Link>
                 </li>
               ))}
-              {groupIndex === 1 && (
-                <li>
-                  <NavLink href="/sponsor">
-                    <div className="flex h-16 items-center gap-2 rounded-md font-medium text-gray-500 hover:text-gray-800">
-                      <Icon icon="ion:shapes" className="" fontSize={36} aria-label="Sponsor Us" />
-                      See your logo here
-                    </div>
-                  </NavLink>
-                </li>
-              )}
             </ul>
           </li>
         ))}
+        <li>
+          <NavLink href="/sponsor">
+            <div className="flex h-16 items-center gap-2 rounded-md font-medium text-gray-500 hover:text-gray-800">
+              <Icon icon="ion:shapes" className="" fontSize={36} aria-label="Sponsor Us" />
+              See your logo here
+            </div>
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
 };
-
-
