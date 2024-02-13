@@ -1,25 +1,28 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
-import {CallToAction} from '@/components/CallToAction';
-import {Faqs} from '@/components/Faqs';
-import {Footer} from '@/components/Footer';
-import {Header} from '@/components/Header';
-import {Hero} from '@/components/Hero';
-import {PrimaryFeatures} from '@/components/PrimaryFeatures';
-import {SecondaryFeatures} from '@/components/SecondaryFeatures';
-import {Testimonials} from '@/components/Testimonials';
-import {BlurBG} from '@/components/BlurBG';
+import backgroundSVG from '@/images/background-hero.svg';
+
+import { CallToAction } from '@/components/CallToAction';
+import { Faqs } from '@/components/Faqs';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { Hero } from '@/components/Hero';
+import { PrimaryFeatures } from '@/components/PrimaryFeatures';
+import { SecondaryFeatures } from '@/components/SecondaryFeatures';
+import { Testimonials } from '@/components/Testimonials';
 
 export default function Home() {
   return (
     <div className="relative">
-      {/* <Image
-        className="absolute top-0 max-w-none -translate-y-1/4"
-        src={backgroundImage}
+      <Image
+        className="absolute top-0 w-full"
+        src={backgroundSVG}
         alt=""
-        style={{objectFit: 'cover', objectPosition: 'center'}}
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
         unoptimized
-      /> */}
+        priority
+      />
 
       <Head>
         <title>Responsively App - A web developer's browser</title>
@@ -32,7 +35,6 @@ export default function Home() {
 
       <main className="relative">
         <div className="relative">
-          <BlurBG bgColor="none" bubbleType="2" />
           <div className="relative z-10">
             <Header />
             <Hero />
