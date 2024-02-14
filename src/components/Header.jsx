@@ -1,16 +1,16 @@
-import {Fragment} from 'react';
+import { Fragment } from 'react';
 import Link from 'next/link';
-import {Popover, Transition} from '@headlessui/react';
+import { Popover, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 
-import {Button} from '@/components/Button';
-import {Container} from '@/components/Container';
-import {Logo} from '@/components/Logo';
-import {NavLink} from '@/components/NavLink';
-import {Icon, InlineIcon} from '@iconify/react';
-import {StarButton} from './StarButton';
+import { Button } from '@/components/Button';
+import { Container } from '@/components/Container';
+import { Logo } from '@/components/Logo';
+import { NavLink } from '@/components/NavLink';
+import { Icon, InlineIcon } from '@iconify/react';
+import { StarButton } from './StarButton';
 
-function MobileNavLink({href, children}) {
+function MobileNavLink({ href, children }) {
   return (
     <Popover.Button as={Link} href={href} className="block w-full p-2">
       {children}
@@ -18,7 +18,7 @@ function MobileNavLink({href, children}) {
   );
 }
 
-function MobileNavIcon({open}) {
+function MobileNavIcon({ open }) {
   return (
     <svg
       aria-hidden="true"
@@ -46,7 +46,7 @@ function MobileNavigation() {
         className="relative z-10 flex h-8 w-8 items-center justify-center [&:not(:focus-visible)]:focus:outline-none"
         aria-label="Toggle Navigation"
       >
-        {({open}) => <MobileNavIcon open={open} />}
+        {({ open }) => <MobileNavIcon open={open} />}
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
