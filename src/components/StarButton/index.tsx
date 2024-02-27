@@ -10,7 +10,10 @@ export const StarButton = () => {
     fetch('https://api.github.com/repos/responsively-org/responsively-app')
       .then(response => response.json())
       .then(data => {
-        setCount(data.stargazers_count);
+        // If the rate limit is exceeded, verify that no counts are returned
+        if (data.stargazers_count) {
+          setCount(data.stargazers_count);
+        }
       })
       .catch(error => {
         console.error('Error while getting the star count:', error);
