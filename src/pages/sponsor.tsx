@@ -46,7 +46,7 @@ export default function Sponsor() {
               className='p-2'
               src={GitHubLogo}
               alt="GitHub Sponsors"
-              width={72}
+              width={64}
               height={64}
             />
             <Button
