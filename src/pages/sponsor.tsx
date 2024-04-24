@@ -1,12 +1,18 @@
 import Head from 'next/head';
-import {usePlausible} from 'next-plausible';
+import { usePlausible } from 'next-plausible';
 
-import {Button} from '@/components/Button';
-import {Header} from '@/components/Header';
-import {Footer} from '@/components/Footer';
-import {Container} from '@/components/Container';
-import {BlurBG} from '@/components/BlurBG';
-import {SponsorsAndContributors} from '@/components/SponsorsAndContributors';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { Button } from '@/components/Button';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { Container } from '@/components/Container';
+import { BlurBG } from '@/components/BlurBG';
+import { SponsorsAndContributors } from '@/components/SponsorsAndContributors';
+
+import GitHubLogo from '@/images/logos/github-white.png';
+import OpenCollectiveLogo from '@/images/logos/open-collective.png';
 
 export default function Sponsor() {
   const plausible = usePlausible();
@@ -31,19 +37,44 @@ export default function Sponsor() {
         <p className="mt-4 text-base tracking-tight text-gray-500">
           Sponsorships can be done through the following ways:
         </p>
-        <div className="my-8 flex w-full justify-center gap-4">
-          <Button
+        <div className="my-8 flex flex-wrap w-full justify-center gap-4">
+          <Link
+            className='flex w-96 sm:w-1/3 md:w-1/4 h-16 bg-zinc-900 rounded-xl shadow-lg hover:shadow-xl'
             href="https://github.com/sponsors/responsively-org"
-            onClick={() => plausible('sponsorClick', {props: {platform: 'github'}})}
           >
-            GitHub Sponsors
-          </Button>
-          <Button
+            <Image
+              className='p-2'
+              src={GitHubLogo}
+              alt="GitHub Sponsors"
+              width={64}
+              height={64}
+            />
+            <Button
+              className='bg-transparent hover:bg-transparent active:bg-transparent'
+              onClick={() => plausible('sponsorClick', { props: { platform: 'github' } })}
+            >
+              GitHub Sponsors
+            </Button>
+          </Link>
+
+          <Link
+            className='flex w-96 sm:w-1/3 md:w-1/4 h-16 bg-zinc-900 rounded-xl shadow-lg hover:shadow-xl'
             href="https://opencollective.com/responsively"
-            onClick={() => plausible('sponsorClick', {props: {platform: 'openCollective'}})}
           >
-            Open Collective
-          </Button>
+            <Image
+              className='p-2'
+              src={OpenCollectiveLogo}
+              alt="GitHub Sponsors"
+              width={64}
+              height={64}
+            />
+            <Button
+              className='bg-transparent hover:bg-transparent active:bg-transparent'
+              onClick={() => plausible('sponsorClick', { props: { platform: 'github' } })}
+            >
+              Open Collective
+            </Button>
+          </Link>
         </div>
         <p className="mt-4 text-base tracking-tight text-gray-500">
           Both recurring and one-time sponsorships are accepted. Recurring sponsorships are

@@ -1,13 +1,13 @@
-import { useEffect, useState, useRef, memo } from 'react'
-import useIntersectionObserver from '@react-hook/intersection-observer'
+import {useEffect, useState, useRef, memo} from 'react';
+import useIntersectionObserver from '@react-hook/intersection-observer';
 
-import Image from 'next/image'
-import { Tab } from '@headlessui/react'
-import clsx from 'clsx'
+import Image from 'next/image';
+import {Tab} from '@headlessui/react';
+import clsx from 'clsx';
 
-import { Container } from '@/components/Container';
+import {Container} from '@/components/Container';
 import allDevicesSideBySide from '@/images/screenshots/all-devices-side-by-side.png';
-import { BlurBG } from './BlurBG';
+import {BlurBG} from './BlurBG';
 
 const features = [
   {
@@ -43,7 +43,7 @@ export function PrimaryFeatures() {
   useEffect(() => {
     let lgMediaQuery = window.matchMedia('(min-width: 1024px)');
 
-    function onMediaQueryChange({ matches }) {
+    function onMediaQueryChange({matches}) {
       setTabOrientation(matches ? 'vertical' : 'horizontal');
     }
 
@@ -76,7 +76,7 @@ export function PrimaryFeatures() {
           className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
           vertical={tabOrientation === 'vertical'}
         >
-          {({ selectedIndex }) => (
+          {({selectedIndex}) => (
             <>
               <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 md:overflow-x-auto md:px-2 lg:col-span-5">
                 <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
@@ -138,38 +138,84 @@ export function PrimaryFeatures() {
   );
 }
 
-const FeatureMedia = memo(function FeatureMedia({ feature }) {
-  const containerRef = useRef()
-  const lockRef = useRef(false)
-  const { isIntersecting } = useIntersectionObserver(containerRef)
+const FeatureMedia = memo(function FeatureMedia({feature}) {
+  const containerRef = useRef();
+  const lockRef = useRef(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const {isIntersecting} = useIntersectionObserver(containerRef);
   if (isIntersecting) {
-    lockRef.current = true
+    lockRef.current = true;
   }
 
+  useEffect(() => {
+    if (lockRef.current) {
+      setIsLoading(false);
+    }
+  }, [isIntersecting]);
+
+  const handleVideoLoading = () => {
+    setIsLoading(false);
+  };
+
   return (
-    <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-emerald-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]" ref={containerRef}>
-      {lockRef.current && (
-        feature.video ? (
+    <div
+      className="3xl:w-[67.8125rem] mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-emerald-900/20 sm:w-auto lg:mt-0 lg:w-[63.8125rem]"
+      ref={containerRef}
+    >
+      {lockRef.current &&
+        (isLoading ? (
+          <div className="video-skeleton h-[45rem]">
+            <div className="loadingContent flex h-full flex-col items-center justify-center">
+              <div className="loadingSpinner">
+                <svg
+                  className="h-16 w-16 animate-spin text-black"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V2.83a1 1 0 012 0V4a8 8 0 018 8h2.83a1 1 0 010 2H20a8 8 0 01-8 8v2.83a1 1 0 01-2 0V20a8 8 0 01-8-8H4a1 1 0 010-2H2.83a1 1 0 010-2H4z"
+                  />
+                </svg>
+              </div>
+              <div className="loadingMessage my-2 w-1/2 rounded-lg p-5 text-center">
+                <p className="animate-pulse text-3xl font-bold uppercase text-emerald-500">
+                  Loading
+                </p>
+              </div>
+            </div>
+          </div> // Skeleton loader
+        ) : feature.video ? (
           <video
             autoPlay
             loop
             muted
             playsInline
+            onLoadedData={handleVideoLoading}
             name="media"
             sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
           >
-            <source src={feature.video} />
+            <source src={feature.video} type="video/mp4" /> // Assuming MP4 type
           </video>
         ) : (
           <Image
             className="w-full"
             src={feature.image}
-            alt=""
+            alt="Feature visual"
             priority
             sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
           />
-        )
-      )}
+        ))}
     </div>
-  )
+  );
 });
