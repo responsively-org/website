@@ -1,6 +1,6 @@
-import {Icon} from '@iconify/react';
-import {NavLink} from '../NavLink';
-import {useEffect, useState} from 'react';
+import { Icon } from '@iconify/react';
+import { NavLink } from '../NavLink';
+import { useEffect, useState } from 'react';
 
 export const StarButton = () => {
   const [count, setCount] = useState<number>(20400);
@@ -30,7 +30,7 @@ export const StarButton = () => {
           <Icon
             icon="material-symbols:star-outline-rounded"
             fontSize={22}
-            className="origin-center transition-transform duration-300 group-hover:scale-125"
+            className="origin-center transition-transform duration-300 group-hover:scale-125 hover:text-yellow-400"
           />
           {count.toLocaleString()} Stars
         </span>
