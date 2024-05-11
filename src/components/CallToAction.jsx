@@ -1,8 +1,8 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import backgroundImage from '@/images/background-call-to-action.jpg'
+import {Button} from '@/components/Button';
+import {Container} from '@/components/Container';
+import backgroundImage from '@/images/background-call-to-action.jpg';
 import {BlurBG} from './BlurBG';
 
 // Responsively APP
@@ -27,8 +27,13 @@ export function CallToAction() {
           <p className="mt-4 text-lg tracking-tight text-white">
             Time to kick off your journey towards Web Development Mastery.
           </p>
-          <Button href="/download" color="white" className="mt-10">
-            Download Now
+          <Button
+            variant="solid"
+            color="white"
+            className="mt-10 rounded-md px-10 py-2 text-lg font-semibold uppercase !text-emerald-500"
+            href="/download"
+          >
+            Begin the Magic
           </Button>
         </div>
       </Container>
