@@ -33,6 +33,7 @@ export function CallToAction() {
             className="mt-10 rounded-md px-10 py-2 text-lg font-semibold uppercase !text-emerald-500"
             href="/download"
           >
+            
             Download Now
           </Button>
         </div>
