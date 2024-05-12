@@ -86,7 +86,7 @@ export default function Download() {
               <Icon
                 icon={'ic:baseline-apple'}
                 fontSize={22}
-                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125 hover:text-gray-900"
+                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125"
               />
               Mac (Apple Silicon)
             </Button>
@@ -99,7 +99,7 @@ export default function Download() {
               <Icon
                 icon={'ic:baseline-apple'}
                 fontSize={22}
-                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125 hover:text-gray-900"
+                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125"
               />
               Mac (Intel)
             </Button>
@@ -112,7 +112,7 @@ export default function Download() {
               <Icon
                 icon={'cib:windows'}
                 fontSize={22}
-                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125 hover:text-gray-900"
+                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125"
               />
               Windows
             </Button>
@@ -125,7 +125,7 @@ export default function Download() {
               <Icon
                 icon={'cib:linux'}
                 fontSize={22}
-                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125 hover:text-gray-900"
+                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125"
               />
               Linux
             </Button>
