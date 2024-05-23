@@ -34,7 +34,9 @@ export default function Download() {
           (asset: any) => asset.name.endsWith('.dmg') && !asset.name.endsWith('-arm64.dmg')
         );
         const win = data.assets.find((asset: any) => asset.name.endsWith('.exe'));
-        const linux = data.assets.find((asset: any) => asset.name.endsWith('.AppImage'));
+        const linux = data.assets.find(
+          (asset: any) => asset.name.endsWith('.AppImage') && asset.name.indexOf('arm') === -1
+        );
 
         setMacURL(macArm64.browser_download_url);
         setMacIntelURL(macIntel.browser_download_url);
