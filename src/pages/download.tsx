@@ -1,17 +1,18 @@
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
-import {usePlausible} from 'next-plausible';
+import { usePlausible } from 'next-plausible';
 import Head from 'next/head';
 
-import {Button} from '@/components/Button';
-import {Header} from '@/components/Header';
-import {Footer} from '@/components/Footer';
-import {Container} from '@/components/Container';
-import {BlurBG} from '@/components/BlurBG';
-import {useEffect, useState} from 'react';
+import { Button } from '@/components/Button';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { Container } from '@/components/Container';
+import { BlurBG } from '@/components/BlurBG';
+import { useEffect, useState } from 'react';
 import allDevicesSideBySide from '@/images/screenshots/all-devices-side-by-side.png';
 import Image from 'next/image';
-import {SponsorsAndContributors} from '@/components/SponsorsAndContributors';
+import { SponsorsAndContributors } from '@/components/SponsorsAndContributors';
+import { Icon } from '@iconify/react';
 
 TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo('en-US');
@@ -81,26 +82,53 @@ export default function Download() {
           <div className="mt-8 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
             <Button
               href={macURL}
-              onClick={() => plausible('appDownload', {props: {arch: 'mac-silicon'}})}
+              onClick={() => plausible('appDownload', { props: { arch: 'mac-silicon' } })}
+              className='flex items-center gap-1'
             >
+              <Icon
+                icon={'ic:baseline-apple'}
+                fontSize={22}
+                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125"
+              />
               Mac (Apple Silicon)
             </Button>
             <Button
               href={macIntelURL}
-              onClick={() => plausible('appDownload', {props: {arch: 'mac-intel'}})}
+              onClick={() => plausible('appDownload', { props: { arch: 'mac-intel' } })}
+              className='flex items-center gap-1'
+
             >
+              <Icon
+                icon={'ic:baseline-apple'}
+                fontSize={22}
+                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125"
+              />
               Mac (Intel)
             </Button>
             <Button
               href={winURL}
-              onClick={() => plausible('appDownload', {props: {arch: 'windows'}})}
+              onClick={() => plausible('appDownload', { props: { arch: 'windows' } })}
+              className='flex items-center gap-1'
+
             >
+              <Icon
+                icon={'cib:windows'}
+                fontSize={22}
+                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125"
+              />
               Windows
             </Button>
             <Button
               href={linuxURL}
-              onClick={() => plausible('appDownload', {props: {arch: 'linux'}})}
+              onClick={() => plausible('appDownload', { props: { arch: 'linux' } })}
+              className='flex items-center gap-1'
+
             >
+              <Icon
+                icon={'cib:linux'}
+                fontSize={22}
+                className="origin-center mx-0.5 transition-transform duration-300 group-hover:scale-125"
+              />
               Linux
             </Button>
           </div>

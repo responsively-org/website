@@ -48,7 +48,13 @@ export function Hero() {
         too! 🎉
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/download">Download Now</Button>
+        <Button
+          variant="outline"
+          className="rounded-md border-[1px]  border-emerald-500 bg-transparent px-10 py-2 text-xl font-semibold shadow-sm shadow-emerald-500 hover:bg-emerald-500 hover:text-white"
+          href="/download"
+        >
+          Start Your Journey
+        </Button>
         {/* <Button variant="outline">
           <Icon icon="akar-icons:github-fill" className="h-5 w-5" />
           <span className="ml-3">Learn More</span>
