@@ -1,5 +1,5 @@
-import logoBairesDev from '@/images/logos/bairesdev.svg';
-import logoBrowserStack from '@/images/logos/browserStack.svg';
+import logoKOptional from '@/images/logos/k-optional.png';
+// import logoBrowserStack from '@/images/logos/browserStack.svg';
 import logoGitHub from '@/images/logos/github.png';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,22 +12,25 @@ const sponsors = [
       name: 'GitHub',
       logo: logoGitHub,
       url: 'https://accelerator.github.com/#:~:text=responsively%2Dorg/responsively%2Dapp',
+      width: 224,
     },
   ],
   [
     {
-      name: 'Baires Dev',
-      logo: logoBairesDev,
-      url: 'https://www.bairesdev.com/?ref=Responsively',
+      name: 'K-Optional Software',
+      logo: logoKOptional,
+      url: 'https://koptional.com/?ref=Responsively',
+      width: 200,
     },
   ],
-  [
-    {
-      name: 'BrowserStack',
-      logo: logoBrowserStack,
-      url: 'https://www.browserstack.com/?utm_source=responsively&utm_medium=partnered&ref=responsively_browser-source',
-    },
-  ],
+  // [
+  //   {
+  //     name: 'BrowserStack',
+  //     logo: logoBrowserStack,
+  //     url: 'https://www.browserstack.com/?utm_source=responsively&utm_medium=partnered&ref=responsively_browser-source',
+  //     width: 224,
+  //   },
+  // ],
 ];
 
 export const SpecialSponsors = () => {
@@ -47,7 +50,12 @@ export const SpecialSponsors = () => {
               {group.map(company => (
                 <li key={company.name} className="flex rounded">
                   <Link href={company.url} target="_blank" aria-label={`Visit ${company.name}`}>
-                    <Image src={company.logo} alt={company.name} unoptimized width={224} />
+                    <Image
+                      src={company.logo}
+                      alt={company.name}
+                      unoptimized
+                      width={company.width}
+                    />
                   </Link>
                 </li>
               ))}

@@ -43,12 +43,7 @@ export const SponsorsAndContributors = () => {
 
       const allSponsors = sponsors
         .flat()
-        .filter(
-          sponsor =>
-            sponsor.role === 'BACKER' &&
-            sponsor.profile !== 'https://opencollective.com/bairesdev' &&
-            sponsor.name !== 'Guest'
-        )
+        .filter(sponsor => sponsor.role === 'BACKER' && sponsor.name !== 'Guest')
         .map(sponsor => ({
           profile: sponsor.profile,
           name: sponsor.name,
@@ -113,9 +108,9 @@ export const SponsorsAndContributors = () => {
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
             rel="noreferrer"
-            href="https://www.bairesdev.com/?ref=Responsively"
+            href="https://koptional.com/?ref=Responsively"
           >
-            <img src="/assets/img/logos/baires-dev.svg" alt="BairesDev" width="264" />
+            <img src="/assets/img/logos/k-optional.png" alt="K-Optional Software" width="208" />
           </a>
           <a
             className="flex h-32 items-center rounded-xl p-5"
