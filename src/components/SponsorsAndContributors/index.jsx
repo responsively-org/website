@@ -37,9 +37,14 @@ export const SponsorsAndContributors = () => {
     // Get Sponsors from GitHub API and Open Collective API and merge them and sort them by amount donated (descending)
     // and then by name (ascending) and then set the state allSponsors.
     (async () => {
-      const sponsors = await fetch('https://opencollective.com/responsively/members.json').then(
-        response => response.json()
-      );
+      const [sponsors, githubSponsors] = await Promise.all([
+        fetch('https://opencollective.com/responsively/members.json').then(response =>
+          response.json()
+        ),
+        fetch('https://ghs.vercel.app/v3/sponsors/responsively-org')
+          .then(response => response.json())
+          .then(response => [...response.sponsors.current, ...response.sponsors.past]),
+      ]);
 
       const allSponsors = sponsors
         .flat()
@@ -62,22 +67,15 @@ export const SponsorsAndContributors = () => {
           return a.name.localeCompare(b.name);
         });
 
-      allSponsors.push(
-        {
-          image: 'https://avatars.githubusercontent.com/u/11783457?v=4',
-          name: 'Daniel Einars',
-          profile: 'https://github.com/polaroidkidd',
-          amount: 10,
-          lastDonation: new Date('2023-03-01').getTime(),
-        },
-        {
-          image: 'https://avatars.githubusercontent.com/u/25272108?v=4',
-          name: 'Trista Lanette Pollard',
-          profile: 'https://github.com/tlanettepollard',
-          amount: 50,
-          lastDonation: new Date('2023-02-12').getTime(),
-        }
-      );
+      for (const sponsor of githubSponsors) {
+        allSponsors.push({
+          profile: `https://github.com/${sponsor.username}`,
+          name: sponsor.username,
+          image: sponsor.avatar,
+          amount: 0,
+          lastDonation: 0,
+        });
+      }
       setAllSponsors(allSponsors);
     })();
   }, []);
