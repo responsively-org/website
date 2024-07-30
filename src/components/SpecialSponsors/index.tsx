@@ -1,5 +1,5 @@
 import logoKOptional from '@/images/logos/k-optional.png';
-// import logoBrowserStack from '@/images/logos/browserStack.svg';
+import logoBrowserStack from '@/images/logos/browserStack.svg';
 import logoGitHub from '@/images/logos/github.png';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -23,14 +23,14 @@ const sponsors = [
       width: 200,
     },
   ],
-  // [
-  //   {
-  //     name: 'BrowserStack',
-  //     logo: logoBrowserStack,
-  //     url: 'https://www.browserstack.com/?utm_source=responsively&utm_medium=partnered&ref=responsively_browser-source',
-  //     width: 224,
-  //   },
-  // ],
+  [
+    {
+      name: 'BrowserStack',
+      logo: logoBrowserStack,
+      url: 'https://www.browserstack.com/?utm_source=responsively&utm_medium=partnered&ref=responsively_browser-source',
+      width: 224,
+    },
+  ],
 ];
 
 export const SpecialSponsors = () => {
