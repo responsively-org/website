@@ -22,6 +22,7 @@ export default function Download() {
   const [macIntelURL, setMacIntelURL] = useState('');
   const [winURL, setWinURL] = useState('');
   const [linuxURL, setLinuxURL] = useState('');
+  const [linuxArm64URL, setLinuxArm64URL] = useState('');
   const [version, setVersion] = useState('');
   const [releaseTs, setReleaseTs] = useState<number>(1690638240);
 
@@ -37,11 +38,15 @@ export default function Download() {
         const linux = data.assets.find(
           (asset: any) => asset.name.endsWith('.AppImage') && asset.name.indexOf('arm') === -1
         );
+        const linuxArm64 = data.assets.find(
+          (asset: any) => asset.name.endsWith('.AppImage') && asset.name.indexOf('arm') !== -1
+        );
 
         setMacURL(macArm64.browser_download_url);
         setMacIntelURL(macIntel.browser_download_url);
         setWinURL(win.browser_download_url);
         setLinuxURL(linux.browser_download_url);
+        setLinuxArm64URL(linuxArm64.browser_download_url);
         setVersion(data.tag_name);
         setReleaseTs(new Date(data.published_at).getTime());
       })
@@ -101,7 +106,13 @@ export default function Download() {
               href={linuxURL}
               onClick={() => plausible('appDownload', {props: {arch: 'linux'}})}
             >
-              Linux
+              Linux (x64)
+            </Button>
+            <Button
+              href={linuxArm64URL}
+              onClick={() => plausible('appDownload', {props: {arch: 'linux-arm64'}})}
+            >
+              Linux (arm64)
             </Button>
           </div>
 
