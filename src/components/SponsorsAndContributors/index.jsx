@@ -106,9 +106,9 @@ export const SponsorsAndContributors = () => {
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
             rel="noreferrer"
-            href="https://koptional.com/?ref=Responsively"
+            href="https://www.syncfusion.com/?utm_source=responsivelyapp&utm_medium=cpc&utm_campaign=responsivelyapp_esee_banaug24"
           >
-            <img src="/assets/img/logos/k-optional.png" alt="K-Optional Software" width="208" />
+            <img src="/assets/img/logos/syncfusion.png" alt="Syncfusion" width="264" />
           </a>
           <a
             className="flex h-32 items-center rounded-xl p-5"

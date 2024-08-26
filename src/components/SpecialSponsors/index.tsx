@@ -1,4 +1,4 @@
-import logoKOptional from '@/images/logos/k-optional.png';
+import logoSyncfusion from '@/images/logos/syncfusion.png';
 import logoBrowserStack from '@/images/logos/browserStack.svg';
 import logoGitHub from '@/images/logos/github.png';
 import Image from 'next/image';
@@ -17,10 +17,10 @@ const sponsors = [
   ],
   [
     {
-      name: 'K-Optional Software',
-      logo: logoKOptional,
-      url: 'https://koptional.com/?ref=Responsively',
-      width: 200,
+      name: 'Syncfusion',
+      logo: logoSyncfusion,
+      url: 'https://www.syncfusion.com/?utm_source=responsivelyapp&utm_medium=cpc&utm_campaign=responsivelyapp_esee_banaug24',
+      width: 224,
     },
   ],
   [
