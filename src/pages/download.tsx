@@ -1,59 +1,55 @@
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
-import {usePlausible} from 'next-plausible';
 import Head from 'next/head';
 
-import {Button} from '@/components/Button';
-import {Header} from '@/components/Header';
-import {Footer} from '@/components/Footer';
-import {Container} from '@/components/Container';
-import {BlurBG} from '@/components/BlurBG';
-import {useEffect, useState} from 'react';
+import { Button } from '@/components/Button';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { Container } from '@/components/Container';
+import { BlurBG } from '@/components/BlurBG';
+import { useEffect, useState } from 'react';
 import allDevicesSideBySide from '@/images/screenshots/all-devices-side-by-side.png';
 import Image from 'next/image';
-import {SponsorsAndContributors} from '@/components/SponsorsAndContributors';
+import { SponsorsAndContributors } from '@/components/SponsorsAndContributors';
+import { DownloadLinks } from '@/components/DownloadLinks';
+import { Spinner } from '@/components/Spinner';
 
 TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo('en-US');
 
 export default function Download() {
-  const plausible = usePlausible();
-  const [macURL, setMacURL] = useState('');
-  const [macIntelURL, setMacIntelURL] = useState('');
-  const [winURL, setWinURL] = useState('');
-  const [linuxURL, setLinuxURL] = useState('');
-  const [linuxArm64URL, setLinuxArm64URL] = useState('');
   const [version, setVersion] = useState('');
   const [releaseTs, setReleaseTs] = useState<number>(1690638240);
+  const [assets, setAssets] = useState<null | any[]>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/responsively-org/responsively-app-releases/releases/latest')
-      .then(res => res.json())
-      .then(data => {
-        const macArm64 = data.assets.find((asset: any) => asset.name.endsWith('-arm64.dmg'));
-        const macIntel = data.assets.find(
-          (asset: any) => asset.name.endsWith('.dmg') && !asset.name.endsWith('-arm64.dmg')
-        );
-        const win = data.assets.find((asset: any) => asset.name.endsWith('.exe'));
-        const linux = data.assets.find(
-          (asset: any) => asset.name.endsWith('.AppImage') && asset.name.indexOf('arm') === -1
-        );
-        const linuxArm64 = data.assets.find(
-          (asset: any) => asset.name.endsWith('.AppImage') && asset.name.indexOf('arm') !== -1
-        );
+    setIsClient(true)
+    const fetchAssets = () => {
+      fetch('https://api.github.com/repos/responsively-org/responsively-app-releases/releases/latest')
+        .then(res => res.json())
+        .then(data => {
+          setAssets(data.assets);
+          setVersion(data.tag_name);
+          setReleaseTs(new Date(data.published_at).getTime());
+        })
+        .catch(err => {
+          console.error('Error getting assets', err);
+        });
+    };
 
-        setMacURL(macArm64.browser_download_url);
-        setMacIntelURL(macIntel.browser_download_url);
-        setWinURL(win.browser_download_url);
-        setLinuxURL(linux.browser_download_url);
-        setLinuxArm64URL(linuxArm64.browser_download_url);
-        setVersion(data.tag_name);
-        setReleaseTs(new Date(data.published_at).getTime());
-      })
-      .catch(err => {
-        console.error('Error getting assets', err);
-      });
-  }, []);
+    if (!assets) {
+      fetchAssets();
+    }
+  }, [assets]);
+
+  if (!isClient) {
+    return (
+      <div className="w-screen h-screen flex justify-center items-center">
+        <Spinner />
+      </div>
+    )
+  }
 
   return (
     <div className="h-fit">
@@ -83,39 +79,7 @@ export default function Download() {
               </div>
             </Button>
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button
-              href={macURL}
-              onClick={() => plausible('appDownload', {props: {arch: 'mac-silicon'}})}
-            >
-              Mac (Apple Silicon)
-            </Button>
-            <Button
-              href={macIntelURL}
-              onClick={() => plausible('appDownload', {props: {arch: 'mac-intel'}})}
-            >
-              Mac (Intel)
-            </Button>
-            <Button
-              href={winURL}
-              onClick={() => plausible('appDownload', {props: {arch: 'windows'}})}
-            >
-              Windows
-            </Button>
-            <Button
-              href={linuxURL}
-              onClick={() => plausible('appDownload', {props: {arch: 'linux'}})}
-            >
-              Linux (x64)
-            </Button>
-            <Button
-              href={linuxArm64URL}
-              onClick={() => plausible('appDownload', {props: {arch: 'linux-arm64'}})}
-            >
-              Linux (arm64)
-            </Button>
-          </div>
-
+          <DownloadLinks assets={assets} />
           <div className="my-8">
             <Image
               className="w-full rounded shadow-xl"

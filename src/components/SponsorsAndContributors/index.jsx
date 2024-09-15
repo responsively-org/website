@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from 'react';
-
 import missingContributors from './missing-contributors.json';
 import {Container} from '../Container';
-
-//import './style.css';
 
 const fixContributors = list => {
   if (list == null) return [];
@@ -22,6 +19,7 @@ const fixContributors = list => {
 export const SponsorsAndContributors = () => {
   const [contributors, setContributors] = useState([]);
   const [allSponsors, setAllSponsors] = useState([]);
+
   useEffect(() => {
     (async () => {
       const contributors = JSON.parse(
@@ -156,7 +154,7 @@ export const SponsorsAndContributors = () => {
         </h3>
         <div className="flex justify-center">
           <div className="my-8 flex flex-wrap items-center justify-center gap-2 md:w-9/12">
-            {contributors.map(contributor => (
+            {contributors?.map(contributor => (
               <a
                 key={contributor.login}
                 href={`https://github.com/${contributor.login}`}
