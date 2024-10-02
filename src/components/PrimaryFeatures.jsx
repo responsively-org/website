@@ -1,13 +1,13 @@
-import {useEffect, useState, useRef, memo} from 'react';
+import { useEffect, useState, useRef, memo } from 'react';
 import useIntersectionObserver from '@react-hook/intersection-observer';
 
 import Image from 'next/image';
-import {Tab} from '@headlessui/react';
+import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
 
-import {Container} from '@/components/Container';
+import { Container } from '@/components/Container';
 import allDevicesSideBySide from '@/images/screenshots/all-devices-side-by-side.png';
-import {BlurBG} from './BlurBG';
+import { BlurBG } from './BlurBG';
 
 const features = [
   {
@@ -43,7 +43,7 @@ export function PrimaryFeatures() {
   useEffect(() => {
     let lgMediaQuery = window.matchMedia('(min-width: 1024px)');
 
-    function onMediaQueryChange({matches}) {
+    function onMediaQueryChange({ matches }) {
       setTabOrientation(matches ? 'vertical' : 'horizontal');
     }
 
@@ -68,7 +68,7 @@ export function PrimaryFeatures() {
             Elevate your web development experience with the comprehensive toolset!
           </h2>
           <p className="mt-6 text-lg tracking-tight text-emerald-100">
-            Well everything you need to be make pixel perfect responsive websites with ease.
+            Everything you need to create pixel-perfect, responsive websites with ease.
           </p>
         </div>
         <Tab.Group
@@ -76,7 +76,7 @@ export function PrimaryFeatures() {
           className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
           vertical={tabOrientation === 'vertical'}
         >
-          {({selectedIndex}) => (
+          {({ selectedIndex }) => (
             <>
               <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 md:overflow-x-auto md:px-2 lg:col-span-5">
                 <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
@@ -138,11 +138,11 @@ export function PrimaryFeatures() {
   );
 }
 
-const FeatureMedia = memo(function FeatureMedia({feature}) {
+const FeatureMedia = memo(function FeatureMedia({ feature }) {
   const containerRef = useRef();
   const lockRef = useRef(false);
   const [isLoading, setIsLoading] = useState(true);
-  const {isIntersecting} = useIntersectionObserver(containerRef);
+  const { isIntersecting } = useIntersectionObserver(containerRef);
   if (isIntersecting) {
     lockRef.current = true;
   }
