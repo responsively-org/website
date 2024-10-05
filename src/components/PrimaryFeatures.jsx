@@ -68,7 +68,7 @@ export function PrimaryFeatures() {
             Elevate your web development experience with the comprehensive toolset!
           </h2>
           <p className="mt-6 text-lg tracking-tight text-emerald-100">
-            Well everything you need to be make pixel perfect responsive websites with ease.
+          All the essential tools and techniques you need to effortlessly create pixel-perfect, responsive websites.
           </p>
         </div>
         <Tab.Group
