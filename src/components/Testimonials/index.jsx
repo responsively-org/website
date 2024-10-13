@@ -31,27 +31,30 @@ const tweets = [
 ];
 
 export function Testimonials() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [visibleTweets, setVisibleTweets] = useState(8);
-  const [showAll, setShowAll] = useState(false); // State to toggle between showing all and limited tweets
+  const [isMobile, setIsMobile] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
+
+      // Reset showAll to false when switching to mobile
+      if (window.innerWidth < 768) {
+        setShowAll(false);
+      }
     };
 
-    handleResize(); // Check initially
-    window.addEventListener('resize', handleResize);
+    // Set initial value for isMobile
+    handleResize();
 
+    window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    setVisibleTweets(isMobile ? (showAll ? tweets.length : 8) : tweets.length);
-  }, [isMobile, showAll]);
+  const visibleTweetsCount = isMobile ? (showAll ? tweets.length : 8) : tweets.length;
 
   const toggleTweets = () => {
-    setShowAll((prev) => !prev); // Toggle between showing all and limited tweets
+    setShowAll((prev) => !prev);
   };
 
   return (
@@ -72,25 +75,23 @@ export function Testimonials() {
       </Container>
       <div className="mx-auto mt-16 max-w-2xl px-8 sm:px-8 lg:mt-20 lg:max-w-none">
         <div className="masonry sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 column-gap-6">
-          {tweets.slice(0, visibleTweets).map((tweetId) => (
+          {tweets.slice(0, visibleTweetsCount).map((tweetId) => (
             <Tweet key={tweetId} id={tweetId} />
           ))}
         </div>
 
-        {/* Show toggle button for more or less tweets */}
-        {/* Only visible on small screens */}
-        <div className="mt-8 text-center sm:hidden"> {/* Hide on larger screens */}
-          <Button
-            variant="solid"
-            color="green"
+        {isMobile && (
+          <div className="mt-8 text-center">
+            <Button 
+            variant="solid" 
+            color="green" 
             onClick={toggleTweets}
-          >
-            {showAll ? 'Show Less' : 'Show More'}
-          </Button>
-        </div>
+            >
+              {showAll ? 'Show Less' : 'Show More'}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
 }
-
-
