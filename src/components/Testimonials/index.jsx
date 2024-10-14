@@ -82,7 +82,7 @@ export function Testimonials() {
         </div>
       </Container>
       <div className="mx-auto mt-16 max-w-2xl px-8 sm:px-8 lg:mt-20 lg:max-w-none">
-        <div className="masonry sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 gap-6">
+        <div className="masonry sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 column-gap-6">
           {tweets.slice(0, visibleTweetsCount).map((tweetId) => (
             <Tweet key={tweetId} id={tweetId} />
           ))}
