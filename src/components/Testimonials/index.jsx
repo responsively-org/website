@@ -31,25 +31,33 @@ const tweets = [
 ];
 
 export function Testimonials() {
-  const [isMobile, setIsMobile] = useState(null);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      const wasMobile = isMobile;
+      const isCurrentlyMobile = window.innerWidth < 768;
 
-      // Reset showAll to false when switching to mobile
-      if (window.innerWidth < 768) {
+      // Update the mobile state if it has changed
+      setIsMobile(isCurrentlyMobile);
+
+      // Only reset showAll if transitioning between mobile and desktop
+      if (wasMobile !== isCurrentlyMobile) {
         setShowAll(false);
       }
     };
 
-    // Set initial value for isMobile
+    // Initial call to set the state based on current window size
     handleResize();
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile]);
 
   const visibleTweetsCount = isMobile ? (showAll ? tweets.length : 8) : tweets.length;
 
@@ -74,7 +82,7 @@ export function Testimonials() {
         </div>
       </Container>
       <div className="mx-auto mt-16 max-w-2xl px-8 sm:px-8 lg:mt-20 lg:max-w-none">
-        <div className="masonry sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 column-gap-6">
+        <div className="masonry sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 gap-6">
           {tweets.slice(0, visibleTweetsCount).map((tweetId) => (
             <Tweet key={tweetId} id={tweetId} />
           ))}
@@ -83,9 +91,9 @@ export function Testimonials() {
         {isMobile && (
           <div className="mt-8 text-center">
             <Button 
-            variant="solid" 
-            color="green" 
-            onClick={toggleTweets}
+              variant="solid" 
+              color="green" 
+              onClick={toggleTweets}
             >
               {showAll ? 'Show Less' : 'Show More'}
             </Button>
