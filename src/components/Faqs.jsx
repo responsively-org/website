@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-faqs.jpg'
 import Link from 'next/link';
+import React, {useState} from 'react';
+import {ChevronUpIcon, ChevronDownIcon} from 'lucide-react';
 
 const faqs = [
   [
@@ -92,6 +94,14 @@ const faqs = [
 ];
 
 export function Faqs() {
+  const [openQuestion, setOpenQuestion] = useState(null);
+
+  const toggleQuestion = index => {
+    setOpenQuestion(openQuestion === index ? null : index);
+  };
+
+  const flatFaqs = faqs.flat();
+
   return (
     <section
       id="faq"
@@ -107,14 +117,14 @@ export function Faqs() {
         unoptimized
       />
       <Container className="relative">
-        <div className="relative mx-auto max-w-2xl lg:mx-0">
+        <div className="mx-auto max-w-3xl">
           <h2
             id="faq-title"
-            className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
+            className="mb-6 text-center font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
           >
-            Frequently asked questions
+            Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          <p className="mb-12 text-center text-xl tracking-tight text-slate-700">
             If you can’t find what you’re looking for, please open an issue on our{' '}
             <a
               href="https://github.com/responsively-org/responsively-app"
@@ -125,26 +135,32 @@ export function Faqs() {
             </a>
             .
           </p>
+          <div className="space-y-6">
+            {flatFaqs.map((faq, index) => (
+              <div
+                key={index}
+                className="rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+              >
+                <button
+                  className="flex w-full items-center justify-between px-6 py-4 text-left"
+                  onClick={() => toggleQuestion(index)}
+                >
+                  <span className="font-semibold text-slate-900">{faq.question}</span>
+                  {openQuestion === index ? (
+                    <ChevronUpIcon className="h-5 w-5 text-slate-500" />
+                  ) : (
+                    <ChevronDownIcon className="h-5 w-5 text-slate-500" />
+                  )}
+                </button>
+                {openQuestion === index && (
+                  <div className="px-6 pb-4">
+                    <p className="text-slate-700">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-        <ul
-          role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3"
-        >
-          {faqs.map((column, columnIndex) => (
-            <li key={columnIndex}>
-              <ul role="list" className="flex flex-col gap-y-8">
-                {column.map((faq, faqIndex) => (
-                  <li key={faqIndex}>
-                    <h3 className="font-display text-lg leading-7 text-slate-900">
-                      {faq.question}
-                    </h3>
-                    <p className="mt-4 text-sm text-slate-700">{faq.answer}</p>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
       </Container>
     </section>
   );
