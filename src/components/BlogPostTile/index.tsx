@@ -1,16 +1,20 @@
-import {PostMeta} from '@/lib/posts';
+import { PostMeta } from '@/lib/posts';
 
 interface Props {
   post: PostMeta;
 }
 
 export const BlogPostTile = ({
-  post: {title, date, slug, authorPic, author, authorTwitterUrl, description},
+  post: { title, date, slug, authorPic, author, authorTwitterUrl, description },
 }: Props) => {
   const href = `/blog/${slug}`;
   const publishDate = new Date(date);
+
   return (
-    <article key={href} className="flex max-w-xl flex-col items-start justify-between">
+    <article 
+      key={href} 
+      className="flex max-w-xl flex-col items-start justify-between p-4 rounded-lg transition-transform duration-300 ease-in-out hover:shadow-lg hover:scale-105 hover:bg-[rgba(255,255,255,0.2)]"
+    >
       <div className="flex items-center gap-x-4 text-xs">
         <time dateTime={publishDate.toString()} className="text-gray-500">
           {publishDate.toLocaleDateString('en-US', {
