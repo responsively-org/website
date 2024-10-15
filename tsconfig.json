@@ -24,6 +24,6 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/NavLink.jsx"
-  ],
+, "src/components/FAQSection/index.jsx"  ],
   "exclude": ["node_modules"]
 }
