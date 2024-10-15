@@ -4,13 +4,13 @@ import Image from 'next/image';
 import backgroundSVG from '@/images/background-hero.svg';
 
 import { CallToAction } from '@/components/CallToAction';
-import { Faqs } from '@/components/Faqs';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { PrimaryFeatures } from '@/components/PrimaryFeatures';
 import { SecondaryFeatures } from '@/components/SecondaryFeatures';
 import { Testimonials } from '@/components/Testimonials';
+import FAQSection from '@/components/FAQSection';
 
 export default function Home() {
   return (
@@ -44,7 +44,7 @@ export default function Home() {
         <SecondaryFeatures />
         <CallToAction />
         <Testimonials />
-        <Faqs />
+        <FAQSection />
       </main>
       <Footer />
     </div>
