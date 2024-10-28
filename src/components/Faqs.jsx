@@ -142,7 +142,7 @@ export function Faqs() {
                 className="rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-md border border-indigo-200"
               >
                 <button
-                  className="flex w-full items-center border-purple-200 justify-between px-6 py-4 text-left"
+                  className="flex w-full items-center justify-between px-6 py-4 text-left"
                   onClick={() => toggleQuestion(index)}
                 >
                   <span className="font-semibold text-slate-900">{faq.question}</span>
