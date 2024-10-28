@@ -103,7 +103,6 @@ export function Faqs() {
   const flatFaqs = faqs.flat();
 
   return (
-// this section
     <section
       id="faq"
       aria-labelledby="faq-title"
@@ -117,7 +116,6 @@ export function Faqs() {
         height={946}
         unoptimized
       />
-
       <Container className="relative">
         <div className="mx-auto max-w-3xl">
           <h2
