@@ -4,8 +4,16 @@ import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
 import { NavLink } from '@/components/NavLink';
 import { Icon } from '@iconify/react';
+import { Button } from './Button';
 
 export function Footer() {
+  function goToTop(){
+    let rootElement = document.documentElement;
+    rootElement.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
   return (
     <footer className="relative z-10 bg-slate-50">
       <Container>
@@ -24,7 +32,7 @@ export function Footer() {
             </div>
           </nav>
         </div>
-        <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
+        <div className="flex flex-col items-center border-t border-slate-400/10 py-10 md:flex-row-reverse md:justify-between">
           <div className="flex items-center gap-x-6">
             <Link
               href="https://twitter.com/ResponsivelyApp"
@@ -65,6 +73,11 @@ export function Footer() {
           </p>
         </div>
       </Container>
+      <Button className='fixed right-2 bottom-2 goToTop'  color="green" style={{width: '40px', height: '40px', padding: '4px 8px'}} onClick={goToTop}>
+        <svg xmlns="http://www.w3.org/2000/svg" width={'40px'} height={'40px'} fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+        </svg>
+      </Button>
     </footer>
   );
 }
