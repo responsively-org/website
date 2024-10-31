@@ -59,7 +59,7 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden pb-28 pt-20 sm:py-32 overflow-avoid"
     >
       <BlurBG />
       <Container className="relative">
@@ -67,7 +67,7 @@ export function PrimaryFeatures() {
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
             Elevate your web development experience with the comprehensive toolset!
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-emerald-100">
+          <p className="mt-6 text-lg tracking-tight text-emerald-100 text-overflow-avoid">
             Everything you need to create pixel-perfect, responsive websites with ease.
           </p>
         </div>
