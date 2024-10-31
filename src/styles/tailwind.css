@@ -29,3 +29,26 @@
 .column-gap-6 {
   column-gap: 1.5rem;  
 }
+
+@media (max-width: 370px) {
+  .overflow-avoid {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 340px) {
+  .overflow-avoid {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 325px) {
+  .overflow-avoid {
+    padding-top: 5px;
+  }
+
+  .text-overflow-avoid {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+  }
+}
