@@ -37,8 +37,11 @@ const features = [
   },
 ];
 
+
+
 export function PrimaryFeatures() {
   let [tabOrientation, setTabOrientation] = useState('horizontal');
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     let lgMediaQuery = window.matchMedia('(min-width: 1024px)');
@@ -55,11 +58,24 @@ export function PrimaryFeatures() {
     };
   }, []);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 370px)');
+    const handleResize = (e) => setIsSmallScreen(e.matches);
+    mediaQuery.addEventListener('change', handleResize);
+
+    // Initial check
+    setIsSmallScreen(mediaQuery.matches);
+
+    return () => mediaQuery.removeEventListener('change', handleResize);
+  }, []);
+
   return (
     <section
       id="features"
       aria-label="Features for running your books"
-      className="relative overflow-hidden pb-28 pt-20 sm:py-32"
+      // className="relative overflow-hidden pb-28 pt-20 sm:py-32"
+      className={`${isSmallScreen ? 'pt-6 ' : 'pt-20 '}relative overflow-hidden pb-28 sm:py-32`}
+
     >
       <BlurBG />
       <Container className="relative">
@@ -67,7 +83,7 @@ export function PrimaryFeatures() {
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
             Elevate your web development experience with the comprehensive toolset!
           </h2>
-          <p className="mt-6 text-lg tracking-tight text-emerald-100">
+          <p className={`${isSmallScreen ? 'mt-3 leading-normal text-base' : 'mt-6'} text-lg tracking-tight text-emerald-100`}>
             Everything you need to create pixel-perfect, responsive websites with ease.
           </p>
         </div>
