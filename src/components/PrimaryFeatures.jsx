@@ -73,13 +73,13 @@ export function PrimaryFeatures() {
         </div>
         <Tab.Group
           as="div"
-          className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
+          className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0 padding-adjust"
           vertical={tabOrientation === 'vertical'}
         >
           {({ selectedIndex }) => (
             <>
               <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 md:overflow-x-auto md:px-2 lg:col-span-5">
-                <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
+                <Tab.List className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal whitespace-adjust ">
                   {features.map((feature, featureIndex) => (
                     <div
                       key={feature.title}
@@ -93,7 +93,7 @@ export function PrimaryFeatures() {
                       <h3>
                         <Tab
                           className={clsx(
-                            'font-display text-lg [&:not(:focus-visible)]:focus:outline-none',
+                            'font-display text-lg [&:not(:focus-visible)]:focus:outline-none font-adjust',
                             selectedIndex === featureIndex
                               ? 'text-emerald-600 lg:text-white'
                               : 'text-emerald-300 hover:text-white lg:text-white'
