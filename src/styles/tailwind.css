@@ -52,3 +52,19 @@
     margin-top: 0.25rem;
   }
 }
+
+@media (max-width: 1023px) {
+  .break-inside-avoid .tweet-actions_like__ebkiV, .tweet-actions_reply__SSjP_, .tweet-actions_copy__9eB3J {
+  margin-right: 0.5rem;
+}
+}
+
+@media (max-width: 340px) {
+  .break-inside-avoid .tweet-actions_like__ebkiV, .tweet-actions_reply__SSjP_, .tweet-actions_copy__9eB3J {
+  margin-right: 0.1rem;
+}
+
+.tweet-actions_likeCount__blNBv{
+  margin-left: 0rem;
+}
+}
