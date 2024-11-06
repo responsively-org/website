@@ -19,7 +19,7 @@ const sponsors = [
     {
       name: 'Syncfusion',
       logo: logoSyncfusion,
-      url: 'https://www.syncfusion.com/?utm_source=responsivelyapp&utm_medium=cpc&utm_campaign=responsivelyapp_esee_banaug24',
+      url: 'https://www.syncfusion.com/?utm_source=responsivelyapp&utm_medium=cpc&utm_campaign=responsivelyapp_esee_ban',
       width: 224,
     },
   ],
