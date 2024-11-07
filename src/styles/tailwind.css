@@ -29,3 +29,48 @@
 .column-gap-6 {
   column-gap: 1.5rem;  
 }
+
+@media(max-width: 1020px){
+  .whitespace-adjust{
+    white-space: pre-wrap;
+    /* column-gap: 0;
+    font-size: 1rem; */
+  }
+}
+
+@media(max-width: 689px){
+  .whitespace-adjust{
+    column-gap: 0;
+  }
+}
+
+@media(max-width: 628px){
+  .font-adjust{
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 573px){
+  .font-adjust{
+    font-size: 0.75rem;
+  }
+}
+
+@media(max-width: 474px){
+  .font-adjust{
+    line-height: 1rem;  
+  }
+}
+
+@media(max-width: 410px){
+  .padding-adjust{
+    margin-top: 0;
+    padding-top: 15px;
+  }
+}
+
+@media(max-width: 400px){
+  .padding-adjust{
+    padding-top: 0px;
+  }
+}
