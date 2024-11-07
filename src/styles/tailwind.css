@@ -74,3 +74,15 @@
     padding-top: 0px;
   }
 }
+
+@media (max-width: 1023px) {
+  .break-inside-avoid .tweet-actions_like__ebkiV, .break-inside-avoid .tweet-actions_reply__SSjP_, .break-inside-avoid .tweet-actions_copy__9eB3J {
+  margin-right: 0.5rem;
+}
+}
+
+@media (max-width: 320px) {
+  .break-inside-avoid .tweet-actions_like__ebkiV, .break-inside-avoid .tweet-actions_reply__SSjP_, .break-inside-avoid .tweet-actions_copy__9eB3J {
+    margin-right: 0.45rem;
+  }
+}
