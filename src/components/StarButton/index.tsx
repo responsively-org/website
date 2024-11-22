@@ -1,6 +1,6 @@
-import {Icon} from '@iconify/react';
-import {NavLink} from '../NavLink';
-import {useEffect, useState} from 'react';
+import { Icon } from '@iconify/react';
+import { NavLink } from '../NavLink';
+import { useEffect, useState } from 'react';
 
 export const StarButton = () => {
   const [count, setCount] = useState<number>(20400);
@@ -33,6 +33,18 @@ export const StarButton = () => {
             className="origin-center transition-transform duration-300 group-hover:scale-125"
           />
           {count.toLocaleString()} Stars
+        </span>
+      </NavLink>
+      <NavLink
+        href="/download"
+      >
+        <span className="flex items-center gap-1">
+          <Icon
+            icon="material-symbols:cloud-download-outline-rounded"
+            fontSize={22}
+            className="origin-center transition-transform duration-300 group-hover:scale-125"
+          />
+          150k+ Downloads
         </span>
       </NavLink>
     </div>
