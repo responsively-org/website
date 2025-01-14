@@ -108,14 +108,14 @@ export const SponsorsAndContributors = () => {
           >
             <img src="/assets/img/logos/syncfusion.png" alt="Syncfusion" width="264" />
           </a>
-          <a
+          {/* <a
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
             rel="noreferrer"
             href="https://www.browserstack.com/?utm_source=responsively&utm_medium=partnered&ref=responsively_browser-source"
           >
             <img src="/assets/img/logos/browserStack.svg" alt="BrowserStack" width="264" />
-          </a>
+          </a> */}
           <a
             className="flex h-28 items-center rounded-xl bg-indigo-50 p-5"
             href="/sponsor/#become-a-sponsor"

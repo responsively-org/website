@@ -23,14 +23,14 @@ const sponsors = [
       width: 224,
     },
   ],
-  [
-    {
-      name: 'BrowserStack',
-      logo: logoBrowserStack,
-      url: 'https://www.browserstack.com/?utm_source=responsively&utm_medium=partnered&ref=responsively_browser-source',
-      width: 224,
-    },
-  ],
+  // [
+  //   {
+  //     name: 'BrowserStack',
+  //     logo: logoBrowserStack,
+  //     url: 'https://www.browserstack.com/?utm_source=responsively&utm_medium=partnered&ref=responsively_browser-source',
+  //     width: 224,
+  //   },
+  // ],
 ];
 
 export const SpecialSponsors = () => {
