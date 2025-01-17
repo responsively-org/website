@@ -57,7 +57,7 @@ const faqs = [
           >
             GitHub repo
           </a>{' '}
-          explainng your need and we'll look into it.
+          explaining your need and we'll look into it.
         </>
       ),
     },
@@ -67,7 +67,7 @@ const faqs = [
       question: 'How can I support Responsively App?',
       answer: (
         <>
-          You can support in a lot of ways and we have details of in our{' '}
+          You can support in a lot of ways and we have info how on our{' '}
           <Link href="/sponsor" className="underline">
             Sponsorship
           </Link>{' '}
@@ -86,7 +86,7 @@ const faqs = [
           >
             GitHub repo
           </a>{' '}
-          for issues that needs help and give them a try.
+          for issues that need help and give them a try.
         </>
       ),
     },
