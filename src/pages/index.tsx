@@ -1,18 +1,21 @@
-import Head from 'next/head';
-import Image from 'next/image';
-
-import backgroundSVG from '@/images/background-hero.svg';
-
 import { CallToAction } from '@/components/CallToAction';
 import { Faqs } from '@/components/Faqs';
 import { Footer } from '@/components/Footer';
+import Head from 'next/head';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import Image from 'next/image';
+
 import { PrimaryFeatures } from '@/components/PrimaryFeatures';
 import { SecondaryFeatures } from '@/components/SecondaryFeatures';
 import { Testimonials } from '@/components/Testimonials';
+import backgroundSVG from '@/images/background-hero.svg';
+
 
 export default function Home() {
+
+
+  
   return (
     <div className="relative">
       <Image
