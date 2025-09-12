@@ -26,7 +26,7 @@ const features = [
   {
     title: 'Quick Context Switching',
     description:
-      "Save your favorite device combinations as Preview Suits and quickly switch between them when you're testing.",
+      "Save your favorite device combinations as Preview Suites and quickly switch between them when you're testing.",
     video: 'https://responsively-org.github.io/responsively-app/assets/video/preview-suites.mp4',
   },
   {
