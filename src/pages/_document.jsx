@@ -34,6 +34,7 @@ export default function Document(props) {
         <meta data-react-helmet="true" name="twitter:site" content="ResponsivelyApp" />
         <meta data-react-helmet="true" name="twitter:title" content={title} />
         <meta data-react-helmet="true" name="twitter:description" content={description} />
+        <script defer src="https://umami.responsively.app/script.js" data-website-id="8334c169-78b3-4ba7-94ce-6e822db4da16"></script>
       </Head>
       <body className="flex h-full flex-col">
         <Main />

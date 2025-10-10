@@ -1,10 +1,9 @@
-import { usePlausible } from 'next-plausible';
 import { Button } from '@/components/Button';
 import { useEffect, useState } from 'react';
 import { Spinner } from '../Spinner';
+import { trackEvent } from '@/utils/analytics';
 
 export const DownloadLinks = ({ assets }: { assets: any[] | null }) => {
-  const plausible = usePlausible();
   const [macURL, setMacURL] = useState('');
   const [macIntelURL, setMacIntelURL] = useState('');
   const [winURL, setWinURL] = useState('');
@@ -37,31 +36,31 @@ export const DownloadLinks = ({ assets }: { assets: any[] | null }) => {
     <div className="mt-8 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
       <Button
         href={macURL}
-        onClick={() => plausible('appDownload', { props: { arch: 'mac-silicon' } })}
+        onClick={() => trackEvent('appDownload', { arch: 'mac-silicon' })}
       >
         {macURL ? "Mac (Apple Silicon)" : <Spinner />}
       </Button>
       <Button
         href={macIntelURL}
-        onClick={() => plausible('appDownload', { props: { arch: 'mac-intel' } })}
+        onClick={() => trackEvent('appDownload', { arch: 'mac-intel' })}
       >
         {macIntelURL ? "Mac (Intel)" : <Spinner />}
       </Button>
       <Button
         href={winURL}
-        onClick={() => plausible('appDownload', { props: { arch: 'windows' } })}
+        onClick={() => trackEvent('appDownload', { arch: 'windows' })}
       >
         {winURL ? "Windows" : <Spinner />}
       </Button>
       <Button
         href={linuxURL}
-        onClick={() => plausible('appDownload', { props: { arch: 'linux' } })}
+        onClick={() => trackEvent('appDownload', { arch: 'linux' })}
       >
         {linuxURL ? "Linux (x64)" : <Spinner />}
       </Button>
       <Button
         href={linuxArm64URL}
-        onClick={() => plausible('appDownload', { props: { arch: 'linux-arm64' } })}
+        onClick={() => trackEvent('appDownload', { arch: 'linux-arm64' })}
       >
         {linuxArm64URL ? "Linux (arm64)" : <Spinner />}
       </Button>

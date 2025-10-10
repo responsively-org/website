@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { usePlausible } from 'next-plausible';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,12 +9,12 @@ import { Footer } from '@/components/Footer';
 import { Container } from '@/components/Container';
 import { BlurBG } from '@/components/BlurBG';
 import { SponsorsAndContributors } from '@/components/SponsorsAndContributors';
+import { trackEvent } from '@/utils/analytics';
 
 import GitHubLogo from '@/images/logos/github-white.png';
 import OpenCollectiveLogo from '@/images/logos/open-collective.png';
 
 export default function Sponsor() {
-  const plausible = usePlausible();
   return (
     <>
       <Head>
@@ -51,7 +50,7 @@ export default function Sponsor() {
             />
             <Button
               className='bg-transparent hover:bg-transparent active:bg-transparent'
-              onClick={() => plausible('sponsorClick', { props: { platform: 'github' } })}
+              onClick={() => trackEvent('sponsorClick', { platform: 'github' })}
             >
               GitHub Sponsors
             </Button>
@@ -70,7 +69,7 @@ export default function Sponsor() {
             />
             <Button
               className='bg-transparent hover:bg-transparent active:bg-transparent'
-              onClick={() => plausible('sponsorClick', { props: { platform: 'github' } })}
+              onClick={() => trackEvent('sponsorClick', { platform: 'opencollective' })}
             >
               Open Collective
             </Button>
