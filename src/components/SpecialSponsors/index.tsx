@@ -11,8 +11,8 @@ const sponsors = [
     {
       name: 'LambdaTest',
       logo: logoLambdaTest,
-      url: 'https://www.lambdatest.com/?ref=responsivelyapp',
-      width: 224,
+      url: 'https://www.lambdatest.com/?utm_source=responsively&utm_medium=sponsor',
+      width: 284,
     },
   ],
   [

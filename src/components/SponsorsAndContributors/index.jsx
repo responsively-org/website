@@ -96,9 +96,9 @@ export const SponsorsAndContributors = () => {
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
             rel="noreferrer"
-            href="https://www.lambdatest.com/?ref=responsivelyapp"
+            href="https://www.lambdatest.com/?utm_source=responsively&utm_medium=sponsor"
           >
-            <img src="/assets/img/logos/lambdatest.svg" alt="LambdaTest" width="264" />
+            <img src="/assets/img/logos/lambdatest.svg" alt="LambdaTest" width="288" />
           </a>
           <a
             className="flex h-32 items-center rounded-xl p-5"
