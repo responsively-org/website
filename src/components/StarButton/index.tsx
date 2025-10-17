@@ -40,7 +40,7 @@ export const StarButton = () => {
       >
         <span className="flex items-center gap-1">
           <Icon
-            icon="material-symbols:cloud-download-outline-rounded"
+            icon="material-symbols:download-rounded"
             fontSize={22}
             className="origin-center transition-transform duration-300 group-hover:scale-125"
           />

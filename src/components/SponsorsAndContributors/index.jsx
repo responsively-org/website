@@ -96,9 +96,9 @@ export const SponsorsAndContributors = () => {
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
             rel="noreferrer"
-            href="https://accelerator.github.com/#:~:text=responsively%2Dorg/responsively%2Dapp"
+            href="https://www.lambdatest.com/?ref=responsivelyapp"
           >
-            <img src="/assets/img/logos/github.png" alt="GitHub" width="264" />
+            <img src="/assets/img/logos/lambdatest.svg" alt="LambdaTest" width="264" />
           </a>
           <a
             className="flex h-32 items-center rounded-xl p-5"

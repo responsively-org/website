@@ -1,6 +1,6 @@
 import logoSyncfusion from '@/images/logos/syncfusion.png';
 import logoBrowserStack from '@/images/logos/browserStack.svg';
-import logoGitHub from '@/images/logos/github.png';
+import logoLambdaTest from '@/images/logos/lambdatest.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import {Icon} from '@iconify/react';
@@ -9,9 +9,9 @@ import {NavLink} from '../NavLink';
 const sponsors = [
   [
     {
-      name: 'GitHub',
-      logo: logoGitHub,
-      url: 'https://accelerator.github.com/#:~:text=responsively%2Dorg/responsively%2Dapp',
+      name: 'LambdaTest',
+      logo: logoLambdaTest,
+      url: 'https://www.lambdatest.com/?ref=responsivelyapp',
       width: 224,
     },
   ],
