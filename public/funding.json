@@ -1,0 +1,123 @@
+{
+  "version": "1.0.0",
+  "entity": {
+    "type": "organisation",
+    "role": "maintainer",
+    "name": "Manoj Vivek",
+    "email": "p.manoj.vivek@gmail.com",
+    "description": "We are the core team behind Responsively App, a modified web browser that helps in responsive web development. We're committed to keeping this tool free and open-source for the developer community.",
+    "webpageUrl": {
+      "url": "https://responsively.app"
+    }
+  },
+  "projects": [
+    {
+      "guid": "responsively-app",
+      "name": "Responsively App",
+      "description": "A modified web browser that helps in responsive web development. It has mirrored user-interactions for all devices, customized browser profiles, hot reloading on CSS edits, and more.",
+      "webpageUrl": {
+        "url": "https://responsively.app"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/responsively-org/responsively-app"
+      },
+      "licenses": [
+        "spdx:AGPL-3.0"
+      ],
+      "tags": [
+        "web-development",
+        "responsive-design",
+        "browser",
+        "developer-tools",
+        "open-source",
+        "cross-platform",
+        "electron",
+        "react",
+        "typescript"
+      ]
+    }
+  ],
+  "funding": {
+    "channels": [
+      {
+        "guid": "github-sponsors",
+        "type": "payment-provider",
+        "address": "https://github.com/sponsors/responsively-org",
+        "description": "Support us through GitHub Sponsors with monthly or one-time contributions."
+      },
+      {
+        "guid": "opencollective",
+        "type": "payment-provider",
+        "address": "https://opencollective.com/responsively",
+        "description": "Support us through OpenCollective with transparent expense management."
+      }
+    ],
+    "plans": [
+      {
+        "guid": "supporter",
+        "status": "active",
+        "name": "Supporter",
+        "description": "You want to see the project grow and get better.",
+        "amount": 10,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": [
+          "github-sponsors",
+          "opencollective"
+        ]
+      },
+      {
+        "guid": "enthusiast",
+        "status": "active",
+        "name": "Enthusiast",
+        "description": "You want to speed-up the development.",
+        "amount": 50,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": [
+          "github-sponsors",
+          "opencollective"
+        ]
+      },
+      {
+        "guid": "champion",
+        "status": "active",
+        "name": "Champion",
+        "description": "You want to take the front seat and get your logo on our README on GitHub.",
+        "amount": 100,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": [
+          "github-sponsors",
+          "opencollective"
+        ]
+      },
+      {
+        "guid": "gold-sponsor",
+        "status": "active",
+        "name": "Gold Sponsor",
+        "description": "Get your logo and link on our website responsively.app (20,000 uv/m). Get your logo and link on our README on GitHub. Get mentioned in our release notes.",
+        "amount": 250,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": [
+          "github-sponsors",
+          "opencollective"
+        ]
+      },
+      {
+        "guid": "one-time",
+        "status": "active",
+        "name": "One-time Contribution",
+        "description": "Support us with a one-time contribution of any amount.",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": [
+          "github-sponsors",
+          "opencollective"
+        ]
+      }
+    ]
+  }
+}
