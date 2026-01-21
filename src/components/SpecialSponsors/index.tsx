@@ -1,6 +1,6 @@
 import logoSyncfusion from '@/images/logos/syncfusion.png';
 import logoBrowserStack from '@/images/logos/browserStack.svg';
-import logoLambdaTest from '@/images/logos/lambdatest.svg';
+import logoTestMu from '@/images/logos/testmu.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import {Icon} from '@iconify/react';
@@ -9,9 +9,9 @@ import {NavLink} from '../NavLink';
 const sponsors = [
   [
     {
-      name: 'LambdaTest',
-      logo: logoLambdaTest,
-      url: 'https://www.lambdatest.com/?utm_source=responsively&utm_medium=sponsor',
+      name: 'TestMu AI',
+      logo: logoTestMu,
+      url: 'https://www.testmu.ai/?utm_source=responsively&utm_medium=sponsor',
       width: 284,
     },
   ],
