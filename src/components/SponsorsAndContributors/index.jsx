@@ -91,23 +91,23 @@ export const SponsorsAndContributors = () => {
             🏆
           </span>
         </h3>
-        <div className="my-8 flex flex-col items-center justify-center lg:flex-row">
+        <div className="my-8 flex flex-col items-center justify-center lg:flex-row gap-6">
           <a
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
             rel="noreferrer"
-            href="https://www.lambdatest.com/?utm_source=responsively&utm_medium=sponsor"
+            href="https://www.testmu.ai/?utm_source=responsively&utm_medium=sponsor"
           >
-            <img src="/assets/img/logos/lambdatest.svg" alt="LambdaTest" width="288" />
+            <img src="/assets/img/logos/testmu.svg" alt="TestMu AI" width="224" />
           </a>
-          <a
+          {/* <a
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
             rel="noreferrer"
             href="https://www.syncfusion.com/?utm_source=responsivelyapp&utm_medium=cpc&utm_campaign=responsivelyapp_esee_ban"
           >
             <img src="/assets/img/logos/syncfusion.png" alt="Syncfusion" width="264" />
-          </a>
+          </a> */}
           {/* <a
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
