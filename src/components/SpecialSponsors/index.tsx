@@ -12,17 +12,17 @@ const sponsors = [
       name: 'TestMu AI',
       logo: logoTestMu,
       url: 'https://www.testmu.ai/?utm_source=responsively&utm_medium=sponsor',
-      width: 284,
-    },
-  ],
-  [
-    {
-      name: 'Syncfusion',
-      logo: logoSyncfusion,
-      url: 'https://www.syncfusion.com/?utm_source=responsivelyapp&utm_medium=cpc&utm_campaign=responsivelyapp_esee_ban',
       width: 224,
     },
   ],
+  // [
+  //   {
+  //     name: 'Syncfusion',
+  //     logo: logoSyncfusion,
+  //     url: 'https://www.syncfusion.com/?utm_source=responsivelyapp&utm_medium=cpc&utm_campaign=responsivelyapp_esee_ban',
+  //     width: 224,
+  //   },
+  // ],
   // [
   //   {
   //     name: 'BrowserStack',
