@@ -96,7 +96,7 @@ export const SponsorsAndContributors = () => {
             className="flex h-32 items-center rounded-xl p-5"
             target="__blank"
             rel="noreferrer"
-            href="https://www.testmu.ai/?utm_source=responsively&utm_medium=sponsor"
+            href="https://www.testmuai.com/?utm_medium=sponsor&utm_source=responsively-app"
           >
             <img src="/assets/img/logos/testmu.svg" alt="TestMu AI" width="224" />
           </a>

@@ -11,7 +11,7 @@ const sponsors = [
     {
       name: 'TestMu AI',
       logo: logoTestMu,
-      url: 'https://www.testmu.ai/?utm_source=responsively&utm_medium=sponsor',
+      url: 'https://www.testmuai.com/?utm_medium=sponsor&utm_source=responsively-app',
       width: 224,
     },
   ],
