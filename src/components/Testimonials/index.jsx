@@ -31,24 +31,20 @@ const tweets = [
 ];
 
 export function Testimonials() {
-  const [isMobile, setIsMobile] = useState(null);
+  const [isMobile, setIsMobile] = useState(false); // Initialize as false
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
-
-      // Reset showAll to false when switching to mobile
-      if (window.innerWidth < 768) {
-        setShowAll(false);
-      }
     };
-
-    // Set initial value for isMobile
     handleResize();
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const visibleTweetsCount = isMobile ? (showAll ? tweets.length : 8) : tweets.length;
@@ -85,9 +81,9 @@ export function Testimonials() {
         {isMobile && (
           <div className="mt-8 text-center">
             <Button 
-            variant="solid" 
-            color="green" 
-            onClick={toggleTweets}
+              variant="solid" 
+              color="green" 
+              onClick={toggleTweets}
             >
               {showAll ? 'Show Less' : 'Show More'}
             </Button>
