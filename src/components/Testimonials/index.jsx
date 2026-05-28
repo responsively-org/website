@@ -2,17 +2,16 @@ import { useState, useEffect } from 'react';
 import { Tweet } from 'react-tweet';
 import { Container } from '@/components/Container';
 import { Button } from '../Button';
+import { TweetBoundary } from './TweetBoundary';
 
 const tweets = [
   '1278606838070534149',
   '1264805970649194502',
   '1264935778557341696',
-  '1301541350601633796',
   '1299048282069467136',
   '1298704840718196738',
   '1351174243086708746',
   '1618231342411698177',
-  '1263688081900625928',
   '1288448878291935232',
   '1316766116841103364',
   '1265940953338130432',
@@ -26,7 +25,6 @@ const tweets = [
   '1588130688452157440',
   '1660872526434652162',
   '1645844479390384132',
-  '1400212191857442817',
   '1696537206347952248',
 ];
 
@@ -77,17 +75,19 @@ export function Testimonials() {
         <div className="masonry sm:columns-1 md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 column-gap-6">
           {tweets.slice(0, visibleTweetsCount).map((tweetId) => (
             <div key={tweetId} className="break-inside-avoid">
-              <Tweet id={tweetId} />
+              <TweetBoundary tweetId={tweetId}>
+                <Tweet id={tweetId} />
+              </TweetBoundary>
             </div>
           ))}
         </div>
 
         {isMobile && (
           <div className="mt-8 text-center">
-            <Button 
-            variant="solid" 
-            color="green" 
-            onClick={toggleTweets}
+            <Button
+              variant="solid"
+              color="green"
+              onClick={toggleTweets}
             >
               {showAll ? 'Show Less' : 'Show More'}
             </Button>
