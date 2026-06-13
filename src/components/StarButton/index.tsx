@@ -21,12 +21,12 @@ export const StarButton = () => {
   }, []);
 
   return (
-    <div className="group hidden md:block">
+    <div className="hidden md:block">
       <NavLink
         href="https://github.com/responsively-org/responsively-app/stargazers"
         target="_blank"
       >
-        <span className="flex items-center gap-1">
+        <span className="group flex items-center gap-1">
           <Icon
             icon="material-symbols:star-outline-rounded"
             fontSize={22}
@@ -38,7 +38,7 @@ export const StarButton = () => {
       <NavLink
         href="/download"
       >
-        <span className="flex items-center gap-1">
+        <span className="group flex items-center gap-1">
           <Icon
             icon="material-symbols:download-rounded"
             fontSize={22}
