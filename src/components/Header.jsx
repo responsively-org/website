@@ -9,6 +9,7 @@ import { Logo } from '@/components/Logo';
 import { NavLink } from '@/components/NavLink';
 import { Icon, InlineIcon } from '@iconify/react';
 import { StarButton } from './StarButton';
+import { useScrolled } from '@/hooks/useScrolled';
 
 function MobileNavLink({ href, children }) {
   return (
@@ -43,7 +44,7 @@ function MobileNavigation() {
   return (
     <Popover>
       <Popover.Button
-        className="relative z-10 flex h-8 w-8 items-center justify-center [&:not(:focus-visible)]:focus:outline-none"
+        className="relative z-20 flex h-8 w-8 items-center justify-center [&:not(:focus-visible)]:focus:outline-none"
         aria-label="Toggle Navigation"
       >
         {({ open }) => <MobileNavIcon open={open} />}
@@ -58,7 +59,7 @@ function MobileNavigation() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="fixed inset-0 bg-slate-300/50" />
+          <Popover.Overlay className="fixed inset-0 z-10 bg-slate-300/50" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -71,7 +72,7 @@ function MobileNavigation() {
         >
           <Popover.Panel
             as="div"
-            className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
+            className="absolute inset-x-0 top-full z-30 mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
           >
             <MobileNavLink href="/#features">Features</MobileNavLink>
             <MobileNavLink href="/#testimonials">Testimonials</MobileNavLink>
@@ -86,39 +87,61 @@ function MobileNavigation() {
 }
 
 export function Header() {
+  const scrolled = useScrolled();
+
   return (
-    <header className="py-10">
-      <Container>
-        <nav className="relative z-50 flex justify-between">
-          <div className="flex items-center md:gap-x-12">
-            <Link href="/" aria-label="Home">
-              <Logo className="h-16 w-auto" />
-            </Link>
-            <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="/#features">Features</NavLink>
-              <NavLink href="/#testimonials" className="md:hidden lg:inline-block">
-                Testimonials
-              </NavLink>
-              <NavLink href="/sponsor">Sponsor</NavLink>
-              <NavLink href="/blog">Blog</NavLink>
-              <NavLink href="/join-discord" className="md:hidden lg:inline-block">
-                Join Discord
-              </NavLink>
+    <>
+      <header
+        className={clsx(
+          'fixed inset-x-0 top-0 z-50 transition-all duration-300',
+          scrolled ? 'py-2 sm:py-3' : 'py-4 sm:py-6'
+        )}
+      >
+        <div
+          aria-hidden="true"
+          className={clsx(
+            'absolute inset-0 -z-10 bg-white/85 shadow-sm ring-1 ring-slate-900/5 backdrop-blur-md backdrop-saturate-150 transition-opacity duration-300 supports-[backdrop-filter]:bg-white/60',
+            scrolled ? 'opacity-100' : 'opacity-0'
+          )}
+        />
+        <Container>
+          <nav className="relative flex items-center justify-between">
+            <div className="flex items-center md:gap-x-12">
+              <Link href="/" aria-label="Home">
+                <Logo
+                  className={clsx(
+                    'w-auto transition-all duration-300',
+                    scrolled ? 'h-10 sm:h-12' : 'h-12 sm:h-16'
+                  )}
+                />
+              </Link>
+              <div className="hidden md:flex md:gap-x-6">
+                <NavLink href="/#features">Features</NavLink>
+                <NavLink href="/#testimonials" className="md:hidden lg:inline-block">
+                  Testimonials
+                </NavLink>
+                <NavLink href="/sponsor">Sponsor</NavLink>
+                <NavLink href="/blog">Blog</NavLink>
+                <NavLink href="/join-discord" className="md:hidden lg:inline-block">
+                  Join Discord
+                </NavLink>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-x-5 md:gap-x-8">
-            <StarButton />
-            <Button href="/download" color="green">
-              <span>
-                Download <span className="hidden lg:inline">Now</span>
-              </span>
-            </Button>
-            <div className="-mr-1 md:hidden">
-              <MobileNavigation />
+            <div className="flex items-center gap-x-5 md:gap-x-8">
+              <StarButton />
+              <Button href="/download" color="green">
+                <span>
+                  Download <span className="hidden lg:inline">Now</span>
+                </span>
+              </Button>
+              <div className="-mr-1 md:hidden">
+                <MobileNavigation />
+              </div>
             </div>
-          </div>
-        </nav>
-      </Container>
-    </header>
+          </nav>
+        </Container>
+      </header>
+      <div aria-hidden="true" className="h-20 sm:h-28" />
+    </>
   );
 }
