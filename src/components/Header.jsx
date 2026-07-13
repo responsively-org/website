@@ -12,7 +12,7 @@ import { StarButton } from './StarButton';
 
 function MobileNavLink({ href, children }) {
   return (
-    <Popover.Button as={Link} href={href} className="block w-full p-2">
+    <Popover.Button as={Link} href={href} className="block w-full p-2 rounded-xl hover:text-white hover:bg-green-500">
       {children}
     </Popover.Button>
   );
