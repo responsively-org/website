@@ -22,11 +22,15 @@ export const SponsorsAndContributors = () => {
 
   useEffect(() => {
     (async () => {
-      const contributors = JSON.parse(
+      const response = JSON.parse(
         await fetch(
           'https://api.github.com/repos/responsively-org/responsively-app/contributors?per_page=100'
         ).then(response => response.text())
-      ).filter(contributor => contributor.type === 'User');
+      );
+      // GitHub API returns an error object (not an array) when rate-limited
+      const contributors = Array.isArray(response)
+        ? response.filter(contributor => contributor.type === 'User')
+        : [];
       setContributors(fixContributors(contributors));
     })();
   }, []);
@@ -36,15 +40,17 @@ export const SponsorsAndContributors = () => {
     // and then by name (ascending) and then set the state allSponsors.
     (async () => {
       const [sponsors, githubSponsors] = await Promise.all([
-        fetch('https://opencollective.com/responsively/members.json').then(response =>
-          response.json()
-        ),
+        fetch('https://opencollective.com/responsively/members.json')
+          .then(response => response.json())
+          .catch(() => []),
         fetch('https://ghs.vercel.app/v3/sponsors/responsively-org')
           .then(response => response.json())
-          .then(response => [...response.sponsors.current, ...response.sponsors.past]),
+          // current/past are null (not []) when there are no sponsors in that bucket
+          .then(response => [...(response.sponsors.current ?? []), ...(response.sponsors.past ?? [])])
+          .catch(() => []),
       ]);
 
-      const allSponsors = sponsors
+      const allSponsors = (Array.isArray(sponsors) ? sponsors : [])
         .flat()
         .filter(sponsor => sponsor.role === 'BACKER' && sponsor.name !== 'Guest')
         .map(sponsor => ({
@@ -99,6 +105,14 @@ export const SponsorsAndContributors = () => {
             href="https://www.testmuai.com/?utm_medium=sponsor&utm_source=responsively-app"
           >
             <img src="/assets/img/logos/testmu.svg" alt="TestMu AI" width="224" />
+          </a>
+          <a
+            className="flex h-32 items-center rounded-xl p-5"
+            target="__blank"
+            rel="noreferrer"
+            href="https://global.fun88.com/?utm_medium=sponsor&utm_source=responsively-app"
+          >
+            <img src="/assets/img/logos/fun88.png" alt="Fun88" width="160" />
           </a>
           {/* <a
             className="flex h-32 items-center rounded-xl p-5"

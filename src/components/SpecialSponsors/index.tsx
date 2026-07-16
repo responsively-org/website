@@ -1,6 +1,7 @@
 import logoSyncfusion from '@/images/logos/syncfusion.png';
 import logoBrowserStack from '@/images/logos/browserStack.svg';
 import logoTestMu from '@/images/logos/testmu.svg';
+import logoFun88 from '@/images/logos/fun88.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import {Icon} from '@iconify/react';
@@ -13,6 +14,14 @@ const sponsors = [
       logo: logoTestMu,
       url: 'https://www.testmuai.com/?utm_medium=sponsor&utm_source=responsively-app',
       width: 224,
+    },
+  ],
+  [
+    {
+      name: 'Fun88',
+      logo: logoFun88,
+      url: 'https://global.fun88.com/?utm_medium=sponsor&utm_source=responsively-app',
+      width: 160,
     },
   ],
   // [
