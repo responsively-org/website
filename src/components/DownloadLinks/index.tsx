@@ -1,69 +1,38 @@
-import { Button } from '@/components/Button';
-import { useEffect, useState } from 'react';
-import { Spinner } from '../Spinner';
-import { trackEvent } from '@/utils/analytics';
+import {Button} from '@/components/Button';
+import {trackEvent} from '@/utils/analytics';
+import {getReleaseDownloadLinks, ReleaseAsset} from '@/utils/releases';
 
-export const DownloadLinks = ({ assets }: { assets: any[] | null }) => {
-  const [macURL, setMacURL] = useState('');
-  const [macIntelURL, setMacIntelURL] = useState('');
-  const [winURL, setWinURL] = useState('');
-  const [linuxURL, setLinuxURL] = useState('');
-  const [linuxArm64URL, setLinuxArm64URL] = useState('');
+type DownloadLinksProps = {
+  assets: ReleaseAsset[];
+  channel: 'stable' | 'beta';
+  version: string;
+};
 
-  useEffect(() => {
-    if (assets) {
-      const macArm64 = assets.find((asset: any) => asset.name.endsWith('-arm64.dmg'));
-      const macIntel = assets.find(
-        (asset: any) => asset.name.endsWith('.dmg') && !asset.name.endsWith('-arm64.dmg')
-      );
-      const win = assets.find((asset: any) => asset.name.endsWith('.exe'));
-      const linux = assets.find(
-        (asset: any) => asset.name.endsWith('.AppImage') && asset.name.indexOf('arm') === -1
-      );
-      const linuxArm64 = assets.find(
-        (asset: any) => asset.name.endsWith('.AppImage') && asset.name.indexOf('arm') !== -1
-      );
+export const DownloadLinks = ({assets, channel, version}: DownloadLinksProps) => {
+  const downloads = getReleaseDownloadLinks(assets);
 
-      setMacURL(macArm64.browser_download_url);
-      setMacIntelURL(macIntel.browser_download_url);
-      setWinURL(win.browser_download_url);
-      setLinuxURL(linux.browser_download_url);
-      setLinuxArm64URL(linuxArm64.browser_download_url);
-    }
-  }, [assets]);
+  if (!downloads.length) {
+    return (
+      <p className="mt-6 text-sm text-slate-600">
+        Installers are not available for this release yet.
+      </p>
+    );
+  }
 
   return (
-    <div className="mt-8 flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-      <Button
-        href={macURL}
-        onClick={() => trackEvent('appDownload', { arch: 'mac-silicon' })}
-      >
-        {macURL ? "Mac (Apple Silicon)" : <Spinner />}
-      </Button>
-      <Button
-        href={macIntelURL}
-        onClick={() => trackEvent('appDownload', { arch: 'mac-intel' })}
-      >
-        {macIntelURL ? "Mac (Intel)" : <Spinner />}
-      </Button>
-      <Button
-        href={winURL}
-        onClick={() => trackEvent('appDownload', { arch: 'windows' })}
-      >
-        {winURL ? "Windows" : <Spinner />}
-      </Button>
-      <Button
-        href={linuxURL}
-        onClick={() => trackEvent('appDownload', { arch: 'linux' })}
-      >
-        {linuxURL ? "Linux (x64)" : <Spinner />}
-      </Button>
-      <Button
-        href={linuxArm64URL}
-        onClick={() => trackEvent('appDownload', { arch: 'linux-arm64' })}
-      >
-        {linuxArm64URL ? "Linux (arm64)" : <Spinner />}
-      </Button>
+    <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+      {downloads.map(({arch, label, href}) => (
+        <Button
+          key={arch}
+          href={href}
+          color={channel === 'beta' ? 'green' : 'slate'}
+          className={channel === 'beta' ? '!bg-emerald-700 hover:!bg-emerald-800' : ''}
+          aria-label={`Download ${version} ${channel} for ${label}`}
+          onClick={() => trackEvent('appDownload', {arch, channel, version})}
+        >
+          {label}
+        </Button>
+      ))}
     </div>
-  )
-}
+  );
+};
