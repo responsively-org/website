@@ -37,7 +37,7 @@ export function Hero() {
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
         A must-have DevTool for all web developers that will make your job easier. <br />
-        And it's free and{' '}
+        And it&apos;s free and{' '}
         <Link
           href="https://github.com/responsively-org/responsively-app"
           className="inline-block rounded-lg font-medium text-slate-900 hover:text-slate-950"
@@ -47,8 +47,11 @@ export function Hero() {
         </Link>{' '}
         too! 🎉
       </p>
-      <div className="mt-10 flex justify-center gap-x-6">
+      <div className="mt-10 flex flex-wrap justify-center gap-4">
         <Button href="/download">Download Now</Button>
+        <Button href="/download#beta" variant="outline">
+          Try the beta
+        </Button>
         {/* <Button variant="outline">
           <Icon icon="akar-icons:github-fill" className="h-5 w-5" />
           <span className="ml-3">Learn More</span>
