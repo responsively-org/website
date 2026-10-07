@@ -23,7 +23,7 @@ export const StarButton = () => {
   return (
     <div className="group hidden md:block">
       <NavLink
-        href="https://github.com/responsively-org/responsively-app/stargazers"
+        href="https://github.com/responsively-org/responsively-app"
         target="_blank"
       >
         <span className="flex items-center gap-1">

@@ -15,7 +15,7 @@
       "id": "github-repo-intro",
       "title": "Do you know Responsively is an open-source project?",
       "text": "Please show us your support by starring our GitHub repo.",
-      "link": "https://github.com/responsively-org/responsively-app/stargazers",
+      "link": "https://github.com/responsively-org/responsively-app",
       "okText": "Open",
       "dismissText": "Dismiss",
       "minOpenCount": 0
@@ -87,7 +87,7 @@
       "id": "github-repo-intro-1",
       "title": "Do you know Responsively is an open-source project?",
       "text": "Please show us your support by starring our GitHub repo.",
-      "link": "https://github.com/responsively-org/responsively-app/stargazers",
+      "link": "https://github.com/responsively-org/responsively-app",
       "okText": "Open",
       "dismissText": "Dismiss",
       "minOpenCount": 31
