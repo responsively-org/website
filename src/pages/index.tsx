@@ -34,9 +34,9 @@ export default function Home() {
       </Head>
 
       <main className="relative">
+        <Header />
         <div className="relative">
           <div className="relative z-10">
-            <Header />
             <Hero />
           </div>
         </div>
